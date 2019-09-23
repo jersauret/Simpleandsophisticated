@@ -22,4 +22,5 @@ public class OrderJpaRepository extends AbstractJpaRepository<Order> {
 		
 		return query.getSingleResult();
 	}
+	
 }

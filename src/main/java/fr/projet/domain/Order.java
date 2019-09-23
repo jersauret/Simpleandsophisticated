@@ -24,7 +24,7 @@ public class Order implements IoEntity {
 	private Long id;
 	private LocalDateTime purchaseDate;
 
-	@OneToMany(mappedBy = "order", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "order", fetch = FetchType.EAGER/* cascade = { CascadeType.REMOVE, CascadeType.MERGE}*/)
 	private List<CommandLine> commandLine;
 
 	@ManyToOne

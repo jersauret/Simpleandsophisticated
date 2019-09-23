@@ -2,12 +2,18 @@ package fr.projet.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class CommandLineId implements Serializable {
 
 	private static final long serialVersionUID = -6559342284645665964L;
 
+	@Column(name = "order_id")
 	private Long orderId; 
 
+	@Column(name = "product_id")
 	private Long productId;
 	
 	public CommandLineId() {
@@ -47,6 +53,22 @@ public class CommandLineId implements Serializable {
 		} else if (!orderId.equals(other.orderId))
 			return false;
 		return true;
+	}
+
+	public Long getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
+	}
+
+	public Long getProductId() {
+		return productId;
+	}
+
+	public void setProductId(Long productId) {
+		this.productId = productId;
 	}
 	
 	
