@@ -1,4 +1,4 @@
-PUT+REQUEST_BODY : 
+PUT+REQUEST_BODY : http://localhost:8080/SimpleAndSophisticated/admin/orders/8
 ==> Necessité de connaitre l'état courant de la commande pour la modifier, cmdLine par cmdLine.
 
 
