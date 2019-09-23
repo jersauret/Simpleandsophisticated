@@ -43,6 +43,7 @@ public class OrderService {
 					// TODO: Appeler commandLineRepository.save(cl);
 				});
 			}
+			return savedOrder;
 		} catch (InvalidDataAccessApiUsageException e) {
 			throw new BadRequestException("Order cannot be created with an id.", e);
 		}
