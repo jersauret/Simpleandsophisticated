@@ -7,7 +7,6 @@ import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import fr.projet.domain.CommandLineId;
 import fr.projet.domain.Order;
 import fr.projet.exception.BadRequestException;
 import fr.projet.repository.OrderJpaRepository;
@@ -37,11 +36,7 @@ public class OrderService {
 			Order savedOrder = orderRepository.save(order);
 			
 			if (order.getCommandLine() != null) {
-				order.getCommandLine().forEach(cl -> {
-					cl.setOrder(savedOrder);
-					cl.setId(new CommandLineId(savedOrder.getId(), cl.getProduct().getId()));
-					// TODO: Appeler commandLineRepository.save(cl);
-				});
+				order.getCommandLine().forEach(cl -> cl.setOrder(savedOrder));
 			}
 			return savedOrder;
 		} catch (InvalidDataAccessApiUsageException e) {

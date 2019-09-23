@@ -12,12 +12,12 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "commandline_")
-public class CommandLine implements Serializable {
+public class CommandLine implements IoEntity {
 
 	private static final long serialVersionUID = -3326848200375558388L;
 
 	@EmbeddedId
-	private CommandLineId id;
+	private Long id;
 
 	private Integer quantities;
 
@@ -36,16 +36,6 @@ public class CommandLine implements Serializable {
 	public CommandLine() {
 	}
 
-	public CommandLine(CommandLineId id, Integer quantities) {
-		this.id = id;
-		this.quantities = quantities;
-	}
-
-	public CommandLine(Long productId, Long orderId, Integer quantities) {
-		this.id = new CommandLineId(orderId, productId);
-		this.quantities = quantities;
-	}
-
 	public Integer getQuantities() {
 		return quantities;
 	}
@@ -54,27 +44,13 @@ public class CommandLine implements Serializable {
 		this.quantities = quantities;
 	}
 
-//	public Product getProduct() {
-//		return product;
-//	}
-//
-//	public void setProduct(Product product) {
-//		this.product = product;
-//	}
-//
-//	public Order getOrder() {
-//		return order;
-//	}
-//
-//	public void setOrder(Order order) {
-//		this.order = order;
-//	}
-
-	public CommandLineId getId() {
+	@Override
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(CommandLineId id) {
+	@Override
+	public void setId(Long id) {
 		this.id = id;
 	}
 
