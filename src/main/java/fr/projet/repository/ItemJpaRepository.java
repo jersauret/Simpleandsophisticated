@@ -1,5 +1,7 @@
 package fr.projet.repository;
 
+import java.util.List;
+
 import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
@@ -21,5 +23,13 @@ public class ItemJpaRepository extends AbstractJpaRepository<Product> {
 		query.setParameter("login", login);
 		
 		return query.getSingleResult();
+	}
+
+	public List<Product> findByName(String name) {
+		String qlString = "from Product u where u.name = :name";
+		TypedQuery<Product> query = entityManager.createQuery(qlString, Product.class);
+		query.setParameter("name", name);
+		
+		return query.getResultList();
 	}
 }

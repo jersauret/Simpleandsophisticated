@@ -37,6 +37,11 @@ public class ItemController {
 	public Product findOneByLogin(@PathVariable String login) {
 		return itemService.findOneByLogin(login);
 	}
+	@RequestMapping(value = "/login/{login}", method = RequestMethod.GET)
+	public List<Product>  findByName(@PathVariable String name) {
+		return itemService.findByName(name);
+	}
+	
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public List<Product> findAll() {
