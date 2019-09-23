@@ -10,6 +10,14 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+
 @Entity
 @Table(name = "customer_")
 public class Customer implements IoEntity {
@@ -25,13 +33,17 @@ public class Customer implements IoEntity {
 	private String lastName;
 	private String street;
 	private Integer streetNumber;
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+	@JsonSerialize(using = LocalDateSerializer.class)
+	@JsonDeserialize(using = LocalDateDeserializer.class)
 	private LocalDate dOB;
 	private String password;
 	private String city;
 	private String country;
 	private String zipCode; // Code Postal
 	private String eMail;
-	
+
 	@OneToMany(mappedBy = "customer")
 	private List<Order> order; // Liste d'items
 

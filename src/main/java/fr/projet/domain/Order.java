@@ -1,5 +1,6 @@
 package fr.projet.domain;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -13,6 +14,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+
 @Entity
 @Table(name = "order_")
 public class Order implements IoEntity {
@@ -22,7 +31,11 @@ public class Order implements IoEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private LocalDateTime purchaseDate;
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+	@JsonSerialize(using = LocalDateSerializer.class)
+	@JsonDeserialize(using = LocalDateDeserializer.class)
+	private LocalDate purchaseDate;
 
 	@OneToMany(mappedBy = "order", fetch = FetchType.EAGER, cascade = { CascadeType.ALL, CascadeType.REMOVE, CascadeType.PERSIST })
 	private List<CommandLine> commandLine;
@@ -33,7 +46,7 @@ public class Order implements IoEntity {
 	public Order() {
 	}
 
-	public Order(LocalDateTime purchaseDate, List<CommandLine> commandLine, Customer customer) {
+	public Order(LocalDate purchaseDate, List<CommandLine> commandLine, Customer customer) {
 		super();
 		this.purchaseDate =purchaseDate;
 		
@@ -49,11 +62,11 @@ public class Order implements IoEntity {
 		this.id = id;
 	}
 
-	public LocalDateTime getPurchaseDate() {
+	public LocalDate getPurchaseDate() {
 		return purchaseDate;
 	}
 
-	public void setPurchaseDate(LocalDateTime purchaseDate) {
+	public void setPurchaseDate(LocalDate purchaseDate) {
 		this.purchaseDate = purchaseDate;
 	}
 
