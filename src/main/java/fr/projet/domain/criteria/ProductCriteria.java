@@ -13,9 +13,10 @@ public class ProductCriteria {
 	private StockLevelType stockLevel;
 	private ProductType productType;
 	private CategoryType categoryType;
+	private String reference;
 
 	public ProductCriteria(String name, String supplier, Integer retailPriceMin, Integer retailPriceMax,
-			StockLevelType stockLevel, ProductType product, CategoryType category) {
+			StockLevelType stockLevel, ProductType product, CategoryType category, String reference) {
 		this.name = name;
 		this.supplier = supplier;
 		this.retailPriceMin = retailPriceMin;
@@ -23,11 +24,12 @@ public class ProductCriteria {
 		this.stockLevel = stockLevel;
 		this.productType = product;
 		this.categoryType = category;
+		this.reference = reference;
 	}
 	
 	public boolean hasCriterias() {
 		return !StringUtils.isEmpty(name) || !StringUtils.isEmpty(supplier) || retailPriceMin != null || retailPriceMax != null 
-				|| stockLevel != null || productType != null || categoryType != null;
+				|| stockLevel != null || productType != null || categoryType != null || !StringUtils.isEmpty(reference);
 	}
 
 	public String getName() {
@@ -84,6 +86,14 @@ public class ProductCriteria {
 
 	public void setCategory(CategoryType category) {
 		this.categoryType = category;
+	}
+
+	public String getReference() {
+		return reference;
+	}
+
+	public void setReference(String reference) {
+		this.reference = reference;
 	}
 
 }

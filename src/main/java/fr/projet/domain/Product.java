@@ -29,6 +29,7 @@ public class Product implements IoEntity{
 	
 	private String name;
 	private String supplier;
+	private String reference;
 	private Integer retailPrice;
 	private Integer stock;
 	@Enumerated(EnumType.STRING)
@@ -45,7 +46,7 @@ public class Product implements IoEntity{
 	}
 
 	public Product(Long id, String name, String supplier, Integer retailPrice, Integer stock, ProductType productType,
-			CategoryType category) {
+			CategoryType category, String reference) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -54,6 +55,7 @@ public class Product implements IoEntity{
 		this.stock = stock;
 		this.productType = productType;
 		this.categoryType = category;
+		this.reference = reference;
 	}
 
 	public Long getId() {
@@ -120,22 +122,13 @@ public class Product implements IoEntity{
 		this.commandLine = commandLine;
 	}
 
-	public ProductType getItemType() {
-		return productType;
+	public String getReference() {
+		return reference;
 	}
 
-	public void setItemType(ProductType productType) {
-		this.productType = productType;
+	public void setReference(String reference) {
+		this.reference = reference;
 	}
 
-	public CategoryType getCategory() {
-		return categoryType;
-	}
-
-	public void setCategory(CategoryType category) {
-		this.categoryType = category;
-	}
-	
-	
 	
 }

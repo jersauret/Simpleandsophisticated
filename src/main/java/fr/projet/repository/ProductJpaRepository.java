@@ -44,6 +44,9 @@ public class ProductJpaRepository extends AbstractJpaRepository<Product> {
 			if (!StringUtils.isEmpty(criteria.getName())) {
 				qlString += " and lower(p.name) like lower(:name)";
 			}
+			if (!StringUtils.isEmpty(criteria.getReference())) {
+				qlString += " and lower(p.reference) like lower(:reference)";
+			}
 			if (!StringUtils.isEmpty(criteria.getSupplier())) {
 				qlString += " and lower(p.supplier) like lower(:supplier)";
 			}
@@ -79,6 +82,9 @@ public class ProductJpaRepository extends AbstractJpaRepository<Product> {
 			if (!StringUtils.isEmpty(criteria.getSupplier())) {
 				query.setParameter("supplier", "%" + criteria.getSupplier() + "%");
 			}
+			if (!StringUtils.isEmpty(criteria.getReference())) {
+				query.setParameter("reference", "%" + criteria.getReference() + "%");
+			}
 			if (criteria.getRetailPriceMin() != null) {
 				query.setParameter("retailPriceMin", criteria.getRetailPriceMin());
 			}
@@ -96,11 +102,11 @@ public class ProductJpaRepository extends AbstractJpaRepository<Product> {
 			}
 
 			if (criteria.getCategory() != null) {
-				query.setParameter("categoryTypeSearched", "%" + criteria.getCategory() + "%");
+				query.setParameter("categoryTypeSearched", criteria.getCategory());
 			}
 
 			if (criteria.getProductType() != null) {
-				query.setParameter("productTypeSearched", "%" + criteria.getProductType() + "%");
+				query.setParameter("productTypeSearched", criteria.getProductType());
 			}
 
 		}
