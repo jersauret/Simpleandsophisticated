@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import fr.projet.domain.Product;
+import fr.projet.domain.criteria.ItemCriteria;
 import fr.projet.exception.BadRequestException;
 import fr.projet.repository.ItemJpaRepository;
 
@@ -50,5 +51,9 @@ public class ItemService {
 	public List<Product> findByName(String name) {
 		return itemRepository.findByName(name);
 		
+	}
+
+	public List<Product> search(ItemCriteria criteria) {
+		return itemRepository.search(criteria);
 	}
 }

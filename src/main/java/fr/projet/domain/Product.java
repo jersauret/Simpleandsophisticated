@@ -34,7 +34,7 @@ public class Product implements IoEntity{
 	@Enumerated(EnumType.STRING)
 	private ProductType productType;
 	@Enumerated(EnumType.STRING)
-	private Category category;
+	private CategoryType category;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
@@ -45,7 +45,7 @@ public class Product implements IoEntity{
 	}
 
 	public Product(Long id, String name, String supplier, Integer retailPrice, Integer stock, ProductType productType,
-			Category category) {
+			CategoryType category) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -104,11 +104,11 @@ public class Product implements IoEntity{
 		this.productType = productType;
 	}
 
-	public Category getCategory() {
+	public CategoryType getCategory() {
 		return category;
 	}
 
-	public void setCategory(Category category) {
+	public void setCategory(CategoryType category) {
 		this.category = category;
 	}
 	
