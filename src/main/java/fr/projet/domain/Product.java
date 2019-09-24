@@ -34,7 +34,7 @@ public class Product implements IoEntity{
 	@Enumerated(EnumType.STRING)
 	private ProductType productType;
 	@Enumerated(EnumType.STRING)
-	private CategoryType category;
+	private CategoryType categoryType;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
@@ -53,7 +53,7 @@ public class Product implements IoEntity{
 		this.retailPrice = retailPrice;
 		this.stock = stock;
 		this.productType = productType;
-		this.category = category;
+		this.categoryType = category;
 	}
 
 	public Long getId() {
@@ -87,13 +87,37 @@ public class Product implements IoEntity{
 	public void setRetailPrice(Integer retailPrice) {
 		this.retailPrice = retailPrice;
 	}
-
+	
 	public Integer getStock() {
 		return stock;
 	}
 
 	public void setStock(Integer stock) {
 		this.stock = stock;
+	}
+
+	public ProductType getProductType() {
+		return productType;
+	}
+
+	public void setProductType(ProductType productType) {
+		this.productType = productType;
+	}
+
+	public CategoryType getCategoryType() {
+		return categoryType;
+	}
+
+	public void setCategoryType(CategoryType categoryType) {
+		this.categoryType = categoryType;
+	}
+
+	public List<CommandLine> getCommandLine() {
+		return commandLine;
+	}
+
+	public void setCommandLine(List<CommandLine> commandLine) {
+		this.commandLine = commandLine;
 	}
 
 	public ProductType getItemType() {
@@ -105,11 +129,11 @@ public class Product implements IoEntity{
 	}
 
 	public CategoryType getCategory() {
-		return category;
+		return categoryType;
 	}
 
 	public void setCategory(CategoryType category) {
-		this.category = category;
+		this.categoryType = category;
 	}
 	
 	

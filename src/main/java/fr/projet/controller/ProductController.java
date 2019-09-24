@@ -15,17 +15,17 @@ import org.springframework.web.bind.annotation.RestController;
 import fr.projet.domain.CategoryType;
 import fr.projet.domain.Product;
 import fr.projet.domain.ProductType;
-import fr.projet.domain.criteria.ItemCriteria;
+import fr.projet.domain.criteria.ProductCriteria;
 import fr.projet.domain.criteria.StockLevelType;
 import fr.projet.exception.BadRequestException;
-import fr.projet.services.ItemService;
+import fr.projet.services.ProductService;
 
 @RestController
 @RequestMapping("/products")
-public class ItemController {
+public class ProductController {
 	
 	@Autowired
-	private ItemService itemService;
+	private ProductService itemService;
 	
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
@@ -68,19 +68,19 @@ public class ItemController {
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public List<Product> search(@RequestParam(required = false) String name,
 			@RequestParam(required = false) String supplier,
-			@RequestParam(required = false) String stockLevel,
+			@RequestParam(required = false) String stockLevelType,
 			@RequestParam(required = false) Integer retailPriceMin,
 			@RequestParam(required = false) Integer retailPriceMax,
 			@RequestParam(required = false) String productType,
 			@RequestParam(required = false) String categoryType
 
 			) {
-		StockLevelType stockLevelType = stockLevel != null ? StockLevelType.valueOf(stockLevel) : null;
+		StockLevelType stockLevel = stockLevelType != null ? StockLevelType.valueOf(stockLevelType) : null;
 		ProductType product = productType != null ? ProductType.valueOf(productType) : null;
 		CategoryType category = categoryType != null ? CategoryType.valueOf(categoryType) : null;
 
 		
-		ItemCriteria criteria = new ItemCriteria(name, supplier, retailPriceMin, retailPriceMax, stockLevelType, product, category);
+		ProductCriteria criteria = new ProductCriteria(name, supplier, retailPriceMin, retailPriceMax, stockLevel, product, category);
 		
 		return itemService.search(criteria);
 	}
