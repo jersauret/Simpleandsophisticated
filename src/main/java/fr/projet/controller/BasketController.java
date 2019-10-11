@@ -16,7 +16,7 @@ import fr.projet.exception.BadRequestException;
 import fr.projet.services.BasketService;
 
 @RestController
-@RequestMapping("/admin/basket/")
+@RequestMapping("/baskets")
 public class BasketController {
 	
 	@Autowired
@@ -24,19 +24,21 @@ public class BasketController {
 	
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
-	public Basket create(@RequestBody Basket user) throws BadRequestException {
-		return basketService.save(user);
+	public Basket create(@RequestBody Basket user) { //throws BadRequestException {
+		try {
+			return basketService.save(user);
+		} catch (BadRequestException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public Basket findById(@PathVariable Long id) {
 		return basketService.find(id);
 	}
-	
-	@RequestMapping(value = "/login/{login}", method = RequestMethod.GET)
-	public Basket findOneByLogin(@PathVariable String login) {
-		return basketService.findOneByLogin(login);
-	}
+
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public List<Basket> findAll() {
@@ -54,5 +56,9 @@ public class BasketController {
 	public Basket delete(@PathVariable Long id) {
 		return basketService.delete(id);
 	}
+	
+	/**
+	 * TODO MULTICRITERIA SEARCH
+	 */
 
 }

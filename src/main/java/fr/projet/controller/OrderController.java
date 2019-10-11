@@ -20,7 +20,7 @@ import fr.projet.exception.BadRequestException;
 import fr.projet.services.OrderService;
 
 @RestController
-@RequestMapping("/admin/orders")
+@RequestMapping("/orders")
 public class OrderController {
 	
 	@Autowired
@@ -28,8 +28,14 @@ public class OrderController {
 	
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
-	public Order create(@RequestBody Order order) throws BadRequestException {
-		return orderService.save(order);
+	public Order create(@RequestBody Order order) { //throws BadRequestException {
+		try {
+			return orderService.save(order);
+		} catch (BadRequestException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)

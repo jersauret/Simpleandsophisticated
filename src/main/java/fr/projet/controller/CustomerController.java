@@ -19,7 +19,7 @@ import fr.projet.exception.BadRequestException;
 import fr.projet.services.CustomerService;
 
 @RestController
-@RequestMapping("/admin/customers/")
+@RequestMapping("/customers")
 public class CustomerController {
 	
 	@Autowired
@@ -27,8 +27,14 @@ public class CustomerController {
 	
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
-	public Customer create(@RequestBody Customer user) throws BadRequestException {
-		return customerService.save(user);
+	public Customer create(@RequestBody Customer user) { //throws BadRequestException {
+		try {
+			return customerService.save(user);
+		} catch (BadRequestException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)

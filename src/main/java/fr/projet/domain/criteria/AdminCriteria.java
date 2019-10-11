@@ -24,6 +24,11 @@ public class AdminCriteria {
 		this.eMail = eMail;
 		this.password = password;
 	}
+	
+	public AdminCriteria() {
+		
+	}
+	
 	public boolean hasCriterias() {
 		return !StringUtils.isEmpty(login) || !StringUtils.isEmpty(firstName) || !StringUtils.isEmpty(lastName) || StringUtils.isEmpty(eMail) 
 				|| StringUtils.isEmpty(password);

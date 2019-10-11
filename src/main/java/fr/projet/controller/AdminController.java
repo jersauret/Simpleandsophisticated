@@ -18,7 +18,7 @@ import fr.projet.exception.BadRequestException;
 import fr.projet.services.AdminService;
 
 @RestController
-@RequestMapping("/admin/administrators/")
+@RequestMapping("/admins")
 public class AdminController {
 	
 	@Autowired
@@ -26,8 +26,14 @@ public class AdminController {
 	
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
-	public Admin create(@RequestBody Admin user) throws BadRequestException {
-		return adminService.save(user);
+	public Admin create(@RequestBody Admin user) {//throws BadRequestException {
+		try {
+			return adminService.save(user);
+		} catch (BadRequestException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
