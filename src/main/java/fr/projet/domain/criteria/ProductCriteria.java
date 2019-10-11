@@ -5,29 +5,31 @@ import org.springframework.util.StringUtils;
 import fr.projet.domain.CategoryType;
 import fr.projet.domain.ProductType;
 
-public class ItemCriteria {
+public class ProductCriteria {
 	private String name;
 	private String supplier;
 	private Integer retailPriceMin;
 	private Integer retailPriceMax;
 	private StockLevelType stockLevel;
 	private ProductType productType;
-	private CategoryType category;
+	private CategoryType categoryType;
+	private String reference;
 
-	public ItemCriteria(String name, String supplier, Integer retailPriceMin, Integer retailPriceMax,
-			StockLevelType stockLevel, ProductType productType, CategoryType category) {
+	public ProductCriteria(String name, String supplier, Integer retailPriceMin, Integer retailPriceMax,
+			StockLevelType stockLevel, ProductType product, CategoryType category, String reference) {
 		this.name = name;
 		this.supplier = supplier;
 		this.retailPriceMin = retailPriceMin;
 		this.retailPriceMax = retailPriceMax;
 		this.stockLevel = stockLevel;
-		this.productType = productType;
-		this.category = category;
+		this.productType = product;
+		this.categoryType = category;
+		this.reference = reference;
 	}
 	
 	public boolean hasCriterias() {
 		return !StringUtils.isEmpty(name) || !StringUtils.isEmpty(supplier) || retailPriceMin != null || retailPriceMax != null 
-				|| stockLevel != null || productType != null || category != null;
+				|| stockLevel != null || productType != null || categoryType != null || !StringUtils.isEmpty(reference);
 	}
 
 	public String getName() {
@@ -79,11 +81,19 @@ public class ItemCriteria {
 	}
 
 	public CategoryType getCategory() {
-		return category;
+		return categoryType;
 	}
 
 	public void setCategory(CategoryType category) {
-		this.category = category;
+		this.categoryType = category;
+	}
+
+	public String getReference() {
+		return reference;
+	}
+
+	public void setReference(String reference) {
+		this.reference = reference;
 	}
 
 }

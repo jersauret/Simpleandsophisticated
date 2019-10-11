@@ -29,12 +29,13 @@ public class Product implements IoEntity{
 	
 	private String name;
 	private String supplier;
+	private String reference;
 	private Integer retailPrice;
 	private Integer stock;
 	@Enumerated(EnumType.STRING)
 	private ProductType productType;
 	@Enumerated(EnumType.STRING)
-	private CategoryType category;
+	private CategoryType categoryType;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
@@ -45,7 +46,7 @@ public class Product implements IoEntity{
 	}
 
 	public Product(Long id, String name, String supplier, Integer retailPrice, Integer stock, ProductType productType,
-			CategoryType category) {
+			CategoryType category, String reference) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -53,7 +54,8 @@ public class Product implements IoEntity{
 		this.retailPrice = retailPrice;
 		this.stock = stock;
 		this.productType = productType;
-		this.category = category;
+		this.categoryType = category;
+		this.reference = reference;
 	}
 
 	public Long getId() {
@@ -87,7 +89,7 @@ public class Product implements IoEntity{
 	public void setRetailPrice(Integer retailPrice) {
 		this.retailPrice = retailPrice;
 	}
-
+	
 	public Integer getStock() {
 		return stock;
 	}
@@ -96,22 +98,37 @@ public class Product implements IoEntity{
 		this.stock = stock;
 	}
 
-	public ProductType getItemType() {
+	public ProductType getProductType() {
 		return productType;
 	}
 
-	public void setItemType(ProductType productType) {
+	public void setProductType(ProductType productType) {
 		this.productType = productType;
 	}
 
-	public CategoryType getCategory() {
-		return category;
+	public CategoryType getCategoryType() {
+		return categoryType;
 	}
 
-	public void setCategory(CategoryType category) {
-		this.category = category;
+	public void setCategoryType(CategoryType categoryType) {
+		this.categoryType = categoryType;
 	}
-	
-	
+
+	public List<CommandLine> getCommandLine() {
+		return commandLine;
+	}
+
+	public void setCommandLine(List<CommandLine> commandLine) {
+		this.commandLine = commandLine;
+	}
+
+	public String getReference() {
+		return reference;
+	}
+
+	public void setReference(String reference) {
+		this.reference = reference;
+	}
+
 	
 }

@@ -3,29 +3,29 @@ package fr.projet.domain.criteria;
 public enum StockLevelType {
 	NONE(0, 0),
 	LOW(1, 9),
-	IN_STOCK(10, Integer.MAX_VALUE);
+	IN_STOCK(10, null);
 	
-	private int min;
-	private int max;
+	private Integer min;
+	private Integer max;
 	
 	StockLevelType(Integer min, Integer max) {
 		this.min = min;
 		this.max = max;
 	}
 
-	public int getMin() {
+	public Integer getMin() {
 		return min;
 	}
 
-	public void setMin(int min) {
+	public void setMin(Integer min) {
 		this.min = min;
 	}
 
-	public int getMax() {
+	public Integer getMax() {
 		return max;
 	}
 
-	public void setMax(int max) {
+	public void setMax(Integer max) {
 		this.max = max;
 	}	
 	
