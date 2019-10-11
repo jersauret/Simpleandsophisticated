@@ -22,9 +22,6 @@ public class BasketService {
 		return basketRepository.find(id);
 	}
 	
-	public Basket findOneByLogin(String login) {
-		return basketRepository.findOneByLogin(login);
-	}
 	
 	public List<Basket> findAll() {
 		return basketRepository.findAll();

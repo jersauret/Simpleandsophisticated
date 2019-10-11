@@ -29,8 +29,14 @@ public class ProductController {
 
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
-	public Product create(@RequestBody Product user) throws BadRequestException {
-		return itemService.save(user);
+	public Product create(@RequestBody Product user) {//throws BadRequestException {
+		try {
+			return itemService.save(user);
+		} catch (BadRequestException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
