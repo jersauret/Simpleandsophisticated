@@ -13,13 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import fr.projet.domain.CategoryType;
 import fr.projet.domain.Customer;
-import fr.projet.domain.Product;
-import fr.projet.domain.ProductType;
 import fr.projet.domain.criteria.CustomerCriteria;
-import fr.projet.domain.criteria.ItemCriteria;
-import fr.projet.domain.criteria.StockLevelType;
 import fr.projet.exception.BadRequestException;
 import fr.projet.services.CustomerService;
 

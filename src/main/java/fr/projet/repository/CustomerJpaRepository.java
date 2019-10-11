@@ -12,9 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import fr.projet.domain.Customer;
-import fr.projet.domain.Product;
 import fr.projet.domain.criteria.CustomerCriteria;
-import fr.projet.domain.criteria.ItemCriteria;
 
 @Repository
 @Transactional
