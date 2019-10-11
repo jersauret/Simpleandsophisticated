@@ -75,6 +75,7 @@ public class ItemController {
 			@RequestParam(required = false) String categoryType
 
 			) {
+		
 		StockLevelType stockLevelType = stockLevel != null ? StockLevelType.valueOf(stockLevel) : null;
 		ProductType product = productType != null ? ProductType.valueOf(productType) : null;
 		CategoryType category = categoryType != null ? CategoryType.valueOf(categoryType) : null;

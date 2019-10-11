@@ -1,42 +1,15 @@
-package fr.projet.domain;
+package fr.projet.domain.criteria;
 
 import java.time.LocalDate;
-import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import org.springframework.util.StringUtils;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
-
-@Entity
-@Table(name = "customer_")
-public class Customer implements IoEntity {
-
-	private static final long serialVersionUID = 7888330938934821980L;
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-
+public class CustomerCriteria {
 	private String login;
 	private String firstName;
 	private String lastName;
 	private String street;
 	private Integer streetNumber;
-	@JsonFormat(pattern = "yyyy-MM-dd")
-	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-	@JsonSerialize(using = LocalDateSerializer.class)
-	@JsonDeserialize(using = LocalDateDeserializer.class)
 	private LocalDate dOB;
 	private String password;
 	private String city;
@@ -45,11 +18,11 @@ public class Customer implements IoEntity {
 	private String eMail;
 	private String phoneNumber;
 
-	@OneToMany(mappedBy = "customer")
-	private List<Order> order; // Liste d'items
-
-	public Customer(String login, String firstName, String lastName, String street, Integer streetNumber, LocalDate dOB,
-			String password, String city, String country, String zipCode, String eMail, String phoneNumber) {
+	
+	
+	public CustomerCriteria(String login, String firstName, String lastName, String street, Integer streetNumber,
+			LocalDate dOB, String password, String city, String country, String zipCode, String eMail,
+			String phoneNumber) {
 		super();
 		this.login = login;
 		this.firstName = firstName;
@@ -62,11 +35,13 @@ public class Customer implements IoEntity {
 		this.country = country;
 		this.zipCode = zipCode;
 		this.eMail = eMail;
-		this.phoneNumber = phoneNumber; //ajouté le 30/09/2019 avec set/get, JPArepo 
+		this.phoneNumber = phoneNumber;
 	}
 
-	public Customer() {
-		super();
+	public boolean hasCriterias() {
+		return !StringUtils.isEmpty(login) || !StringUtils.isEmpty(firstName) || !StringUtils.isEmpty(lastName) ||!StringUtils.isEmpty(street) 
+				|| streetNumber !=null || dOB !=null || StringUtils.isEmpty(password) || StringUtils.isEmpty(city) || StringUtils.isEmpty(country)
+				|| StringUtils.isEmpty(zipCode) || StringUtils.isEmpty(eMail) || StringUtils.isEmpty(phoneNumber); 
 	}
 
 	public String getLogin() {
@@ -156,20 +131,15 @@ public class Customer implements IoEntity {
 	public void seteMail(String eMail) {
 		this.eMail = eMail;
 	}
+
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
+
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
-	@Override
-	public Long getId() {
-		return id;
-	}
+	
 
-	@Override
-	public void setId(Long id) {
-		this.id = id;
-	}
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import fr.projet.domain.Order;
+import fr.projet.domain.criteria.OrderCriteria;
 import fr.projet.exception.BadRequestException;
 import fr.projet.repository.OrderJpaRepository;
 
@@ -50,5 +51,9 @@ public class OrderService {
 	
 	public Order delete(Long id) {
 		return orderRepository.delete(id);
+	}
+	
+	public List<Order> search(OrderCriteria criteria){
+		return orderRepository.searchWithCriteria(criteria);
 	}
 }

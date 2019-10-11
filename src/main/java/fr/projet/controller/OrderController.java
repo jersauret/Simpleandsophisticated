@@ -1,6 +1,7 @@
 
 package fr.projet.controller;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,10 +10,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.projet.domain.Order;
+import fr.projet.domain.criteria.OrderCriteria;
 import fr.projet.exception.BadRequestException;
 import fr.projet.services.OrderService;
 
@@ -54,6 +57,19 @@ public class OrderController {
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public Order delete(@PathVariable Long id) {
 		return orderService.delete(id);
+	}
+	
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	public List<Order> search(@RequestParam(required = false) LocalDate purchaseDate,
+			@RequestParam(required = false) Integer orderNumber,
+			@RequestParam(required = false) Integer totalPrice
+			) {
+		
+
+		
+		OrderCriteria criteria = new OrderCriteria(purchaseDate, orderNumber, totalPrice);
+		
+		return orderService.search(criteria);
 	}
 
 }

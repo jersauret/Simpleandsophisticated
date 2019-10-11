@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import fr.projet.domain.Admin;
+import fr.projet.domain.criteria.AdminCriteria;
 import fr.projet.exception.BadRequestException;
 import fr.projet.repository.AdminJpaRepository;
 
@@ -30,6 +31,7 @@ public class AdminService {
 		return adminRepository.findAll();
 	}
 	
+	
 	@Transactional(readOnly = false)
 	public Admin save(Admin admin) throws BadRequestException {
 		try {
@@ -45,5 +47,9 @@ public class AdminService {
 	
 	public Admin delete(Long id) {
 		return adminRepository.delete(id);
+	}
+	
+	public List <Admin> search(AdminCriteria criteria){
+		return adminRepository.searchWithCriteria(criteria);
 	}
 }

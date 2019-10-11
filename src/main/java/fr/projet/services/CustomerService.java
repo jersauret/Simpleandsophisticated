@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import fr.projet.domain.Customer;
+import fr.projet.domain.criteria.CustomerCriteria;
 import fr.projet.exception.BadRequestException;
 import fr.projet.repository.CustomerJpaRepository;
 
@@ -45,5 +46,8 @@ public class CustomerService {
 	
 	public Customer delete(Long id) {
 		return customerJpaRepository.delete(id);
+	}
+	public List<Customer> search(CustomerCriteria criteria) {
+		return customerJpaRepository.searchWithCriteria(criteria);
 	}
 }

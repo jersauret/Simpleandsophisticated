@@ -8,10 +8,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.projet.domain.Admin;
+import fr.projet.domain.criteria.AdminCriteria;
 import fr.projet.exception.BadRequestException;
 import fr.projet.services.AdminService;
 
@@ -54,5 +56,19 @@ public class AdminController {
 	public Admin delete(@PathVariable Long id) {
 		return adminService.delete(id);
 	}
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	public List<Admin> search(@RequestParam(required = false) String login,
+			@RequestParam(required = false) String firstName,
+			@RequestParam(required = false) String lastName,
+			@RequestParam(required = false) String password,
+			@RequestParam(required = false) String eMail
 
+			) {
+
+		
+		AdminCriteria criteria = new AdminCriteria(login, firstName, lastName, eMail, password);
+		return adminService.search(criteria);
+	}
+
+	
 }

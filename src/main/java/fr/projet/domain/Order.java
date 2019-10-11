@@ -27,7 +27,7 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 public class Order implements IoEntity {
 
 	private static final long serialVersionUID = -3737508893634026566L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -36,8 +36,11 @@ public class Order implements IoEntity {
 	@JsonSerialize(using = LocalDateSerializer.class)
 	@JsonDeserialize(using = LocalDateDeserializer.class)
 	private LocalDate purchaseDate;
+	private Integer orderNumber;
+	private Integer totalPrice;
 
-	@OneToMany(mappedBy = "order", fetch = FetchType.EAGER, cascade = { CascadeType.ALL, CascadeType.REMOVE, CascadeType.PERSIST })
+	@OneToMany(mappedBy = "order", fetch = FetchType.EAGER, cascade = { CascadeType.ALL, CascadeType.REMOVE,
+			CascadeType.PERSIST })
 	private List<CommandLine> commandLine;
 
 	@ManyToOne
@@ -46,10 +49,12 @@ public class Order implements IoEntity {
 	public Order() {
 	}
 
-	public Order(LocalDate purchaseDate, List<CommandLine> commandLine, Customer customer) {
+	public Order(LocalDate purchaseDate, Integer orderNumber, Integer totalPrice, List<CommandLine> commandLine,
+			Customer customer) {
 		super();
-		this.purchaseDate =purchaseDate;
-		
+		this.purchaseDate = purchaseDate;
+		this.orderNumber = orderNumber;
+		this.totalPrice = totalPrice;
 		this.commandLine = commandLine;
 		this.customer = customer;
 	}
@@ -84,6 +89,22 @@ public class Order implements IoEntity {
 
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
+	}
+
+	public Integer getOrderNumber() {
+		return orderNumber;
+	}
+
+	public void setOrderNumber(Integer orderNumber) {
+		this.orderNumber = orderNumber;
+	}
+
+	public Integer getTotalPrice() {
+		return totalPrice;
+	}
+
+	public void setTotalPrice(Integer totalPrice) {
+		this.totalPrice = totalPrice;
 	}
 
 }

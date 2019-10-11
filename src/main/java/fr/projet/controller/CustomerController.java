@@ -1,5 +1,6 @@
 package fr.projet.controller;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,10 +9,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.projet.domain.CategoryType;
 import fr.projet.domain.Customer;
+import fr.projet.domain.Product;
+import fr.projet.domain.ProductType;
+import fr.projet.domain.criteria.CustomerCriteria;
+import fr.projet.domain.criteria.ItemCriteria;
+import fr.projet.domain.criteria.StockLevelType;
 import fr.projet.exception.BadRequestException;
 import fr.projet.services.CustomerService;
 
@@ -54,5 +62,24 @@ public class CustomerController {
 	public Customer delete(@PathVariable Long id) {
 		return customerService.delete(id);
 	}
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	public List<Customer> search(@RequestParam(required = false) String login,
+			@RequestParam(required = false) String firstName,
+			@RequestParam(required = false) String lastName,
+			@RequestParam(required = false) String street,
+			@RequestParam(required = false) Integer streetNumber,
+			@RequestParam(required = false) LocalDate dOB,
+			@RequestParam(required = false) String password,
+			@RequestParam(required = false) String city,
+			@RequestParam(required = false) String country,
+			@RequestParam(required = false) String zipCode,
+			@RequestParam(required = false) String eMail,
+			@RequestParam(required = false) String phoneNumber
 
+			) {
+
+		
+		CustomerCriteria criteria = new CustomerCriteria(login, firstName, lastName, street, streetNumber, dOB, password, city, country, zipCode, eMail, phoneNumber);
+		return customerService.search(criteria);
+	}
 }
