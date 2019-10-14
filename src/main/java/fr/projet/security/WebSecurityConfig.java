@@ -16,32 +16,29 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true, proxyTargetClass = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-	
+
 	@Autowired
 	AuthenticationService authenticationService;
-	
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.sessionManagement()
-		.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-		.and()
-		.authorizeRequests()
-		.antMatchers("/api/public/**")
-		.permitAll().anyRequest()
-		.authenticated()
-		.and().httpBasic()
-		.and()
-		.csrf()
-		.disable();}
-	
+		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS) //
+		.and().authorizeRequests() //
+		.antMatchers("/api/admin/**").hasRole("ADMIN") //
+		.antMatchers("/api/orders/**").authenticated() //
+		.antMatchers("/api/**").permitAll() //
+		.and().httpBasic() //
+		.and().csrf().disable(); //
+	}
+
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
-		
+
 	}
-	
+
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(authenticationService).passwordEncoder(passwordEncoder());
-		}
+	}
 }

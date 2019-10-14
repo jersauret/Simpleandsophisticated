@@ -8,11 +8,11 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import fr.projet.domain.IoEntity;
+import fr.projet.domain.IdEntity;
 
 @Repository
 @Transactional
-public abstract class AbstractJpaRepository<T extends IoEntity>  {
+public abstract class AbstractJpaRepository<T extends IdEntity>  {
 
 	@PersistenceContext
 	protected EntityManager entityManager;
@@ -22,7 +22,7 @@ public abstract class AbstractJpaRepository<T extends IoEntity>  {
 	protected AbstractJpaRepository(Class<T> type) {
 		this.type = type;
 	}
-	
+
 	public T save(T entity) {
 		entityManager.persist(entity);
 		return entity;

@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "commandline_")
-public class CommandLine implements IoEntity {
+public class CommandLine implements IdEntity {
 
 	private static final long serialVersionUID = -3326848200375558388L;
 

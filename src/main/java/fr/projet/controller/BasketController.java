@@ -16,7 +16,7 @@ import fr.projet.exception.BadRequestException;
 import fr.projet.services.BasketService;
 
 @RestController
-@RequestMapping("/admin/basket/")
+@RequestMapping("/api/baskets")
 public class BasketController {
 	
 	@Autowired

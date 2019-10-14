@@ -21,12 +21,13 @@ import fr.projet.exception.BadRequestException;
 import fr.projet.services.ProductService;
 
 @RestController
-@RequestMapping("/products")
+@RequestMapping("/api/products")
 public class ProductController {
 
 	@Autowired
 	private ProductService itemService;
 
+	//@PreAuthorize("hasAuthority('CREATE_PRODUCT')")
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	public Product create(@RequestBody Product user) throws BadRequestException {

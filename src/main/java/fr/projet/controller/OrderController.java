@@ -17,7 +17,7 @@ import fr.projet.exception.BadRequestException;
 import fr.projet.services.OrderService;
 
 @RestController
-@RequestMapping("/admin/orders")
+@RequestMapping("/api/orders")
 public class OrderController {
 	
 	@Autowired

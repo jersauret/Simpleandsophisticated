@@ -16,7 +16,7 @@ import fr.projet.exception.BadRequestException;
 import fr.projet.services.AdminService;
 
 @RestController
-@RequestMapping("/admin/administrators/")
+@RequestMapping("/api/admins")
 public class AdminController {
 	
 	@Autowired

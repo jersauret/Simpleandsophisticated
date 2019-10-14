@@ -1,7 +1,6 @@
 package fr.projet.repository;
 
 import javax.persistence.TypedQuery;
-
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
