@@ -22,10 +22,14 @@ public class OrderService {
 	public Order find(Long id) {
 		return orderRepository.find(id);
 	}
+<<<<<<< Updated upstream
 	
 	public Order findOneByNumber(String orderNumber) {
 		return orderRepository.findOneByNumber(orderNumber);
 	}
+=======
+
+>>>>>>> Stashed changes
 	
 	public List<Order> findAll() {
 		return orderRepository.findAll();
@@ -52,8 +56,14 @@ public class OrderService {
 	public Order delete(Long id) {
 		return orderRepository.delete(id);
 	}
+<<<<<<< Updated upstream
 	
 	public List<Order> search(OrderCriteria criteria){
 		return orderRepository.searchWithCriteria(criteria);
+=======
+
+	public Order findOneByUsername(String username) {
+		return orderRepository.findOneByUsername(username);
+>>>>>>> Stashed changes
 	}
 }

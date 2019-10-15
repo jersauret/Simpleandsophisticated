@@ -43,9 +43,9 @@ public class CustomerController {
 		return customerService.find(id);
 	}
 	
-	@RequestMapping(value = "/login/{login}", method = RequestMethod.GET)
-	public Customer findOneByLogin(@PathVariable String login) {
-		return customerService.findOneByLogin(login);
+	@RequestMapping(value = "/email/{email}", method = RequestMethod.GET)
+	public Customer findOneByLogin(@PathVariable String email) {
+		return customerService.findOneByEmail(email);
 	}
 	
 	@RequestMapping(method = RequestMethod.GET)

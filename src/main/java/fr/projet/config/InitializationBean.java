@@ -1,7 +1,6 @@
 package fr.projet.config;
 
 import java.time.LocalDate;
-import java.time.Year;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +22,6 @@ import fr.projet.repository.OrderJpaRepository;
 import fr.projet.repository.RightRepository;
 import fr.projet.repository.RoleRepository;
 import fr.projet.repository.UserRepository;
-import fr.projet.services.CustomerService;
 
 @Component
 public class InitializationBean {

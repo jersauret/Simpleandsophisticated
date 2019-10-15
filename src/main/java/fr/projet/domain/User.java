@@ -33,11 +33,11 @@ public class User implements IdEntity {
 		this.email = email;
 	}
 
-	public User(Long id, String username, String password, String email) {
-		this.id = id;
+	public User(String username, String password, String email, Role role) {
 		this.username = username;
 		this.password = password;
 		this.email = email;
+		this.role = role;
 	}
 
 	public String getUsername() {

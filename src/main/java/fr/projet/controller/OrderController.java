@@ -47,11 +47,14 @@ public class OrderController {
 		return orderService.find(id);
 	}
 	
+<<<<<<< Updated upstream
 	@RequestMapping(value = "/orderNumber/{orderNumber}", method = RequestMethod.GET)
 	public Order findOneByOrderNumber(@PathVariable String orderNumber) {
 		return orderService.findOneByNumber(orderNumber);
 	}
 	
+=======
+>>>>>>> Stashed changes
 	@RequestMapping(method = RequestMethod.GET)
 	public List<Order> findAll() {
 		return orderService.findAll();
@@ -69,6 +72,7 @@ public class OrderController {
 		return orderService.delete(id);
 	}
 	
+<<<<<<< Updated upstream
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public List<Order> search(@RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate purchaseDate,
 			@RequestParam(required = false) String orderNumber,
@@ -80,6 +84,13 @@ public class OrderController {
 		OrderCriteria criteria = new OrderCriteria(purchaseDate, orderNumber, totalPrice);
 		
 		return orderService.search(criteria);
+=======
+	@PreAuthorize("hasRole('ADMIN') or hasRole('CUSTOMER')")
+	@PostAuthorize("hasRole('ADMIN') or #returnObject.customer.email == principal.username")
+	@RequestMapping(value = "/login/{login}", method = RequestMethod.GET)
+	public Order findOneByUsername(@PathVariable String username) {
+		return orderService.findOneByUsername(username);
+>>>>>>> Stashed changes
 	}
 
 }

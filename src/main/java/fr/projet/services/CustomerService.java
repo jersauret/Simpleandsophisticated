@@ -23,9 +23,6 @@ public class CustomerService {
 		return customerJpaRepository.find(id);
 	}
 	
-	public Customer findOneByLogin(String login) {
-		return customerJpaRepository.findOneByLogin(login);
-	}
 	
 	public List<Customer> findAll() {
 		return customerJpaRepository.findAll();
@@ -47,7 +44,15 @@ public class CustomerService {
 	public Customer delete(Long id) {
 		return customerJpaRepository.delete(id);
 	}
+<<<<<<< Updated upstream
 	public List<Customer> search(CustomerCriteria criteria) {
 		return customerJpaRepository.searchWithCriteria(criteria);
 	}
+=======
+
+	public Customer findOneByEmail(String email) {
+		return customerJpaRepository.findOneByEmail(email);
+	}
+
+>>>>>>> Stashed changes
 }
