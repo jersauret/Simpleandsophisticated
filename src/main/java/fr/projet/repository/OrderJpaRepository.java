@@ -27,6 +27,7 @@ public class OrderJpaRepository extends AbstractJpaRepository<Order> {
 		TypedQuery<Order> query = entityManager.createQuery(qlString, Order.class);
 		query.setParameter("orderNumber", orderNumber);
 
+
 		return query.getSingleResult();
 	}
 

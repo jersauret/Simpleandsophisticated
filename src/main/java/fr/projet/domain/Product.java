@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="product_")
-public class Product implements IoEntity{
+public class Product implements IdEntity{
 
 	/**
 	 * 

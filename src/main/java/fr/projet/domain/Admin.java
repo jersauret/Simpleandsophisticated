@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "administrator_")
-public class Admin implements IoEntity {
+public class Admin implements IdEntity {
 
 	private static final long serialVersionUID = 7888330938934821980L;
 

@@ -1,4 +1,4 @@
-package fr.projet.config;
+package fr.projet.config.converter;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;

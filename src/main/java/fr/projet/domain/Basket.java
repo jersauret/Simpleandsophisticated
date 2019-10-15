@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="basket_")
-public class Basket implements IoEntity {
+public class Basket implements IdEntity {
 
 	/**
 	 * 

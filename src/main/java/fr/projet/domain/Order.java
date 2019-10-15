@@ -24,7 +24,7 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 @Entity
 @Table(name = "order_")
 
-public class Order implements IoEntity {
+public class Order implements IdEntity {
 
 	private static final long serialVersionUID = -3737508893634026566L;
 
@@ -44,7 +44,7 @@ public class Order implements IoEntity {
 	
 	private List<CommandLine> commandLine;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	private Customer customer;
 
 	public Order() {
@@ -59,6 +59,12 @@ public class Order implements IoEntity {
 		this.commandLine = commandLine;
 		this.customer = customer;
 	}
+
+	public Order(LocalDate purchaseDate, Customer customer) {
+		super();
+		this.purchaseDate = purchaseDate;	
+		this.customer = customer;
+}
 
 	public Long getId() {
 		return id;
