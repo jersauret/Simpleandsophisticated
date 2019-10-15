@@ -1,5 +1,7 @@
 package fr.projet.config;
 
+import java.time.LocalDate;
+import java.time.Year;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,12 +11,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import fr.projet.domain.CommandLine;
+import fr.projet.domain.Customer;
+import fr.projet.domain.Order;
 import fr.projet.domain.Right;
 import fr.projet.domain.Role;
 import fr.projet.domain.User;
+import fr.projet.exception.BadRequestException;
+import fr.projet.repository.CustomerJpaRepository;
+import fr.projet.repository.OrderJpaRepository;
 import fr.projet.repository.RightRepository;
 import fr.projet.repository.RoleRepository;
 import fr.projet.repository.UserRepository;
+import fr.projet.services.CustomerService;
 
 @Component
 public class InitializationBean {
@@ -29,10 +38,17 @@ public class InitializationBean {
 	private RightRepository rightRepository;
 	
 	@Autowired
+	private OrderJpaRepository orderRepository;
+	
+	@Autowired
 	private PasswordEncoder encoder;
+	
+	@Autowired
+	private CustomerJpaRepository customerRepository;
+	
 
 	@PostConstruct
-	public void init() {
+	public void init() throws BadRequestException {
 
 		if (userRepository.findAll().isEmpty()) {
 			Right createProductRight = new Right("C_PRODUCT");
@@ -71,6 +87,9 @@ public class InitializationBean {
 			roleRepository.save(customerRole);
 			roleRepository.save(visitorRole);
 			
+			
+			
+			
 			User userAdmin = new User("admin", encoder.encode("admin"), "admin@sas.net");
 			userAdmin.setRole(adminRole);
 			User userCustomer = new User("customer", encoder.encode("customer"), "customer@sas.net");
@@ -81,6 +100,21 @@ public class InitializationBean {
 			userRepository.save(userAdmin);
 			userRepository.save(userCustomer);
 			userRepository.save(userVisitor);
+			
+			
+			/*
+			 * String login, String firstName, String lastName, String street, Integer streetNumber, LocalDate dOB,
+			String password, String city, String country, String zipCode, String eMail
+			 */
+			
+			Customer customer1 = new Customer("TahitiBob", "Milton", "Eustache", "test", 666, LocalDate.of(1994,12,31), "test", "test", "France", "34070", "m.eustache@sas.net");
+			Order orderCustomer= new Order(LocalDate.of(2019,01,01), customer1);
+			List<CommandLine> commandeligne = new ArrayList<CommandLine>();
+			commandeligne.add(null);
+			commandeligne.add(null);
+			
+			customerRepository.save(customer1);
+			orderRepository.save(orderCustomer);
 		}
 	}
 }

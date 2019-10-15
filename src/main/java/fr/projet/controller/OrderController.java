@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PostAuthorize;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +31,8 @@ public class OrderController {
 		return orderService.save(order);
 	}
 	
+	@PreAuthorize("hasRole('ADMIN') or hasRole('CUSTOMER')")
+	@PostAuthorize("hasRole('ADMIN') or #returnObject.customer.email == principal.username")
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public Order findById(@PathVariable Long id) {
 		return orderService.find(id);

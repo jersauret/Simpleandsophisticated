@@ -1,7 +1,6 @@
 package fr.projet.domain;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -40,7 +39,7 @@ public class Order implements IdEntity {
 	@OneToMany(mappedBy = "order", fetch = FetchType.EAGER, cascade = { CascadeType.ALL, CascadeType.REMOVE, CascadeType.PERSIST })
 	private List<CommandLine> commandLine;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	private Customer customer;
 
 	public Order() {
@@ -53,6 +52,12 @@ public class Order implements IdEntity {
 		this.commandLine = commandLine;
 		this.customer = customer;
 	}
+
+	public Order(LocalDate purchaseDate, Customer customer) {
+		super();
+		this.purchaseDate = purchaseDate;	
+		this.customer = customer;
+}
 
 	public Long getId() {
 		return id;

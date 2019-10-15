@@ -37,6 +37,17 @@ public class CommandLine implements IdEntity {
 	
 	public CommandLine() {
 	}
+	
+	
+
+	public CommandLine(Integer quantities, Product product, Order order) {
+		super();
+		this.quantities = quantities;
+		this.product = product;
+		this.order = order;
+	}
+
+
 
 	public Integer getQuantities() {
 		return quantities;
