@@ -105,7 +105,7 @@ public class InitializationBean {
 			String password, String city, String country, String zipCode, String eMail
 			 */
 			
-			Customer customer1 = new Customer("TahitiBob", "Milton", "Eustache", "test", 666, LocalDate.of(1994,12,31), "test", "test", "France", "34070", "m.eustache@sas.net");
+			Customer customer1 = new Customer("TahitiBob", "Milton", "Eustache", "test", 666, LocalDate.of(1994,12,31), "test", "test", "France", "34070", "m.eustache@sas.net", "0635656565");
 			Order orderCustomer= new Order(LocalDate.of(2019,01,01), customer1);
 			List<CommandLine> commandeligne = new ArrayList<CommandLine>();
 			commandeligne.add(null);

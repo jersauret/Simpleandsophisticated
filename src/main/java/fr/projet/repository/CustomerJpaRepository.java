@@ -30,7 +30,6 @@ public class CustomerJpaRepository extends AbstractJpaRepository<Customer> {
 		return query.getSingleResult();
 	}
 
-<<<<<<< Updated upstream
 	public List<Customer> searchWithCriterias(CustomerCriteria customerCriteria) {
 		String qlString = "from Customer c";
 
@@ -179,13 +178,12 @@ public class CustomerJpaRepository extends AbstractJpaRepository<Customer> {
 		List<Customer> customers = entityManager.createQuery(criteria).getResultList();
 
 		return customers;
-=======
+	}
 	public Customer findOneByEmail(String email) {
 		String qlString = "from Customer u where u.email = :email";
 		TypedQuery<Customer> query = entityManager.createQuery(qlString, Customer.class);
 		query.setParameter("email", email);
 		
 		return query.getSingleResult();
->>>>>>> Stashed changes
 	}
 }

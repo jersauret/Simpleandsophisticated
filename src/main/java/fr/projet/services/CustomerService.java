@@ -44,15 +44,12 @@ public class CustomerService {
 	public Customer delete(Long id) {
 		return customerJpaRepository.delete(id);
 	}
-<<<<<<< Updated upstream
 	public List<Customer> search(CustomerCriteria criteria) {
 		return customerJpaRepository.searchWithCriteria(criteria);
 	}
-=======
 
 	public Customer findOneByEmail(String email) {
 		return customerJpaRepository.findOneByEmail(email);
 	}
 
->>>>>>> Stashed changes
 }

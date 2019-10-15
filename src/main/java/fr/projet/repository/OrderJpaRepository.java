@@ -13,11 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import fr.projet.domain.Order;
-<<<<<<< Updated upstream
 import fr.projet.domain.criteria.OrderCriteria;
-=======
 import fr.projet.services.CustomerService;
->>>>>>> Stashed changes
 
 @Repository
 @Transactional
@@ -30,7 +27,6 @@ public class OrderJpaRepository extends AbstractJpaRepository<Order> {
 		super(Order.class);
 	}
 
-<<<<<<< Updated upstream
 	public Order findOneByNumber(String orderNumber) {
 		String qlString = "from Order o where o.orderNumber = :orderNumber";
 		TypedQuery<Order> query = entityManager.createQuery(qlString, Order.class);
@@ -97,14 +93,12 @@ public class OrderJpaRepository extends AbstractJpaRepository<Order> {
 		return orders;
 	}
 
-=======
 	public Order findOneByUsername(String username) {
 		String qlString = "from Order u where u.username = :username";
 		TypedQuery<Order> query = entityManager.createQuery(qlString, Order.class);
-		query.setParameter("username", customerService.findOneByEmail(username).getCity());
+		query.setParameter("username", customerService.findOneByEmail(username).geteMail());
 		return query.getSingleResult();
 	}
 
 	
->>>>>>> Stashed changes
 }
