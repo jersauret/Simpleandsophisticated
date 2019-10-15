@@ -84,6 +84,7 @@ public class ProductController {
 					product, category, reference);
 
 			return itemService.search(criteria);
+			
 
 	}
 }
