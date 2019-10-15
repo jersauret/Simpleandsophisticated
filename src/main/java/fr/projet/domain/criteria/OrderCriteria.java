@@ -3,11 +3,12 @@ package fr.projet.domain.criteria;
 import java.time.LocalDate;
 
 public class OrderCriteria {
+	
 	private LocalDate purchaseDate;
-	private Integer orderNumber;
+	private String orderNumber;
 	private Integer totalPrice;
 
-	public OrderCriteria(LocalDate purchaseDate, Integer orderNumber, Integer totalPrice) {
+	public OrderCriteria(LocalDate purchaseDate, String orderNumber, Integer totalPrice) {
 		super();
 		this.purchaseDate = purchaseDate;
 		this.orderNumber = orderNumber;
@@ -26,11 +27,11 @@ public class OrderCriteria {
 		this.purchaseDate = purchaseDate;
 	}
 
-	public Integer getOrderNumber() {
+	public String getOrderNumber() {
 		return orderNumber;
 	}
 
-	public void setOrderNumber(Integer orderNumber) {
+	public void setOrderNumber(String orderNumber) {
 		this.orderNumber = orderNumber;
 	}
 

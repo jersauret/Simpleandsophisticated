@@ -23,8 +23,8 @@ public class OrderService {
 		return orderRepository.find(id);
 	}
 	
-	public Order findOneByLogin(String login) {
-		return orderRepository.findOneByLogin(login);
+	public Order findOneByNumber(String orderNumber) {
+		return orderRepository.findOneByNumber(orderNumber);
 	}
 	
 	public List<Order> findAll() {

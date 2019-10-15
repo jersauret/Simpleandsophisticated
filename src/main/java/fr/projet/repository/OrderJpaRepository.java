@@ -22,10 +22,10 @@ public class OrderJpaRepository extends AbstractJpaRepository<Order> {
 		super(Order.class);
 	}
 
-	public Order findOneByLogin(String login) {
-		String qlString = "from Order u where u.login = :login";
+	public Order findOneByNumber(String orderNumber) {
+		String qlString = "from Order o where o.orderNumber = :orderNumber";
 		TypedQuery<Order> query = entityManager.createQuery(qlString, Order.class);
-		query.setParameter("login", login);
+		query.setParameter("orderNumber", orderNumber);
 
 		return query.getSingleResult();
 	}
@@ -36,8 +36,9 @@ public class OrderJpaRepository extends AbstractJpaRepository<Order> {
 		if (criteria.hasCriterias()) {
 			qlString += " where 1=1";
 
-			if (criteria.getOrderNumber()!= null) {
-				qlString += " and o.orderNumber = :orderNumber";
+			if (StringUtils.isEmpty(criteria.getOrderNumber())) {
+				qlString += " and lower(o.orderNumber) like lower(:orderNumber)";
+				
 			}
 			if (criteria.getTotalPrice()!= null) {
 				qlString += " and o.totalPrice = :totalPrice";
@@ -72,13 +73,13 @@ public class OrderJpaRepository extends AbstractJpaRepository<Order> {
 		Root<Order> root = criteria.from(Order.class);
 
 		if (!StringUtils.isEmpty(orderCritera.getPurchaseDate())) {
-			criteria.where(builder.like(root.get("purchaseDate"), "%" + orderCritera.getPurchaseDate() + "%"));
+			criteria.where(builder.equal(root.get("purchaseDate"), orderCritera.getPurchaseDate() ));
 		}
 		if (!StringUtils.isEmpty(orderCritera.getOrderNumber())) {
 			criteria.where(builder.like(root.get("orderNumber"), "%" + orderCritera.getOrderNumber() + "%"));
 		}
 		if (!StringUtils.isEmpty(orderCritera.getTotalPrice())) {
-			criteria.where(builder.like(root.get("totalPrice"), "%" + orderCritera.getTotalPrice() + "%"));
+			criteria.where(builder.equal(root.get("totalPrice"), orderCritera.getTotalPrice()));
 		}
 
 		List<Order> orders = entityManager.createQuery(criteria).getResultList();

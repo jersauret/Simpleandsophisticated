@@ -6,6 +6,7 @@ import fr.projet.domain.CategoryType;
 import fr.projet.domain.ProductType;
 
 public class ProductCriteria {
+	private Long id;
 	private String name;
 	private String supplier;
 	private Integer retailPriceMin;
@@ -15,8 +16,9 @@ public class ProductCriteria {
 	private CategoryType categoryType;
 	private String reference;
 
-	public ProductCriteria(String name, String supplier, Integer retailPriceMin, Integer retailPriceMax,
+	public ProductCriteria(Long id, String name, String supplier, Integer retailPriceMin, Integer retailPriceMax,
 			StockLevelType stockLevel, ProductType product, CategoryType category, String reference) {
+		this.id = id;
 		this.name = name;
 		this.supplier = supplier;
 		this.retailPriceMin = retailPriceMin;
@@ -28,7 +30,7 @@ public class ProductCriteria {
 	}
 	
 	public boolean hasCriterias() {
-		return !StringUtils.isEmpty(name) || !StringUtils.isEmpty(supplier) || retailPriceMin != null || retailPriceMax != null 
+		return id != null || !StringUtils.isEmpty(name) || !StringUtils.isEmpty(supplier) || retailPriceMin != null || retailPriceMax != null 
 				|| stockLevel != null || productType != null || categoryType != null || !StringUtils.isEmpty(reference);
 	}
 
@@ -94,6 +96,22 @@ public class ProductCriteria {
 
 	public void setReference(String reference) {
 		this.reference = reference;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public CategoryType getCategoryType() {
+		return categoryType;
+	}
+
+	public void setCategoryType(CategoryType categoryType) {
+		this.categoryType = categoryType;
 	}
 
 }

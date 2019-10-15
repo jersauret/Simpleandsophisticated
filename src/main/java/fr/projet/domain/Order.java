@@ -1,7 +1,6 @@
 package fr.projet.domain;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -24,6 +23,7 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 
 @Entity
 @Table(name = "order_")
+
 public class Order implements IoEntity {
 
 	private static final long serialVersionUID = -3737508893634026566L;
@@ -36,11 +36,12 @@ public class Order implements IoEntity {
 	@JsonSerialize(using = LocalDateSerializer.class)
 	@JsonDeserialize(using = LocalDateDeserializer.class)
 	private LocalDate purchaseDate;
-	private Integer orderNumber;
+	private String orderNumber;
 	private Integer totalPrice;
 
 	@OneToMany(mappedBy = "order", fetch = FetchType.EAGER, cascade = { CascadeType.ALL, CascadeType.REMOVE,
 			CascadeType.PERSIST })
+	
 	private List<CommandLine> commandLine;
 
 	@ManyToOne
@@ -49,7 +50,7 @@ public class Order implements IoEntity {
 	public Order() {
 	}
 
-	public Order(LocalDate purchaseDate, Integer orderNumber, Integer totalPrice, List<CommandLine> commandLine,
+	public Order(LocalDate purchaseDate, String orderNumber, Integer totalPrice, List<CommandLine> commandLine,
 			Customer customer) {
 		super();
 		this.purchaseDate = purchaseDate;
@@ -91,11 +92,11 @@ public class Order implements IoEntity {
 		this.customer = customer;
 	}
 
-	public Integer getOrderNumber() {
+	public String getOrderNumber() {
 		return orderNumber;
 	}
 
-	public void setOrderNumber(Integer orderNumber) {
+	public void setOrderNumber(String orderNumber) {
 		this.orderNumber = orderNumber;
 	}
 

@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import fr.projet.domain.Basket;
+import fr.projet.domain.Order;
+import fr.projet.domain.criteria.BasketCriteria;
+import fr.projet.domain.criteria.OrderCriteria;
 import fr.projet.exception.BadRequestException;
 import fr.projet.repository.BasketJpaRepository;
 
@@ -42,5 +45,8 @@ public class BasketService {
 	
 	public Basket delete(Long id) {
 		return basketRepository.delete(id);
+	}
+	public List<Basket> search(BasketCriteria criteria){
+		return basketRepository.searchWithCriteria(criteria);
 	}
 }

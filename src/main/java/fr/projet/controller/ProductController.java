@@ -44,12 +44,8 @@ public class ProductController {
 		return itemService.find(id);
 	}
 
-	@RequestMapping(value = "/login/{login}", method = RequestMethod.GET)
-	public Product findOneByLogin(@PathVariable String login) {
-		return itemService.findOneByLogin(login);
-	}
 
-	@RequestMapping(value = "/name/{login}", method = RequestMethod.GET)
+	@RequestMapping(value = "/name/{name}", method = RequestMethod.GET)
 	public List<Product> findByName(@PathVariable String name) {
 		return itemService.findByName(name);
 	}
@@ -72,6 +68,7 @@ public class ProductController {
 
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public List<Product> search(@RequestParam(required = false) String name,
+			@RequestParam(required = false) Long id,
 			@RequestParam(required = false) String supplier, @RequestParam(required = false) String stockLevelType,
 			@RequestParam(required = false) Integer retailPriceMin,
 			@RequestParam(required = false) Integer retailPriceMax, @RequestParam(required = false) String productType,
@@ -83,7 +80,7 @@ public class ProductController {
 			ProductType product = productType != null ? ProductType.valueOf(productType) : null;
 			CategoryType category = categoryType != null ? CategoryType.valueOf(categoryType) : null;
 
-			ProductCriteria criteria = new ProductCriteria(name, supplier, retailPriceMin, retailPriceMax, stockLevel,
+			ProductCriteria criteria = new ProductCriteria(id, name, supplier, retailPriceMin, retailPriceMax, stockLevel,
 					product, category, reference);
 
 			return itemService.search(criteria);

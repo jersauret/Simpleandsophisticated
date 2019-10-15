@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,7 +33,6 @@ public class OrderController {
 		try {
 			return orderService.save(order);
 		} catch (BadRequestException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
 		}
@@ -43,9 +43,9 @@ public class OrderController {
 		return orderService.find(id);
 	}
 	
-	@RequestMapping(value = "/login/{login}", method = RequestMethod.GET)
+	@RequestMapping(value = "/orderNumber/{orderNumber}", method = RequestMethod.GET)
 	public Order findOneByOrderNumber(@PathVariable String orderNumber) {
-		return orderService.findOneByLogin(orderNumber);
+		return orderService.findOneByNumber(orderNumber);
 	}
 	
 	@RequestMapping(method = RequestMethod.GET)
@@ -66,8 +66,8 @@ public class OrderController {
 	}
 	
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
-	public List<Order> search(@RequestParam(required = false) LocalDate purchaseDate,
-			@RequestParam(required = false) Integer orderNumber,
+	public List<Order> search(@RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate purchaseDate,
+			@RequestParam(required = false) String orderNumber,
 			@RequestParam(required = false) Integer totalPrice
 			) {
 		

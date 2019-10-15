@@ -23,9 +23,9 @@ public class ProductService {
 		return productRepository.find(id);
 	}
 	
-	public Product findOneByLogin(String login) {
-		return productRepository.findOneByLogin(login);
-	}
+//	public Product findOneByName(String name) {
+//		return productRepository.findByName(name);
+//	}
 	
 	public List<Product> findAll() {
 		return productRepository.findAll();

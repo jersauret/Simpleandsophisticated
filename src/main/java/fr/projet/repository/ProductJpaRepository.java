@@ -19,16 +19,9 @@ public class ProductJpaRepository extends AbstractJpaRepository<Product> {
 		super(Product.class);
 	}
 
-	public Product findOneByLogin(String login) {
-		String qlString = "from Item u where u.login = :login";
-		TypedQuery<Product> query = entityManager.createQuery(qlString, Product.class);
-		query.setParameter("login", login);
-
-		return query.getSingleResult();
-	}
 
 	public List<Product> findByName(String name) {
-		String qlString = "from Product u where u.name = :name";
+		String qlString = "from Product p where p.name = :name";
 		TypedQuery<Product> query = entityManager.createQuery(qlString, Product.class);
 		query.setParameter("name", name);
 
@@ -40,6 +33,8 @@ public class ProductJpaRepository extends AbstractJpaRepository<Product> {
 
 		if (criteria.hasCriterias()) {
 			qlString += " where 1=1";
+			
+
 
 			if (!StringUtils.isEmpty(criteria.getName())) {
 				qlString += " and lower(p.name) like lower(:name)";
@@ -70,6 +65,9 @@ public class ProductJpaRepository extends AbstractJpaRepository<Product> {
 			if (criteria.getCategory() != null) {
 				qlString += " and p.categoryType like :categoryTypeSearched";
 			}
+			if(criteria.getId() != null) {
+				qlString += "and p.id = :id";
+			}
 
 		}
 
@@ -87,6 +85,9 @@ public class ProductJpaRepository extends AbstractJpaRepository<Product> {
 			}
 			if (criteria.getRetailPriceMin() != null) {
 				query.setParameter("retailPriceMin", criteria.getRetailPriceMin());
+			}
+			if (criteria.getId() != null) {
+				query.setParameter("id", criteria.getId());
 			}
 			if (criteria.getRetailPriceMax() != null) {
 				query.setParameter("retailPriceMax", criteria.getRetailPriceMax());
