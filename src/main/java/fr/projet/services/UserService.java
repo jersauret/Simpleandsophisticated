@@ -7,6 +7,7 @@ import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import fr.projet.domain.Customer;
 import fr.projet.domain.User;
 import fr.projet.domain.criteria.UserCriteria;
 import fr.projet.exception.BadRequestException;
@@ -40,6 +41,9 @@ public class UserService {
 	
 	public User update(User user) {
 		return userRepository.update(user);
+	}
+	public User findOneByEmail(String email) {
+		return userRepository.findOneByEmail(email);
 	}
 	
 	public User delete(Long id) {

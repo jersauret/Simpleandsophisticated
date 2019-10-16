@@ -84,17 +84,17 @@ public class InitializationBean {
 			roleRepository.save(customerRole);
 			roleRepository.save(visitorRole);
 
-//			User userAdmin = new User("admin", encoder.encode("admin"), "admin@sas.net");
-//			userAdmin.setRole(adminRole);
-//			User userCustomer = new User("customer", encoder.encode("customer"), "customer@sas.net");
-//			userCustomer.setRole(customerRole);
-//			User userVisitor = new User("visitor", encoder.encode("visitor"), "visitor@sas.net");
-//			userVisitor.setRole(visitorRole);
-//			
-//			userRepository.save(userAdmin);
-//			userRepository.save(userCustomer);
-//			userRepository.save(userVisitor);
-//			
+			User userAdmin = new User("admin", encoder.encode("admin"), "admin@sas.net");
+			userAdmin.setRole(adminRole);
+			User userCustomer = new User("customer", encoder.encode("customer"), "customer@sas.net");
+			userCustomer.setRole(customerRole);
+			User userVisitor = new User("visitor", encoder.encode("visitor"), "visitor@sas.net");
+			userVisitor.setRole(visitorRole);
+			
+			userRepository.save(userAdmin);
+			userRepository.save(userCustomer);
+			userRepository.save(userVisitor);
+			
 
 			/*
 			 * String login, String firstName, String lastName, String street, Integer
