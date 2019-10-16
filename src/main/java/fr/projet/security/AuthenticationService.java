@@ -25,7 +25,7 @@ public class AuthenticationService implements UserDetailsService {
 		User user = userRepository.findOneByEmail(username);
 		if (user != null) {
 			List<GrantedAuthority> rules = this.getUserCredentials(user);
-			return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), rules);
+			return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), rules);
 		}
 		throw new UsernameNotFoundException("username.not.found");
 	}
