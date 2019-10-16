@@ -13,10 +13,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import fr.projet.domain.Customer;
+import fr.projet.domain.User;
 import fr.projet.domain.criteria.CustomerCriteria;
+import fr.projet.domain.criteria.UserCriteria;
 import fr.projet.exception.BadRequestException;
-import fr.projet.services.CustomerService;
+import fr.projet.services.UserService;
 
 @RestController
 
@@ -24,13 +25,13 @@ import fr.projet.services.CustomerService;
 public class CustomerController {
 	
 	@Autowired
-	private CustomerService customerService;
+	private UserService clientService;
 	
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
-	public Customer create(@RequestBody Customer user) { //throws BadRequestException {
+	public User create(@RequestBody User user) { //throws BadRequestException {
 		try {
-			return customerService.save(user);
+			return clientService.save(user);
 		} catch (BadRequestException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -39,9 +40,10 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public Customer findById(@PathVariable Long id) {
-		return customerService.find(id);
+	public User findById(@PathVariable Long id) {
+		return clientService.find(id);
 	}
+	
 	
 	@RequestMapping(value = "/email/{email}", method = RequestMethod.GET)
 	public Customer findOneByLogin(@PathVariable String email) {
@@ -49,24 +51,25 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public List<Customer> findAll() {
-		return customerService.findAll();
+	public List<User> findAll() {
+		return clientService.findAll();
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-	public Customer update(@PathVariable Long id, 
-			@RequestBody Customer user) {
+	public User update(@PathVariable Long id, 
+			@RequestBody User user) {
 		user.setId(id);
-		return customerService.update(user);
+		return clientService.update(user);
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public Customer delete(@PathVariable Long id) {
-		return customerService.delete(id);
+	public User delete(@PathVariable Long id) {
+		return clientService.delete(id);
 	}
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
-	public List<Customer> search(@RequestParam(required = false) String login,
+	public List<User> search(@RequestParam(required = false) String login,
 			@RequestParam(required = false) String firstName,
+			@RequestParam(required = false) String username,
 			@RequestParam(required = false) String lastName,
 			@RequestParam(required = false) String street,
 			@RequestParam(required = false) Integer streetNumber,
@@ -81,7 +84,7 @@ public class CustomerController {
 			) {
 
 		
-		CustomerCriteria criteria = new CustomerCriteria(login, firstName, lastName, street, streetNumber, dOB, password, city, country, zipCode, eMail, phoneNumber);
-		return customerService.search(criteria);
+		UserCriteria clientCriteria = new UserCriteria(eMail, username, firstName, lastName, password, street, streetNumber, dOB, city, country, zipCode, phoneNumber);
+		return clientService.searchClient(clientCriteria);
 	}
 }
