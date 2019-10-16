@@ -1,6 +1,5 @@
 package fr.projet.domain;
 
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -82,5 +81,12 @@ public class CommandLine implements IdEntity {
 	public void setOrder(Order order) {
 		this.order = order;
 	}
+
+	@Override
+	public String toString() {
+		return "CommandLine [id=" + id + ", quantities=" + quantities + ", product=" + product + "]";
+	}
+	
+	
 
 }

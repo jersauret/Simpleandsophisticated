@@ -42,7 +42,6 @@ public class Order implements IdEntity {
 
 	@OneToMany(mappedBy = "order", fetch = FetchType.EAGER, cascade = { CascadeType.ALL, CascadeType.REMOVE,
 			CascadeType.PERSIST })
-	
 	private List<CommandLine> commandLine;
 
 	@ManyToOne 
@@ -115,5 +114,13 @@ public class Order implements IdEntity {
 	public void setTotalPrice(Integer totalPrice) {
 		this.totalPrice = totalPrice;
 	}
+
+	@Override
+	public String toString() {
+		return "Order [id=" + id + ", purchaseDate=" + purchaseDate + ", orderNumber=" + orderNumber + ", totalPrice="
+				+ totalPrice + ", commandLine=" + commandLine + ", user=" + user + "]";
+	}
+	
+	
 
 }

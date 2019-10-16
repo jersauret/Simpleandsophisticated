@@ -21,7 +21,7 @@ import fr.projet.services.UserService;
 public class OrderJpaRepository extends AbstractJpaRepository<Order> {
 	
 	@Autowired
-	UserService customerService;
+	UserService userService;
 
 	public OrderJpaRepository() {
 		super(Order.class);
@@ -89,15 +89,21 @@ public class OrderJpaRepository extends AbstractJpaRepository<Order> {
 		}
 
 		List<Order> orders = entityManager.createQuery(criteria).getResultList();
-
 		return orders;
 	}
 
-	public Order findOneByUsername(String username) {
-		String qlString = "from Order u where u.username = :username";
+	public Order findOneByOrderId(String orderNumber) {
+		String qlString = "from Order u where u.ordernumber = :orderNumber";
 		TypedQuery<Order> query = entityManager.createQuery(qlString, Order.class);
-		query.setParameter("username", customerService.findOneByEmail(username).getEmail());
+		query.setParameter("orderNumber", orderNumber);
 		return query.getSingleResult();
+	}
+	
+	public List<Order> findAllOrdersByUserEmail(String userEmail) {
+		String qlString = "from Order u where u.user_id = :user_id";
+		TypedQuery<Order> query = entityManager.createQuery(qlString, Order.class);
+		query.setParameter("user_id", userService.findOneByEmail(userEmail).getId());
+		return query.getResultList();
 	}
 
 	

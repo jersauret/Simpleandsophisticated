@@ -47,22 +47,28 @@ public class OrderController {
 		return orderService.find(id);
 	}
 	
+
 	@PreAuthorize("hasRole('ADMIN') or hasRole('CUSTOMER')")
-	@PostAuthorize("hasRole('ADMIN') or #returnObject.customer.email == principal.username")
+ 	@PostAuthorize("hasRole('ADMIN') or returnObject.user.email == principal.username")
 	@RequestMapping(value = "/orderNumber/{orderNumber}", method = RequestMethod.GET)
 	public Order findOneByOrderNumber(@PathVariable String orderNumber) {
-		return orderService.findOneByNumber(orderNumber);
+		Order o = orderService.findOneByNumber(orderNumber);
+		System.out.println(o);	
+		return o;
 	}
 	
 	@PreAuthorize("hasRole('ADMIN') or hasRole('CUSTOMER')")
-	@PostAuthorize("hasRole('ADMIN') or #returnObject.customer.email == principal.username")
+ 	@PostAuthorize("hasRole('ADMIN') or returnObject.user.email == principal.username")
 	@RequestMapping(method = RequestMethod.GET)
 	public List<Order> findAll() {
-		return orderService.findAll();
+		List<Order> orders = orderService.findAll();
+		
+		System.out.println(orders);	
+	
+		return orders;
 	}
 	
 	@PreAuthorize("hasRole('ADMIN') or hasRole('CUSTOMER')")
-	@PostAuthorize("hasRole('ADMIN') or #returnObject.customer.email == principal.username")
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	public Order update(@PathVariable Long id, 
 			@RequestBody Order order) {
@@ -78,7 +84,7 @@ public class OrderController {
 	}
 	
 	@PreAuthorize("hasRole('ADMIN') or hasRole('CUSTOMER')")
-	@PostAuthorize("hasRole('ADMIN') or #returnObject.customer.email == principal.username")
+ 	@PostAuthorize("hasRole('ADMIN') or returnObject.customer.email == principal.username")
 	@RequestMapping(value = "/search", method = RequestMethod.GET) 
 	public List<Order> search(@RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate purchaseDate,
 			@RequestParam(required = false) String orderNumber,
@@ -93,11 +99,6 @@ public class OrderController {
 		
 	}
 
-//	@PreAuthorize("hasRole('ADMIN') or hasRole('CUSTOMER')")
-//	@PostAuthorize("hasRole('ADMIN') or #returnObject.customer.email == principal.username")
-//	@RequestMapping(value = "/login/{login}", method = RequestMethod.GET)
-//	public Order findOneByUsername(@PathVariable String username) {
-//		return orderService.findOneByUsername(username);
-//	}
+
 
 }
