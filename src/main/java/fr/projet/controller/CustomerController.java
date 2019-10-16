@@ -46,8 +46,8 @@ public class CustomerController {
 	
 	
 	@RequestMapping(value = "/email/{email}", method = RequestMethod.GET)
-	public Customer findOneByLogin(@PathVariable String email) {
-		return customerService.findOneByEmail(email);
+	public User findOneByMail(@PathVariable String email) {
+		return clientService.findOneByEmail(email);
 	}
 	
 	@RequestMapping(method = RequestMethod.GET)
