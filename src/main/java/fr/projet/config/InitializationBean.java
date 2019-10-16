@@ -91,6 +91,7 @@ public class InitializationBean {
 
 			List<Right> rightsCustomerList = new ArrayList<Right>();
 			rightsCustomerList.addAll(rightsVisitorList);
+			rightsCustomerList.add(updateBasketRight);
 			rightsCustomerList.add(readOrderRight);
 
 			List<Right> rightsAdminList = new ArrayList<Right>();
