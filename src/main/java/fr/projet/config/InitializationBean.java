@@ -3,13 +3,10 @@ package fr.projet.config;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.annotation.PostConstruct;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
-
 import fr.projet.domain.CommandLine;
 import fr.projet.domain.Customer;
 import fr.projet.domain.Order;
