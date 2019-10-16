@@ -16,6 +16,7 @@ import javax.persistence.Table;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
@@ -45,6 +46,7 @@ public class Order implements IdEntity {
 	private List<CommandLine> commandLine;
 
 	@ManyToOne
+	@JsonIgnore
 	private User user;
 
 	public Order() {
