@@ -14,14 +14,14 @@ import org.springframework.util.StringUtils;
 
 import fr.projet.domain.Order;
 import fr.projet.domain.criteria.OrderCriteria;
-import fr.projet.services.CustomerService;
+import fr.projet.services.UserService;
 
 @Repository
 @Transactional
 public class OrderJpaRepository extends AbstractJpaRepository<Order> {
 	
 	@Autowired
-	CustomerService customerService;
+	UserService customerService;
 
 	public OrderJpaRepository() {
 		super(Order.class);

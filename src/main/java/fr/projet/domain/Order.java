@@ -45,25 +45,25 @@ public class Order implements IdEntity {
 	private List<CommandLine> commandLine;
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	private Customer customer;
+	private User user;
 
 	public Order() {
 	}
 
 	public Order(LocalDate purchaseDate, String orderNumber, Integer totalPrice, List<CommandLine> commandLine,
-			Customer customer) {
+			User user) {
 		super();
 		this.purchaseDate = purchaseDate;
 		this.orderNumber = orderNumber;
 		this.totalPrice = totalPrice;
 		this.commandLine = commandLine;
-		this.customer = customer;
+		this.user = user;
 	}
 
-	public Order(LocalDate purchaseDate, Customer customer) {
+	public Order(LocalDate purchaseDate, User customer) {
 		super();
 		this.purchaseDate = purchaseDate;	
-		this.customer = customer;
+		this.user = customer;
 }
 
 	public Long getId() {
@@ -90,12 +90,12 @@ public class Order implements IdEntity {
 		this.commandLine = commandLine;
 	}
 
-	public Customer getCustomer() {
-		return customer;
+	public User getUser() {
+		return user;
 	}
 
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public String getOrderNumber() {

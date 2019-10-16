@@ -8,13 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import fr.projet.domain.CommandLine;
-import fr.projet.domain.Customer;
 import fr.projet.domain.Order;
 import fr.projet.domain.Right;
 import fr.projet.domain.Role;
 import fr.projet.domain.User;
 import fr.projet.exception.BadRequestException;
-import fr.projet.repository.CustomerJpaRepository;
 import fr.projet.repository.OrderJpaRepository;
 import fr.projet.repository.RightRepository;
 import fr.projet.repository.RoleRepository;
@@ -38,9 +36,6 @@ public class InitializationBean {
 	@Autowired
 	private PasswordEncoder encoder;
 
-	@Autowired
-	private CustomerJpaRepository customerRepository;
-
 	@PostConstruct
 	public void init() throws BadRequestException {
 
@@ -49,42 +44,41 @@ public class InitializationBean {
 			Right createOrderRight = new Right("C_ORDER");
 			Right createUserRight = new Right("C_USER");
 			Right createBasketRight = new Right ("C_BASKET");
-			
+
 			Right readOrderRight = new Right("R_ORDER");
 			Right readProductRight = new Right("R_PRODUCT");
-			Right readUserRight = new Right ("R_USER");
+			Right readUserRight = new Right("R_USER");
 			Right readBasketRight = new Right("R_BASKET");
-			
-			Right updateProductRight = new Right ("U_PRODUCT");
-			Right updateOrderRight = new Right ("U_ORDER");
-			Right updateUserRight = new Right ("U_USER");
-			Right updateBasketRight = new Right ("U_BASKET");
-			
-			Right deleteProductRight = new Right ("D_PRODUCT");
-			Right deleteUserRight = new Right ("D_USER");
-			Right deleteOrderRight = new Right ("D_ORDER");
-			Right deleteBasketRight = new Right ("D_BASKET");
-			
+
+			Right updateProductRight = new Right("U_PRODUCT");
+			Right updateOrderRight = new Right("U_ORDER");
+			Right updateUserRight = new Right("U_USER");
+			Right updateBasketRight = new Right("U_BASKET");
+
+			Right deleteProductRight = new Right("D_PRODUCT");
+			Right deleteUserRight = new Right("D_USER");
+			Right deleteOrderRight = new Right("D_ORDER");
+			Right deleteBasketRight = new Right("D_BASKET");
+
 			rightRepository.save(createProductRight);
 			rightRepository.save(createOrderRight);
 			rightRepository.save(createUserRight);
 			rightRepository.save(createBasketRight);
-			
+
 			rightRepository.save(readOrderRight);
 			rightRepository.save(readProductRight);
 			rightRepository.save(readUserRight);
 			rightRepository.save(readBasketRight);
-			
+
 			rightRepository.save(updateProductRight);
 			rightRepository.save(updateOrderRight);
 			rightRepository.save(updateUserRight);
 			rightRepository.save(updateBasketRight);
-			
+
 			rightRepository.save(deleteProductRight);
 			rightRepository.save(deleteUserRight);
 			rightRepository.save(deleteOrderRight);
 			rightRepository.save(deleteBasketRight);
-			
 
 			List<Right> rightsVisitorList = new ArrayList<Right>();
 			rightsVisitorList.add(readProductRight);
@@ -112,31 +106,29 @@ public class InitializationBean {
 			roleRepository.save(customerRole);
 			roleRepository.save(visitorRole);
 
-			User userAdmin = new User("admin", encoder.encode("admin"), "admin@sas.net");
+			User userAdmin = new User("admin@sas.net", encoder.encode("admin"));
 			userAdmin.setRole(adminRole);
-			User userCustomer = new User("customer", encoder.encode("customer"), "customer@sas.net");
+			User userCustomer = new User("TahitiBob@sas.net", encoder.encode("milton"), "ru de Eustache", 28 , LocalDate.of(1994, 12, 31), "test", "France", "34070", "0635656565");
 			userCustomer.setRole(customerRole);
-			User userVisitor = new User("visitor", encoder.encode("visitor"), "visitor@sas.net");
-			userVisitor.setRole(visitorRole);
-			
+
+//	//		User userVisitor = new User("visitor", encoder.encode("visitor"), "visitor@sas.net");
+//	//		userVisitor.setRole(visitorRole);
+//
 			userRepository.save(userAdmin);
 			userRepository.save(userCustomer);
-			userRepository.save(userVisitor);
-			
+//	//		userRepository.save(userVisitor);
 
 			/*
 			 * String login, String firstName, String lastName, String street, Integer
 			 * streetNumber, LocalDate dOB, String password, String city, String country,
 			 * String zipCode, String eMail
 			 */
-			
-			Customer customer1 = new Customer("TahitiBob", "Milton", "Eustache", "test", 666, LocalDate.of(1994,12,31), "test", "test", "France", "34070", "m.eustache@sas.net", "0635656565");
-			Order orderCustomer= new Order(LocalDate.of(2019,01,01), customer1);
+
+			Order orderCustomer = new Order(LocalDate.of(2019, 01, 01), userCustomer);
 			List<CommandLine> commandeligne = new ArrayList<CommandLine>();
 			commandeligne.add(null);
 			commandeligne.add(null);
-			
-			customerRepository.save(customer1);
+
 			orderRepository.save(orderCustomer);
 		}
 	}
