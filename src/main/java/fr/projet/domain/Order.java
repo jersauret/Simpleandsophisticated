@@ -45,7 +45,7 @@ public class Order implements IdEntity {
 	
 	private List<CommandLine> commandLine;
 
-	@ManyToOne
+	@ManyToOne 
 	@JsonIgnore
 	private User user;
 
