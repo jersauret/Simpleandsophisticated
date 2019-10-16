@@ -9,7 +9,7 @@ public class UserCriteria {
 		private Long id;
 
 		private String email;
-		private String username;
+		
 		private String firstName;
 		private String lastName;
 		private String password;
@@ -23,10 +23,10 @@ public class UserCriteria {
 		private String phoneNumber;
 
 		// CONSTRUCTEUR ADMIN
-		public UserCriteria(String eMail, String username, String password, String firstName, String lastName) {
+		public UserCriteria(String eMail, String password, String firstName, String lastName) {
 			super();
 			this.eMail = eMail;
-			this.username = username;
+			
 			this.password = password;
 			this.firstName = firstName;
 			this.lastName = lastName;
@@ -34,11 +34,11 @@ public class UserCriteria {
 		}
 		
 		// CONSTRUCTEUR CLIENT
-		public UserCriteria(String email, String username, String firstName, String lastName, String password, String street, Integer streetNumber, LocalDate dOB,
+		public UserCriteria(String email, String firstName, String lastName, String password, String street, Integer streetNumber, LocalDate dOB,
 				String city, String country, String zipCode, String phoneNumber) {
 			super();
 			this.email = email;
-			this.username = username;
+			
 			this.password = password;
 			this.street = street;
 			this.streetNumber = streetNumber;
@@ -56,18 +56,12 @@ public class UserCriteria {
 		}
 		
 		public boolean hasCriterias() {
-			return !StringUtils.isEmpty(username) || !StringUtils.isEmpty(firstName) || !StringUtils.isEmpty(lastName) ||!StringUtils.isEmpty(street) 
+			return !StringUtils.isEmpty(firstName) || !StringUtils.isEmpty(lastName) ||!StringUtils.isEmpty(street) 
 					|| streetNumber !=null || dOB !=null || StringUtils.isEmpty(password) || StringUtils.isEmpty(city) || StringUtils.isEmpty(country)
 					|| StringUtils.isEmpty(zipCode) || StringUtils.isEmpty(eMail) || StringUtils.isEmpty(phoneNumber); 
 		}
 
-		public String getUsername() {
-			return username;
-		}
-
-		public void setUsername(String username) {
-			this.username = username;
-		}
+		
 
 		public Long getId() {
 			return id;

@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PostAuthorize;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +27,8 @@ public class AdminController {
 	@Autowired
 	private UserService adminService;
 	
+	@PreAuthorize("hasRole('ADMIN')")
+	@PostAuthorize("hasRole('ADMIN')")
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	public User create(@RequestBody User admin) {//throws BadRequestException {
@@ -36,32 +40,38 @@ public class AdminController {
 			return null;
 		}
 	}
-	
+	@PreAuthorize("hasRole('ADMIN')")
+	@PostAuthorize("hasRole('ADMIN')")
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public User findById(@PathVariable Long id) {
 		return adminService.find(id);
 	}
 	
 	
-	
+	@PreAuthorize("hasRole('ADMIN')")
+	@PostAuthorize("hasRole('ADMIN')")
 	@RequestMapping(method = RequestMethod.GET)
 	public List<User> findAll() {
 		return adminService.findAll();
 	}
-	
+	@PreAuthorize("hasRole('ADMIN')")
+	@PostAuthorize("hasRole('ADMIN')")
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	public User update(@PathVariable Long id, 
 			@RequestBody User user) {
 		user.setId(id);
 		return adminService.update(user);
 	}
-	
+	@PreAuthorize("hasRole('ADMIN')")
+	@PostAuthorize("hasRole('ADMIN')")
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public User delete(@PathVariable Long id) {
 		return adminService.delete(id);
 	}
+	@PreAuthorize("hasRole('ADMIN')")
+	@PostAuthorize("hasRole('ADMIN')")
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
-	public List<User> search(@RequestParam(required = false) String username,
+	public List<User> search(
 			@RequestParam(required = false) String firstName,
 			@RequestParam(required = false) String lastName,
 			@RequestParam(required = false) String password,
@@ -70,7 +80,7 @@ public class AdminController {
 			) {
 
 		
-		UserCriteria adminCriteria = new UserCriteria(eMail, username, password, firstName, lastName);
+		UserCriteria adminCriteria = new UserCriteria(eMail, password, firstName, lastName);
 		return adminService.searchAdmin(adminCriteria);
 	}
 

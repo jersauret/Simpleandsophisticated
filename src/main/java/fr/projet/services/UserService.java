@@ -7,7 +7,6 @@ import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import fr.projet.domain.Customer;
 import fr.projet.domain.User;
 import fr.projet.domain.criteria.UserCriteria;
 import fr.projet.exception.BadRequestException;

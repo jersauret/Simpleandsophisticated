@@ -30,7 +30,7 @@ public class User implements IdEntity {
 	private Long id;
 
 	private String email;
-	private String username;
+	
 	private String password;
 	private String street;
 	private Integer streetNumber;
@@ -53,20 +53,20 @@ public class User implements IdEntity {
 	private List<Order> order;
 
 	//CONSTRUCTEUR ADMIN
-	public User(String eMail, String username, String password, Role role) {
+	public User(String eMail,  String password) {
 		super();
 		this.eMail = eMail;
-		this.username = username;
+		
 		this.password = password;
-		this.role = role;
+		
 	}
 	
 	// CONSTRUCTEUR CLIENT
-	public User(String email, String username, String password, String street, Integer streetNumber, LocalDate dOB,
-			String city, String country, String zipCode, String phoneNumber, Role role) {
+	public User(String email,  String password, String street, Integer streetNumber, LocalDate dOB,
+			String city, String country, String zipCode, String phoneNumber) {
 		super();
 		this.email = email;
-		this.username = username;
+		
 		this.password = password;
 		this.street = street;
 		this.streetNumber = streetNumber;
@@ -75,7 +75,7 @@ public class User implements IdEntity {
 		this.country = country;
 		this.zipCode = zipCode;
 		this.phoneNumber = phoneNumber;
-		this.role = role;
+		
 	}
 
 
@@ -84,13 +84,6 @@ public class User implements IdEntity {
 
 	
 
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
 
 	public Long getId() {
 		return id;

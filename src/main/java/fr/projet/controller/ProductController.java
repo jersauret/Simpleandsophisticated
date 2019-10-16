@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PostAuthorize;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,7 +29,7 @@ public class ProductController {
 	@Autowired
 	private ProductService itemService;
 
-	//@PreAuthorize("hasAuthority('CREATE_PRODUCT')")
+	@PreAuthorize("hasAuthority('C_PRODUCT')")
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	public Product create(@RequestBody Product user) {//throws BadRequestException {
@@ -40,33 +42,40 @@ public class ProductController {
 		}
 	}
 
+	@PreAuthorize("hasRole('ADMIN')")
+	@PostAuthorize("hasRole('ADMIN')")
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public Product findById(@PathVariable Long id) {
 		return itemService.find(id);
 	}
 
-
+	@PreAuthorize("hasAuthority('R_PRODUCT')")
 	@RequestMapping(value = "/name/{name}", method = RequestMethod.GET)
 	public List<Product> findByName(@PathVariable String name) {
 		return itemService.findByName(name);
 	}
 
+	@PreAuthorize("hasAuthority('R_PRODUCT')")
 	@RequestMapping(method = RequestMethod.GET)
 	public List<Product> findAll() {
 		return itemService.findAll();
 	}
-
+	
+	@PreAuthorize("hasAutority('U_PRODUCT')")
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	public Product update(@PathVariable Long id, @RequestBody Product product) {
 		product.setId(id);
 		return itemService.update(product);
 	}
 
+	@PreAuthorize("hasRole('ADMIN')")
+	@PostAuthorize("hasRole('ADMIN')")
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public Product delete(@PathVariable Long id) {
 		return itemService.delete(id);
 	}
 
+	@PreAuthorize("hasAutority('R_PRODUCT')")
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public List<Product> search(@RequestParam(required = false) String name,
 			@RequestParam(required = false) Long id,

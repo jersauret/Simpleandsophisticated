@@ -38,9 +38,7 @@ public class UserRepository extends AbstractJpaRepository<User>{
 		if (userCriteria.hasCriterias()) {
 			qlString += " where 1=1";
 
-			if (!StringUtils.isEmpty(userCriteria.getUsername())) {
-				qlString += " and lower(u.login) like lower(:login)";
-			}
+			
 			if (!StringUtils.isEmpty(userCriteria.getFirstName())) {
 				qlString += " and lower(u.firstName) like lower(:firstName)";
 			}
@@ -81,9 +79,7 @@ public class UserRepository extends AbstractJpaRepository<User>{
 		TypedQuery<User> query = entityManager.createQuery(qlString, User.class);
 
 		if (userCriteria.hasCriterias()) {
-			if (!StringUtils.isEmpty(userCriteria.getUsername())) {
-				query.setParameter("login", "%" + userCriteria.getUsername() + "%");
-			}
+			
 			if (!StringUtils.isEmpty(userCriteria.getFirstName())) {
 				query.setParameter("firstName", "%" + userCriteria.getFirstName() + "%");
 			}
@@ -137,9 +133,7 @@ public class UserRepository extends AbstractJpaRepository<User>{
 		CriteriaQuery<User> criteria = builder.createQuery(User.class);
 		Root<User> root = criteria.from(User.class);
 
-		if (!StringUtils.isEmpty(userCriteria.getUsername())) {
-			criteria.where(builder.like(root.get("login"), "%" + userCriteria.getUsername() + "%"));
-		}
+		
 		if (!StringUtils.isEmpty(userCriteria.getFirstName())) {
 			criteria.where(builder.like(root.get("firstName"), "%" + userCriteria.getFirstName() + "%"));
 		}
@@ -189,9 +183,7 @@ public class UserRepository extends AbstractJpaRepository<User>{
 		if (adminCriteria.hasCriterias()) {
 			qlString += " where 1=1";
 
-			if (!StringUtils.isEmpty(adminCriteria.getUsername())) {
-				qlString += " and lower(u.username) like lower(:username)";
-			}
+			
 			if (!StringUtils.isEmpty(adminCriteria.getFirstName())) {
 				qlString += " and lower(u.firstName) like lower(:firstName)";
 			}
@@ -212,9 +204,7 @@ public class UserRepository extends AbstractJpaRepository<User>{
 		TypedQuery<User> query = entityManager.createQuery(qlString, User.class);
 
 		if (adminCriteria.hasCriterias()) {
-			if (!StringUtils.isEmpty(adminCriteria.getUsername())) {
-				query.setParameter("username", "%" + adminCriteria.getUsername() + "%");
-			}
+			
 			if (!StringUtils.isEmpty(adminCriteria.getFirstName())) {
 				query.setParameter("firstName", "%" + adminCriteria.getFirstName() + "%");
 			}
@@ -243,9 +233,7 @@ public class UserRepository extends AbstractJpaRepository<User>{
 		CriteriaQuery<User> criteria = builder.createQuery(User.class);
 		Root<User> root = criteria.from(User.class);
 
-		if (!StringUtils.isEmpty(adminCriteria.getUsername())) {
-			criteria.where(builder.like(root.get("username"), "%" + adminCriteria.getUsername() + "%"));
-		}
+		
 		if (!StringUtils.isEmpty(adminCriteria.getFirstName())) {
 			criteria.where(builder.like(root.get("firstName"), "%" + adminCriteria.getFirstName() + "%"));
 		}

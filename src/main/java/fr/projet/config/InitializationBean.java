@@ -51,14 +51,43 @@ public class InitializationBean {
 			Right createProductRight = new Right("C_PRODUCT");
 			Right createOrderRight = new Right("C_ORDER");
 			Right createUserRight = new Right("C_USER");
+			Right createBasketRight = new Right ("C_BASKET");
+			
 			Right readOrderRight = new Right("R_ORDER");
 			Right readProductRight = new Right("R_PRODUCT");
-
+			Right readUserRight = new Right ("R_USER");
+			Right readBasketRight = new Right("R_BASKET");
+			
+			Right updateProductRight = new Right ("U_PRODUCT");
+			Right updateOrderRight = new Right ("U_ORDER");
+			Right updateUserRight = new Right ("U_USER");
+			Right updateBasketRight = new Right ("U_BASKET");
+			
+			Right deleteProductRight = new Right ("D_PRODUCT");
+			Right deleteUserRight = new Right ("D_USER");
+			Right deleteOrderRight = new Right ("D_ORDER");
+			Right deleteBasketRight = new Right ("D_BASKET");
+			
 			rightRepository.save(createProductRight);
 			rightRepository.save(createOrderRight);
 			rightRepository.save(createUserRight);
+			rightRepository.save(createBasketRight);
+			
 			rightRepository.save(readOrderRight);
 			rightRepository.save(readProductRight);
+			rightRepository.save(readUserRight);
+			rightRepository.save(readBasketRight);
+			
+			rightRepository.save(updateProductRight);
+			rightRepository.save(updateOrderRight);
+			rightRepository.save(updateUserRight);
+			rightRepository.save(updateBasketRight);
+			
+			rightRepository.save(deleteProductRight);
+			rightRepository.save(deleteUserRight);
+			rightRepository.save(deleteOrderRight);
+			rightRepository.save(deleteBasketRight);
+			
 
 			List<Right> rightsVisitorList = new ArrayList<Right>();
 			rightsVisitorList.add(readProductRight);
@@ -72,6 +101,7 @@ public class InitializationBean {
 			rightsAdminList.add(createProductRight);
 			rightsAdminList.add(createOrderRight);
 			rightsAdminList.add(createUserRight);
+			rightsAdminList.add(updateProductRight);
 
 			Role adminRole = new Role("ADMIN");
 			adminRole.setRights(rightsAdminList);
