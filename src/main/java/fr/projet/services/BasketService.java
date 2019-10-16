@@ -2,15 +2,14 @@ package fr.projet.services;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import fr.projet.domain.Basket;
-import fr.projet.domain.Order;
 import fr.projet.domain.criteria.BasketCriteria;
-import fr.projet.domain.criteria.OrderCriteria;
 import fr.projet.exception.BadRequestException;
 import fr.projet.repository.BasketJpaRepository;
 

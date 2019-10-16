@@ -53,12 +53,11 @@ public class User implements IdEntity {
 	private List<Order> order;
 
 	//CONSTRUCTEUR ADMIN
-	public User(String eMail, String username, String password, Role role) {
+	public User(String eMail, String username, String password) {
 		super();
 		this.eMail = eMail;
 		this.username = username;
 		this.password = password;
-		this.role = role;
 	}
 	
 	// CONSTRUCTEUR CLIENT
@@ -81,8 +80,6 @@ public class User implements IdEntity {
 
 	public User() {
 	}
-
-	
 
 	public String getUsername() {
 		return username;
