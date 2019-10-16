@@ -69,7 +69,8 @@ public class OrderController {
 		return orderService.delete(id);
 	}
 	
-	@RequestMapping(value = "/search", method = RequestMethod.GET)
+
+	@RequestMapping(value = "/search", method = RequestMethod.GET) 
 	public List<Order> search(@RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate purchaseDate,
 			@RequestParam(required = false) String orderNumber,
 			@RequestParam(required = false) Integer totalPrice
@@ -80,6 +81,14 @@ public class OrderController {
 		OrderCriteria criteria = new OrderCriteria(purchaseDate, orderNumber, totalPrice);
 		
 		return orderService.search(criteria);
+		
+	}
+
+	@PreAuthorize("hasRole('ADMIN') or hasRole('CUSTOMER')")
+	@PostAuthorize("hasRole('ADMIN') or #returnObject.customer.email == principal.username")
+	@RequestMapping(value = "/login/{login}", method = RequestMethod.GET)
+	public Order findOneByUsername(@PathVariable String username) {
+		return orderService.findOneByUsername(username);
 	}
 
 }

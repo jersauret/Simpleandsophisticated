@@ -56,4 +56,8 @@ public class OrderService {
 	public List<Order> search(OrderCriteria criteria){
 		return orderRepository.searchWithCriteria(criteria);
 	}
+
+	public Order findOneByUsername(String username) {
+		return orderRepository.findOneByUsername(username);
+	}
 }

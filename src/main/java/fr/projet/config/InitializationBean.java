@@ -101,15 +101,15 @@ public class InitializationBean {
 			 * streetNumber, LocalDate dOB, String password, String city, String country,
 			 * String zipCode, String eMail
 			 */
-
-//			Customer customer1 = new Customer("TahitiBob", "Milton", "Eustache", "test", 666, LocalDate.of(1994,12,31), "test", "test", "France", "34070", "m.eustache@sas.net");
-//			Order orderCustomer= new Order(LocalDate.of(2019,01,01), customer1);
-//			List<CommandLine> commandeligne = new ArrayList<CommandLine>();
-//			commandeligne.add(null);
-//			commandeligne.add(null);
-
-//			customerRepository.save(customer1);
-//			orderRepository.save(orderCustomer);	}
+			
+			Customer customer1 = new Customer("TahitiBob", "Milton", "Eustache", "test", 666, LocalDate.of(1994,12,31), "test", "test", "France", "34070", "m.eustache@sas.net", "0635656565");
+			Order orderCustomer= new Order(LocalDate.of(2019,01,01), customer1);
+			List<CommandLine> commandeligne = new ArrayList<CommandLine>();
+			commandeligne.add(null);
+			commandeligne.add(null);
+			
+			customerRepository.save(customer1);
+			orderRepository.save(orderCustomer);
 		}
 	}
 }

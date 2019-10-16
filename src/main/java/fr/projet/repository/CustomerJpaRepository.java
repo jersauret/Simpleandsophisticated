@@ -179,4 +179,11 @@ public class CustomerJpaRepository extends AbstractJpaRepository<Customer> {
 
 		return customers;
 	}
+	public Customer findOneByEmail(String email) {
+		String qlString = "from Customer u where u.email = :email";
+		TypedQuery<Customer> query = entityManager.createQuery(qlString, Customer.class);
+		query.setParameter("email", email);
+		
+		return query.getSingleResult();
+	}
 }
