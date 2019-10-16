@@ -11,9 +11,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import fr.projet.domain.Basket;
-import fr.projet.domain.Customer;
 import fr.projet.domain.criteria.BasketCriteria;
-import fr.projet.domain.criteria.CustomerCriteria;
 
 @Repository
 @Transactional
