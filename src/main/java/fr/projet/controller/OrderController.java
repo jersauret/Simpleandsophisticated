@@ -47,8 +47,9 @@ public class OrderController {
 		return orderService.find(id);
 	}
 	
+	//@PostAuthorize("hasRole('ADMIN') or #returnObject.customer.email == principal.username")
+
 	@PreAuthorize("hasRole('ADMIN') or hasRole('CUSTOMER')")
-	@PostAuthorize("hasRole('ADMIN') or #returnObject.customer.email == principal.username")
 	@RequestMapping(value = "/orderNumber/{orderNumber}", method = RequestMethod.GET)
 	public Order findOneByOrderNumber(@PathVariable String orderNumber) {
 		return orderService.findOneByNumber(orderNumber);
