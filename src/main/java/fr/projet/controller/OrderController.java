@@ -57,14 +57,24 @@ public class OrderController {
 		return o;
 	}
 	
-	@PreAuthorize("hasRole('ADMIN') or hasRole('CUSTOMER')")
- 	@PostAuthorize("hasRole('ADMIN') or returnObject.user.email == principal.username")
+	@PreAuthorize("hasRole('ADMIN')")
+ 	@PostAuthorize("hasRole('ADMIN')")
 	@RequestMapping(method = RequestMethod.GET)
 	public List<Order> findAll() {
 		List<Order> orders = orderService.findAll();
 		
 		System.out.println(orders);	
 	
+		return orders;
+	}
+	
+ 	@PreAuthorize("hasRole('ADMIN') or (hasRole('CUSTOMER') and  @securityService.isConnectedUser(#id))")
+	@RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
+	public List<Order> findAllOrdersByUserEmail(@PathVariable Long id) {
+		List<Order> orders = orderService.findAllOrdersByUserId(id);
+		
+		System.out.println(orders);	
+		System.out.println("############################################################");	
 		return orders;
 	}
 	
