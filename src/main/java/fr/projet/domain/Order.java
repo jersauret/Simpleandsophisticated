@@ -44,7 +44,7 @@ public class Order implements IdEntity {
 	
 	private List<CommandLine> commandLine;
 
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne
 	private User user;
 
 	public Order() {

@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -42,20 +43,20 @@ public class User implements IdEntity {
 	private String city;
 	private String country;
 	private String zipCode; // Code Postal
-	private String eMail;
+	
 	private String phoneNumber;
 	
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	private Role role;
 	
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
 	private List<Order> order;
 
 	//CONSTRUCTEUR ADMIN
-	public User(String eMail, String password) {
+	public User(String email, String password) {
 		super();
-		this.eMail = eMail;
+		this.email = email;
 		this.password = password;
 		
 	}
@@ -177,15 +178,7 @@ public class User implements IdEntity {
 	}
 
 
-	public String geteMail() {
-		return eMail;
-	}
-
-
-	public void seteMail(String eMail) {
-		this.eMail = eMail;
-	}
-
+	
 
 	public String getPhoneNumber() {
 		return phoneNumber;

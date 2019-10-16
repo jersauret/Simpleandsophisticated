@@ -96,7 +96,7 @@ public class OrderJpaRepository extends AbstractJpaRepository<Order> {
 	public Order findOneByUsername(String username) {
 		String qlString = "from Order u where u.username = :username";
 		TypedQuery<Order> query = entityManager.createQuery(qlString, Order.class);
-		query.setParameter("username", customerService.findOneByEmail(username).geteMail());
+		query.setParameter("username", customerService.findOneByEmail(username).getEmail());
 		return query.getSingleResult();
 	}
 
