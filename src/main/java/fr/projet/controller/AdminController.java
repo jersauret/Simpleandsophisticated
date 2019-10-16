@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import fr.projet.domain.Admin;
-import fr.projet.domain.criteria.AdminCriteria;
+import fr.projet.domain.User;
+import fr.projet.domain.criteria.UserCriteria;
 import fr.projet.exception.BadRequestException;
-import fr.projet.services.AdminService;
+import fr.projet.services.UserService;
 
 @RestController
 
@@ -23,13 +23,13 @@ import fr.projet.services.AdminService;
 public class AdminController {
 	
 	@Autowired
-	private AdminService adminService;
+	private UserService adminService;
 	
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
-	public Admin create(@RequestBody Admin user) {//throws BadRequestException {
+	public User create(@RequestBody User admin) {//throws BadRequestException {
 		try {
-			return adminService.save(user);
+			return adminService.save(admin);
 		} catch (BadRequestException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -38,33 +38,30 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public Admin findById(@PathVariable Long id) {
+	public User findById(@PathVariable Long id) {
 		return adminService.find(id);
 	}
 	
-	@RequestMapping(value = "/login/{login}", method = RequestMethod.GET)
-	public Admin findOneByLogin(@PathVariable String login) {
-		return adminService.findOneByLogin(login);
-	}
+	
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public List<Admin> findAll() {
+	public List<User> findAll() {
 		return adminService.findAll();
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-	public Admin update(@PathVariable Long id, 
-			@RequestBody Admin user) {
+	public User update(@PathVariable Long id, 
+			@RequestBody User user) {
 		user.setId(id);
 		return adminService.update(user);
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public Admin delete(@PathVariable Long id) {
+	public User delete(@PathVariable Long id) {
 		return adminService.delete(id);
 	}
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
-	public List<Admin> search(@RequestParam(required = false) String login,
+	public List<User> search(@RequestParam(required = false) String username,
 			@RequestParam(required = false) String firstName,
 			@RequestParam(required = false) String lastName,
 			@RequestParam(required = false) String password,
@@ -73,8 +70,8 @@ public class AdminController {
 			) {
 
 		
-		AdminCriteria criteria = new AdminCriteria(login, firstName, lastName, eMail, password);
-		return adminService.search(criteria);
+		UserCriteria adminCriteria = new UserCriteria(eMail, username, password, firstName, lastName);
+		return adminService.searchAdmin(adminCriteria);
 	}
 
 	
