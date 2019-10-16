@@ -30,7 +30,7 @@ public class Basket implements IdEntity {
 	//ID session ??????
 	
 	@OneToOne
-	private Customer customer;
+	private User customer;
 
 	public Long getId() {
 		return id;
@@ -56,11 +56,11 @@ public class Basket implements IdEntity {
 		this.shippingCost = shippingCost;
 	}
 
-	public Customer getCustomer() {
+	public User getCustomer() {
 		return customer;
 	}
 
-	public void setCustomer(Customer customer) {
+	public void setCustomer(User customer) {
 		this.customer = customer;
 	}
 
