@@ -1,4 +1,4 @@
-package fr.projet.domain;
+ package fr.projet.domain;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -41,12 +41,13 @@ public class User implements IdEntity {
 	private String city;
 	private String country;
 	private String zipCode; // Code Postal
-
+	
 	private String phoneNumber;
-
+	
+	
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Role role;
-
+	
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
 	private List<Order> order;
 
@@ -54,22 +55,22 @@ public class User implements IdEntity {
 
 	private String lastName;
 
-	// CONSTRUCTEUR ADMIN
+	//CONSTRUCTEUR ADMIN
 	public User(String email, String password) {
 		super();
 		this.email = email;
 		this.password = password;
-
+		
 	}
-
+	
 	// CONSTRUCTEUR CLIENT
-	public User(String firstName, String lastName, String email, String password, String street, Integer streetNumber,
-			LocalDate dOB, String city, String country, String zipCode, String phoneNumber) {
+	public User(String firstName, String lastName, String email,  String password, String street, Integer streetNumber, LocalDate dOB,
+			String city, String country, String zipCode, String phoneNumber) {
 		super();
 		this.email = email;
 		this.firstName = firstName;
 		this.lastName = lastName;
-
+		
 		this.password = password;
 		this.street = street;
 		this.streetNumber = streetNumber;
@@ -78,11 +79,15 @@ public class User implements IdEntity {
 		this.country = country;
 		this.zipCode = zipCode;
 		this.phoneNumber = phoneNumber;
-
+		
 	}
+
 
 	public User() {
 	}
+
+	
+
 
 	public Long getId() {
 		return id;
@@ -116,65 +121,83 @@ public class User implements IdEntity {
 		this.role = role;
 	}
 
+
 	public String getStreet() {
 		return street;
 	}
+
 
 	public void setStreet(String street) {
 		this.street = street;
 	}
 
+
 	public Integer getStreetNumber() {
 		return streetNumber;
 	}
+
 
 	public void setStreetNumber(Integer streetNumber) {
 		this.streetNumber = streetNumber;
 	}
 
+
 	public LocalDate getdOB() {
 		return doB;
 	}
+
 
 	public void setdOB(LocalDate dOB) {
 		this.doB = dOB;
 	}
 
+
 	public String getCity() {
 		return city;
 	}
+
 
 	public void setCity(String city) {
 		this.city = city;
 	}
 
+
 	public String getCountry() {
 		return country;
 	}
+
 
 	public void setCountry(String country) {
 		this.country = country;
 	}
 
+
 	public String getZipCode() {
 		return zipCode;
 	}
+
 
 	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
 	}
 
+
+	
+
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
+
 
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
+
 	public List<Order> getOrder() {
 		return order;
 	}
+
 
 	public void setOrder(List<Order> order) {
 		this.order = order;
