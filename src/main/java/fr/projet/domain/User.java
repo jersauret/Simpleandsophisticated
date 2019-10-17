@@ -60,10 +60,12 @@ public class User implements IdEntity {
 	}
 	
 	// CONSTRUCTEUR CLIENT
-	public User(String email,  String password, String street, Integer streetNumber, LocalDate dOB,
+	public User(String firstName, String lastName, String email,  String password, String street, Integer streetNumber, LocalDate dOB,
 			String city, String country, String zipCode, String phoneNumber) {
 		super();
 		this.email = email;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		
 		this.password = password;
 		this.street = street;
@@ -195,6 +197,22 @@ public class User implements IdEntity {
 
 	public void setOrder(List<Order> order) {
 		this.order = order;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 }
