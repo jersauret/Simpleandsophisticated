@@ -24,8 +24,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS) //
 		.and().authorizeRequests() //
-		.antMatchers("/api/admin/**").hasRole("ADMIN") //
-		.antMatchers("/api/orders/**").authenticated() //
+		//.antMatchers("/api/admin/**").hasRole("ADMIN") //
+		//.antMatchers("/api/orders/**").authenticated() //
 		.antMatchers("/api/**").permitAll() //
 		.and().httpBasic() //
 		.and().csrf().disable(); //
