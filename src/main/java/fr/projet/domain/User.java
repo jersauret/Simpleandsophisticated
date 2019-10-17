@@ -29,9 +29,7 @@ public class User implements IdEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
 	private String email;
-	
 	private String password;
 	private String street;
 	private Integer streetNumber;
@@ -39,7 +37,7 @@ public class User implements IdEntity {
 	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
 	@JsonSerialize(using = LocalDateSerializer.class)
 	@JsonDeserialize(using = LocalDateDeserializer.class)
-	private LocalDate dOB;
+	private LocalDate doB;
 	private String city;
 	private String country;
 	private String zipCode; // Code Postal
