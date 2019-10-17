@@ -108,7 +108,7 @@ public class InitializationBean {
 
 			User userAdmin = new User("admin@sas.net", encoder.encode("admin"));
 			userAdmin.setRole(adminRole);
-			User userCustomer = new User("TahitiBob@sas.net", encoder.encode("milton"), "ru de Eustache", 28 , LocalDate.of(1994, 12, 31), "test", "France", "34070", "0635656565");
+			User userCustomer = new User("Milton","EUSTACHE","TahitiBob@sas.net", encoder.encode("milton"), "ru de Eustache", 28 , LocalDate.of(1994, 12, 31), "test", "France", "34070", "0635656565");
 			userCustomer.setRole(customerRole);
 
 //	//		User userVisitor = new User("visitor", encoder.encode("visitor"), "visitor@sas.net");
