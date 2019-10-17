@@ -51,6 +51,10 @@ public class User implements IdEntity {
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
 	private List<Order> order;
 
+	private String firstName;
+
+	private String lastName;
+
 	//CONSTRUCTEUR ADMIN
 	public User(String email, String password) {
 		super();
@@ -70,7 +74,7 @@ public class User implements IdEntity {
 		this.password = password;
 		this.street = street;
 		this.streetNumber = streetNumber;
-		this.dOB = dOB;
+		this.doB = dOB;
 		this.city = city;
 		this.country = country;
 		this.zipCode = zipCode;
@@ -139,12 +143,12 @@ public class User implements IdEntity {
 
 
 	public LocalDate getdOB() {
-		return dOB;
+		return doB;
 	}
 
 
 	public void setdOB(LocalDate dOB) {
-		this.dOB = dOB;
+		this.doB = dOB;
 	}
 
 
