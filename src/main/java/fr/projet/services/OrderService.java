@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import fr.projet.domain.Order;
-import fr.projet.domain.User;
 import fr.projet.domain.criteria.OrderCriteria;
 import fr.projet.exception.BadRequestException;
 import fr.projet.repository.OrderJpaRepository;
@@ -58,9 +57,7 @@ public class OrderService {
 		return orderRepository.searchWithCriteria(criteria);
 	}
 
-	public List<Order> findAllOrdersByUserEmail(String userEmail){
-		return orderRepository.findAllOrdersByUserEmail(userEmail);
-		
-		
+	public List<Order> findAllOrdersByUserId(Long id) {
+		return orderRepository.findAllOrdersByUserId(id);
 	}
 }

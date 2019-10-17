@@ -99,10 +99,10 @@ public class OrderJpaRepository extends AbstractJpaRepository<Order> {
 		return query.getSingleResult();
 	}
 	
-	public List<Order> findAllOrdersByUserEmail(String userEmail) {
-		String qlString = "from Order u where u.user_id = :user_id";
+	public List<Order> findAllOrdersByUserId(Long userId) {
+		String qlString = "from Order o where o.user.id = :user_id";
 		TypedQuery<Order> query = entityManager.createQuery(qlString, Order.class);
-		query.setParameter("user_id", userService.findOneByEmail(userEmail).getId());
+		query.setParameter("user_id", userId);
 		return query.getResultList();
 	}
 
