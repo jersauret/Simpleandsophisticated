@@ -70,7 +70,7 @@ public class User implements IdEntity {
 		this.password = password;
 		this.street = street;
 		this.streetNumber = streetNumber;
-		this.dOB = dOB;
+		this.doB = dOB;
 		this.city = city;
 		this.country = country;
 		this.zipCode = zipCode;
