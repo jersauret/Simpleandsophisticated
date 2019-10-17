@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -40,9 +42,14 @@ public class Order implements IdEntity {
 	private String orderNumber;
 	private Integer totalPrice;
 
+	@Enumerated(EnumType.STRING)
+	private CommandStatus commandStatus;
+
 	@OneToMany(mappedBy = "order", fetch = FetchType.EAGER, cascade = { CascadeType.ALL, CascadeType.REMOVE,
 			CascadeType.PERSIST })
 	private List<CommandLine> commandLine;
+	
+
 
 	@ManyToOne 
 	@JsonIgnore
@@ -59,12 +66,14 @@ public class Order implements IdEntity {
 		this.totalPrice = totalPrice;
 		this.commandLine = commandLine;
 		this.user = user;
+		
 	}
 
 	public Order(LocalDate purchaseDate, User customer) {
 		super();
 		this.purchaseDate = purchaseDate;	
 		this.user = customer;
+	
 }
 
 	public Long getId() {
@@ -119,6 +128,15 @@ public class Order implements IdEntity {
 	public String toString() {
 		return "Order [id=" + id + ", purchaseDate=" + purchaseDate + ", orderNumber=" + orderNumber + ", totalPrice="
 				+ totalPrice + ", commandLine=" + commandLine + ", user=" + user + "]";
+	}
+
+	
+	public CommandStatus getCommandStatus() {
+		return commandStatus;
+	}
+
+	public void setCommandStatus(CommandStatus commandStatus) {
+		this.commandStatus = commandStatus;
 	}
 	
 	

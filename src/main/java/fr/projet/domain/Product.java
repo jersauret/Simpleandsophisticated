@@ -45,10 +45,10 @@ public class Product implements IdEntity{
 		
 	}
 
-	public Product(Long id, String name, String supplier, Integer retailPrice, Integer stock, ProductType productType,
+	public Product(String name, String supplier, Integer retailPrice, Integer stock, ProductType productType,
 			CategoryType category, String reference) {
 		super();
-		this.id = id;
+		
 		this.name = name;
 		this.supplier = supplier;
 		this.retailPrice = retailPrice;

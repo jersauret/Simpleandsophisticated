@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.projet.domain.CommandStatus;
 import fr.projet.domain.Order;
 import fr.projet.domain.criteria.OrderCriteria;
 import fr.projet.exception.BadRequestException;
@@ -98,9 +99,11 @@ public class OrderController {
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public List<Order> search(
 			@RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate purchaseDate,
-			@RequestParam(required = false) String orderNumber, @RequestParam(required = false) Integer totalPrice) {
+			@RequestParam(required = false) String orderNumber, @RequestParam(required = false) Integer totalPrice,
+			@RequestParam(required = false) String commandStatus ) {
 
-		OrderCriteria criteria = new OrderCriteria(purchaseDate, orderNumber, totalPrice);
+		CommandStatus orderStatus = commandStatus != null ? CommandStatus.valueOf(commandStatus) : null;
+		OrderCriteria criteria = new OrderCriteria(purchaseDate, orderNumber, totalPrice, orderStatus);
 
 		return orderService.search(criteria);
 
