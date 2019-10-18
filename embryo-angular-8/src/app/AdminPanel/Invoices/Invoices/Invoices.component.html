@@ -12,7 +12,7 @@
    </div>
    <!-- wrap -->
 </mat-card>
-<ng-container *ngIf="invoiceList && invoiceList.length>0; else elseBlock">
+<ng-container *ngIf=" invoiceList && invoiceList.length>0; else elseBlock">
    <div fxLayout="column">
       <mat-card>
          <div class="table-responsive-x">
@@ -23,19 +23,19 @@
                </ng-container>
                <ng-container matColumnDef="invoiceId">
                   <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef> Invoice Id </th>
-                  <td class="px-3 text-nowrap" mat-cell *matCellDef="let element"> <a href="javascript:void(0)" (click) ="onSeeDialog()"> {{element.invoiceId}}</a> </td>
+                  <td class="px-3 text-nowrap" mat-cell *matCellDef="let element"> <a href="javascript:void(0)" (click) ="onSeeDialog()"> {{order.id}}</a> </td>
                </ng-container>
                <ng-container matColumnDef="name">
                   <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef> Buyer </th>
-                  <td class="px-3 text-nowrap" mat-cell *matCellDef="let element"> {{element.name}} </td>
+                  <td class="px-3 text-nowrap" mat-cell *matCellDef="let element"> {{order.userName}} </td>
                </ng-container>
                <ng-container matColumnDef="date">
                   <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef>Date </th>
-                  <td class="px-3 text-nowrap" mat-cell *matCellDef="let element"> {{element.date}} </td>
+                  <td class="px-3 text-nowrap" mat-cell *matCellDef="let element"> {{order.purchaseDate}} </td>
                </ng-container>
                <ng-container matColumnDef="price">
                   <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef> Price </th>
-                  <td class="px-3 text-nowrap" mat-cell *matCellDef="let element"> ${{element.price}} </td>
+                  <td class="px-3 text-nowrap" mat-cell *matCellDef="let element"> ${{order.totalPrice}} </td>
                </ng-container>
                <ng-container matColumnDef="payment">
                   <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef mat-sort-header> Payment </th>

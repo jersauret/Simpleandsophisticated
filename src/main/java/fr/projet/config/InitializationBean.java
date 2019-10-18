@@ -3,9 +3,9 @@ package fr.projet.config;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.annotation.PostConstruct;
 
-import org.omg.CORBA.portable.ValueOutputStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -141,8 +141,9 @@ public class InitializationBean {
 			productJpaRepository.save(product1);
 			productJpaRepository.save(product2);
 
-			Order orderCustomer= new Order(LocalDate.of(2016, 12, 25), userCustomer);
+			
 			List<CommandLine> commandeligne = new ArrayList<CommandLine>();
+			Order orderCustomer= new Order(LocalDate.of(2006, 12, 31), "2545111", product1.getRetailPrice() + product2.getRetailPrice(), commandeligne, userCustomer);
 			
 			//	public CommandLine(Integer quantities, Product product, Order order) {
 

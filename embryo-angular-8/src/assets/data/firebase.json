@@ -1382,10 +1382,10 @@
          }
       ]
    }],
-   "invoiceData": [{
+ /* "invoiceData": [{
          "position": 1,
          "invoiceId": 1801,
-         "name": "Daniel",
+         "name": "gkfdibnteguobufei",
          "date": "2019/02/1",
          "price": 1.0079,
          "payment": "Credit Card",
@@ -1533,8 +1533,18 @@
          "price": 10.811,
          "payment": "Credit Card",
          "status": "Sent"
+      },
+      {
+         "position": 18,
+         "invoiceId": 1818,
+         "name": "Joshua",
+         "date": "2019/01/9",
+         "price": 10.811,
+         "payment": "Credit Card",
+         "status": "Sent"
       }
-   ],
+   
+   ], */
    "collaborationData": [{
          "image": "assets/images/user-2.jpg",
          "name": "Lissa Roy",
@@ -1577,5 +1587,6 @@
          "access": "Admin",
          "accessclass": "primary"
       }
+      
    ]
 }
