@@ -8,10 +8,9 @@ import { ProfileService } from 'src/app/profile.service';
   styleUrls: ['./Profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-
   @Input() profile: Profile;
 
-  constructor(private profileService: ProfileService) { }
+  constructor(private profileService: ProfileService) {}
 
   ngOnInit() {
     this.profileService.getClient(2).subscribe(result => {
@@ -19,5 +18,4 @@ export class ProfileComponent implements OnInit {
       return;
     });
   }
-
 }

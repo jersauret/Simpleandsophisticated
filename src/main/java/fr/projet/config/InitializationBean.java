@@ -4,16 +4,23 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
+
+import org.omg.CORBA.portable.ValueOutputStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+
+import fr.projet.domain.CategoryType;
 import fr.projet.domain.CommandLine;
 import fr.projet.domain.Order;
+import fr.projet.domain.Product;
+import fr.projet.domain.ProductType;
 import fr.projet.domain.Right;
 import fr.projet.domain.Role;
 import fr.projet.domain.User;
 import fr.projet.exception.BadRequestException;
 import fr.projet.repository.OrderJpaRepository;
+import fr.projet.repository.ProductJpaRepository;
 import fr.projet.repository.RightRepository;
 import fr.projet.repository.RoleRepository;
 import fr.projet.repository.UserRepository;
@@ -32,6 +39,11 @@ public class InitializationBean {
 
 	@Autowired
 	private OrderJpaRepository orderRepository;
+	
+	@Autowired
+	private ProductJpaRepository productJpaRepository;
+	
+	
 
 	@Autowired
 	private PasswordEncoder encoder;
@@ -124,11 +136,20 @@ public class InitializationBean {
 			 * String zipCode, String eMail
 			 */
 
-			Order orderCustomer = new Order(LocalDate.of(2019, 01, 01), userCustomer);
-			List<CommandLine> commandeligne = new ArrayList<CommandLine>();
-			commandeligne.add(null);
-			commandeligne.add(null);
+			Product product1 = new Product("Iphone", "Pigeon", 500, 10, ProductType.SMARTPHONE, CategoryType.QUOTIDIEN, "06454");
+			Product product2 = new Product("GodMichet", "Marc Dorcel", 500, 10, ProductType.SMARTPHONE, CategoryType.QUOTIDIEN, "06454");
+			productJpaRepository.save(product1);
+			productJpaRepository.save(product2);
 
+			Order orderCustomer= new Order(LocalDate.of(2016, 12, 25), userCustomer);
+			List<CommandLine> commandeligne = new ArrayList<CommandLine>();
+			
+			//	public CommandLine(Integer quantities, Product product, Order order) {
+
+			commandeligne.add(new CommandLine(55, product1, orderCustomer));
+			commandeligne.add(new CommandLine(26 , product2, orderCustomer));
+			orderCustomer.setCommandLine(commandeligne);
+			
 			orderRepository.save(orderCustomer);
 		}
 	}

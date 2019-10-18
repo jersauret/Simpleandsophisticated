@@ -52,6 +52,10 @@ public class OrderJpaRepository extends AbstractJpaRepository<Order> {
 			if (criteria.getPurchaseDate()!= null) {
 				qlString += " and o.purchaseDate = :purchaseDate";
 			}
+			if(criteria.getCommandStatus() != null) {
+				qlString += " and o.commandStatus = :commandStatus";
+			}
+			
 			
 		}
 
@@ -67,6 +71,9 @@ public class OrderJpaRepository extends AbstractJpaRepository<Order> {
 			if (criteria.getPurchaseDate() != null) {
 				query.setParameter("purchaseDate", criteria.getPurchaseDate());
 			}
+			if (criteria.getCommandStatus() !=null) {
+				query.setParameter("commandStatus", criteria.getCommandStatus());
+			}
 		}
 
 		return query.getResultList();
@@ -78,15 +85,19 @@ public class OrderJpaRepository extends AbstractJpaRepository<Order> {
 		CriteriaQuery<Order> criteria = builder.createQuery(Order.class);
 		Root<Order> root = criteria.from(Order.class);
 
-		if (!StringUtils.isEmpty(orderCritera.getPurchaseDate())) {
+		if (orderCritera.getPurchaseDate() != null) {
 			criteria.where(builder.equal(root.get("purchaseDate"), orderCritera.getPurchaseDate() ));
 		}
 		if (!StringUtils.isEmpty(orderCritera.getOrderNumber())) {
 			criteria.where(builder.like(root.get("orderNumber"), "%" + orderCritera.getOrderNumber() + "%"));
 		}
-		if (!StringUtils.isEmpty(orderCritera.getTotalPrice())) {
+		if (orderCritera.getTotalPrice() != null) {
 			criteria.where(builder.equal(root.get("totalPrice"), orderCritera.getTotalPrice()));
 		}
+		if(orderCritera.getCommandStatus() != null) {
+			criteria.where(builder.equal(root.get("commandStatus"), orderCritera.getCommandStatus()));
+		}
+		
 
 		List<Order> orders = entityManager.createQuery(criteria).getResultList();
 		return orders;
