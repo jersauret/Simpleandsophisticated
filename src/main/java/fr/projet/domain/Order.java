@@ -41,7 +41,7 @@ public class Order implements IdEntity {
 	private LocalDate purchaseDate;
 	private String orderNumber;
 	private Integer totalPrice;
-
+ 
 	@Enumerated(EnumType.STRING)
 	private CommandStatus commandStatus;
 
