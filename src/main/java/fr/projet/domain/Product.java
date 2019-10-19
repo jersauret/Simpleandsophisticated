@@ -37,6 +37,8 @@ public class Product implements IdEntity{
 	@Enumerated(EnumType.STRING)
 	private CategoryType categoryType;
 	
+	String urlImage; 
+	
 	@JsonIgnore
 	@OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
 	private List<CommandLine> commandLine;
@@ -46,7 +48,7 @@ public class Product implements IdEntity{
 	}
 
 	public Product(String name, String supplier, Integer retailPrice, Integer stock, ProductType productType,
-			CategoryType category, String reference) {
+			CategoryType category, String reference, String urlImage) {
 		super();
 		
 		this.name = name;
@@ -56,6 +58,15 @@ public class Product implements IdEntity{
 		this.productType = productType;
 		this.categoryType = category;
 		this.reference = reference;
+		this.urlImage = urlImage;
+	}
+
+	public String getUrlImage() {
+		return urlImage;
+	}
+
+	public void setUrlImage(String urlImage) {
+		this.urlImage = urlImage;
 	}
 
 	public Long getId() {

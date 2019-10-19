@@ -136,8 +136,8 @@ public class InitializationBean {
 			 * String zipCode, String eMail
 			 */
 
-			Product product1 = new Product("Iphone", "Pigeon", 500, 10, ProductType.SMARTPHONE, CategoryType.QUOTIDIEN, "06454");
-			Product product2 = new Product("GodMichet", "Marc Dorcel", 500, 10, ProductType.SMARTPHONE, CategoryType.QUOTIDIEN, "06454");
+			Product product1 = new Product("Iphone", "Pigeon", 500, 10, ProductType.SMARTPHONE, CategoryType.QUOTIDIEN, "06454", "");
+			Product product2 = new Product("GodMichet", "Marc Dorcel", 500, 10, ProductType.SMARTPHONE, CategoryType.QUOTIDIEN, "06454", "");
 			productJpaRepository.save(product1);
 			productJpaRepository.save(product2);
 
