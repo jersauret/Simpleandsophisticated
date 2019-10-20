@@ -1,19 +1,17 @@
 import { Component, EventEmitter, Output,OnInit } from '@angular/core';
-import { ProductDisplay } from '../Models/ProductDisplay.Model';
+import { ProductDisplay } from '../../Models/ProductDisplay.Model';
 
-import { ProductService } from '../Services/product.service';
-import { Product } from '../Models/Product.Model';
-import { IAlert } from '../Models/IAlert';
-import { SharedService } from '../Services/shared.service';
+import { ProductService } from '../../Services/product.service';
+import { Product } from '../../Models/Product.Model';
+import { IAlert } from '../../Models/IAlert';
+import { SharedService } from '../../Services/shared.service';
 
 @Component({
-  selector: 'app-productdisplay',
-  templateUrl: './productdisplay.component.html',
-  styleUrls: ['./productdisplay.component.scss'],
-  providers:[ProductService]
+  selector: 'app-product-display-by-criteria',
+  templateUrl: './product-display-by-criteria.component.html',
+  styleUrls: ['./product-display-by-criteria.component.scss']
 })
-export class ProductdisplayComponent implements OnInit {
-
+export class ProductDisplayByCriteriaComponent implements OnInit {
   public alerts: Array<IAlert> = [];
   cartItemCount: number = 0;
   @Output() cartEvent = new EventEmitter<number>();
@@ -104,6 +102,5 @@ export class ProductdisplayComponent implements OnInit {
               const index: number = this.alerts.indexOf(alert);
               this.alerts.splice(index, 1);
           }   
-  }
 
-
+}
