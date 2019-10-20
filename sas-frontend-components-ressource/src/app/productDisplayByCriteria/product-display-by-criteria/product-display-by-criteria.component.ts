@@ -20,7 +20,9 @@ export class ProductDisplayByCriteriaComponent implements OnInit {
   allProducts: ProductDisplay[];
   allSeachedProducts: ProductDisplay[];
   productAddedTocart:Product[];
-  queriesParam =['name','iphone'];
+  queriesParam =[];
+  querieskey: string = 'name';
+  queriesValue: string;
   criteria: string = '';
 
   constructor(private productService:ProductService,private sharedService:SharedService) { }
@@ -34,8 +36,8 @@ onSubmit() {
   if(this.criteria === ''){
     console.log('criteria n\'est pas renseigné');
   }
-  this.queriesParam[0]='name';
-  this.queriesParam[1]='iphone';
+  this.queriesParam[0]=this.querieskey;
+  this.queriesParam[1]=this.queriesValue;
   this.searchProductByCriteria();
 }
 
@@ -58,6 +60,7 @@ onSubmit() {
         }
       )
    }
+   this.queriesParam = [];
  }
 
  OnAddCart(product:Product)

@@ -45,10 +45,10 @@ export class ProductService {
       );
   }
 
-  getProductsByCriteria(queriesParam: any[]){
-    this.apirUrlSearchProduct=this.apirUrlSearchProduct.concat(queriesParam[0],'=',queriesParam[1]);
-    console.log(this.apirUrlSearchProduct);
-    return this.httpClient.get(this.apirUrlSearchProduct)
+  getProductsByCriteria(queriesParam: string[]){
+    let apirUrlSearchProduct=this.apirUrlSearchProduct.concat(queriesParam[0],'=',queriesParam[1]);
+    console.log(apirUrlSearchProduct);
+    return this.httpClient.get(apirUrlSearchProduct)
       .pipe(
         map(res => res),
         catchError(this.errorHandler)

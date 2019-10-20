@@ -22,6 +22,9 @@ export class AppComponent implements OnInit {
   currentUser: Registration[];
   isLoggedIn: boolean = false;
 
+  username:string = '';
+  password:string = '';
+
   cartItemCount: number = 0;
   approvalText: string = "";
 
@@ -70,12 +73,11 @@ export class AppComponent implements OnInit {
     }
   }
   Login() {
-    let user = this.loginForm.value;
     this.isLoggedIn = false;
     this.authService.removeToken();
     this.alerts = [];
-    console.log(user);
-    this.authService.ValidateUser(user)
+    console.log(this.username+' '+this.password);
+    this.authService.ValidateUser(this.username, this.password)
       .subscribe((result) => {
         this.globalResponse = result;
       },
@@ -147,6 +149,7 @@ export class AppComponent implements OnInit {
           let a = this.globalResponse;
           this.currentUser = this.globalResponse;
           this.authService.storeRole(this.currentUser);
+          console.log(this.currentUser);
         }
       )
 

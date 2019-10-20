@@ -1,7 +1,7 @@
 <div id="collapseExample" [ngbCollapse]="false">
   <input [(ngModel)]="searchText" placeholder="search text goes here">
   <form (submit)="onSubmit()">
-    <input type="text"  >
+    <input type="text" [(ngModel)]='queriesValue' name='name'>
   </form>
   <div class="card">
     <div class="card-body">

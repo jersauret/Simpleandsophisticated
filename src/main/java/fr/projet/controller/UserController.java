@@ -84,11 +84,11 @@ public class UserController {
 			@RequestParam(required = false) String street, @RequestParam(required = false) Integer streetNumber,
 			@RequestParam(required = false) LocalDate dOB, @RequestParam(required = false) String password,
 			@RequestParam(required = false) String city, @RequestParam(required = false) String country,
-			@RequestParam(required = false) String zipCode, @RequestParam(required = false) String eMail,
+			@RequestParam(required = false) String zipCode, @RequestParam(required = false) String email,
 			@RequestParam(required = false) String phoneNumber
 
 	) {
-		UserCriteria clientCriteria = new UserCriteria(eMail, firstName, lastName, password, street, streetNumber, dOB,
+		UserCriteria clientCriteria = new UserCriteria(email, firstName, lastName, password, street, streetNumber, dOB,
 				city, country, zipCode, phoneNumber);
 		return clientService.searchClient(clientCriteria);
 	}

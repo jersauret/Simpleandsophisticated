@@ -13,17 +13,18 @@ export class AuthenticationService {
 
   constructor(private httpClient:HttpClient) { }
 
-  ValidateUser (user: Registration)
+  ValidateUser (username:string, password:string)
   {
+    //    const encryptedPassword = crypto.AES.encrypt(value, 'password');
 
+    
 //http://localhost:8080/mvc/api/users/search?email='admin@sas.net'
 
     //var userData = "username=" + user.email + "&password=" + user.password + "&grant_type=password";
-    var userData = user.email ;//+ "&password=" + user.password + "&grant_type=password";
     var reqHeader = new HttpHeaders({ 'Content-Type': 'application/json','No-Auth':'True' });
-    console.log(this.apiURL+ 'api/users/email/' + 'admin@sas.net');
+    console.log(this.apiURL+ 'api/users/search?email='+ username+'&password='+password);
 
-    return this.httpClient.get(this.apiURL+ 'api/users/search?email='+ 'admin@sas.net',{ headers: reqHeader })
+    return this.httpClient.get(this.apiURL+ 'api/users/search?email='+username+'&password='+'$2a$10$/CkRcxG/bbPfNHn5GYjgpuUnn/TWLVUPVLS/TIUcZxZZVE8o3XeA6',{ headers: reqHeader })
     .pipe(
       map(res => res),
        catchError( this.errorHandler)

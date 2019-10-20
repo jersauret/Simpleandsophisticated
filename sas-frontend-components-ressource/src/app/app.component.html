@@ -60,13 +60,13 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text" id="basic-addon1">@</span>
                         </div>
-                        <input type="text" formControlName="UserName" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                        <input [(ngModel)]='username' name='name' type="text" formControlName="UserName" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                           <span class="input-group-text" id="basic-addon1">*</span>
                         </div>
-                        <input type="password" formControlName="Password" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+                        <input [(ngModel)]='password' name='password' type="password" formControlName="Password" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                   </div>
                   <button type="button" style="margin-left: 39%;" [disabled]="!loginForm.valid" class="btn btn-outline-success" (click)="Login()"><b>Login</b></button>
