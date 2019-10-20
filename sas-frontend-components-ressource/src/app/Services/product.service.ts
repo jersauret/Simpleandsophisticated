@@ -12,6 +12,7 @@ import { Product } from '../Models/Product.Model';
 export class ProductService {
 
   public apiURL: string = "http://localhost:8080/mvc/api/products";
+  public apirUrlSearchProduct: string = "http://localhost:8080/mvc/api/products/search?";
 
   constructor(private httpClient: HttpClient, private authService: AuthenticationService) { }
 
@@ -38,6 +39,16 @@ export class ProductService {
   }
   getAllProducts() {
     return this.httpClient.get(this.apiURL)
+      .pipe(
+        map(res => res),
+        catchError(this.errorHandler)
+      );
+  }
+
+  getProductsByCriteria(queriesParam: any[]){
+    this.apirUrlSearchProduct=this.apirUrlSearchProduct.concat(queriesParam[0],'=',queriesParam[1]);
+    console.log(this.apirUrlSearchProduct);
+    return this.httpClient.get(this.apirUrlSearchProduct)
       .pipe(
         map(res => res),
         catchError(this.errorHandler)

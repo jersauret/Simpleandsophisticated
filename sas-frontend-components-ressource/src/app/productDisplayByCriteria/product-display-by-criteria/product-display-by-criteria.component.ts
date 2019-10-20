@@ -18,30 +18,47 @@ export class ProductDisplayByCriteriaComponent implements OnInit {
   public globalResponse: any;
   yourByteArray:any;
   allProducts: ProductDisplay[];
+  allSeachedProducts: ProductDisplay[];
   productAddedTocart:Product[];
+  queriesParam =['name','iphone'];
+  criteria: string = '';
+
   constructor(private productService:ProductService,private sharedService:SharedService) { }
 
   ngOnInit() {
-    this.productService.getAllProducts()
-            .subscribe((result) => {
-              this.globalResponse = result;              
-            },
-            error => { //This is error part
-              console.log(error.message);
-            },
-            () => {
-                //  This is Success part
-                console.log("Product fetched sucssesfully.");
-                //console.log(this.globalResponse);
-                this.allProducts=this.globalResponse;
-                }
-              )
-
+    this.onSubmit();
  }
-
- getProductByCriteria() {
-  //this.allProducts.filter()
+  ngOnChanges(){
+  }
+onSubmit() {
+  if(this.criteria === ''){
+    console.log('criteria n\'est pas renseigné');
+  }
+  this.queriesParam[0]='name';
+  this.queriesParam[1]='iphone';
+  this.searchProductByCriteria();
 }
+
+ searchProductByCriteria(){
+   if(this.queriesParam === null) {
+    console.log('no registered criterias')
+   }else{
+    this.productService.getProductsByCriteria(this.queriesParam)
+    .subscribe((result) => {
+      this.globalResponse = result;              
+    },
+    error => { //This is error part
+      console.log(error.message);
+    },
+    () => {
+        //  This is Success part
+        console.log("Product fetched sucssesfully. TU PARLES");
+        console.log(this.globalResponse);
+        this.allSeachedProducts=this.globalResponse;
+        }
+      )
+   }
+ }
 
  OnAddCart(product:Product)
             {
