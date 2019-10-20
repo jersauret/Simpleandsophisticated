@@ -32,7 +32,7 @@ public class OrderController {
 	@Autowired
 	private OrderService orderService;
 
-	@PreAuthorize("hasAuthority('C_ORDER')")
+	//@PreAuthorize("hasAuthority('C_ORDER')")
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	public Order create(@RequestBody Order order) { // throws BadRequestException {
@@ -44,7 +44,7 @@ public class OrderController {
 		}
 	}
 
-	@PreAuthorize("hasRole('ADMIN')")
+	//@PreAuthorize("hasRole('ADMIN')")
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public Order findById(@PathVariable Long id) {
 		return orderService.find(id);
@@ -70,7 +70,7 @@ public class OrderController {
 		return orders;
 	}
 
-	@PreAuthorize("hasRole('ADMIN') or (hasRole('CUSTOMER') and  @securityService.isConnectedUser(#id))")
+	//@PreAuthorize("hasRole('ADMIN') or (hasRole('CUSTOMER') and  @securityService.isConnectedUser(#id))")
 	@RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
 	public List<Order> findAllOrdersByUserEmail(@PathVariable Long id) {
 		List<Order> orders = orderService.findAllOrdersByUserId(id);
@@ -80,22 +80,22 @@ public class OrderController {
 		return orders;
 	}
 
-	@PreAuthorize("hasRole('ADMIN') or hasRole('CUSTOMER')")
+	//@PreAuthorize("hasRole('ADMIN') or hasRole('CUSTOMER')")
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	public Order update(@PathVariable Long id, @RequestBody Order order) {
 		order.setId(id);
 		return orderService.update(order);
 	}
 
-	@PreAuthorize("hasRole('ADMIN')")
-	@PostAuthorize("hasRole('ADMIN')")
+	//@PreAuthorize("hasRole('ADMIN')")
+	//@PostAuthorize("hasRole('ADMIN')")
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public Order delete(@PathVariable Long id) {
 		return orderService.delete(id);
 	}
 
-	@PreAuthorize("hasRole('ADMIN') or hasRole('CUSTOMER')")
-	@PostAuthorize("hasRole('ADMIN') or returnObject.customer.email == principal.username")
+	//@PreAuthorize("hasRole('ADMIN') or hasRole('CUSTOMER')")
+	//@PostAuthorize("hasRole('ADMIN') or returnObject.customer.email == principal.username")
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public List<Order> search(
 			@RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate purchaseDate,

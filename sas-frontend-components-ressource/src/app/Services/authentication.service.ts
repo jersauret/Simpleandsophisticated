@@ -3,21 +3,27 @@ import { HttpClient,HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { Http, Response } from '@angular/http';  
 import { Observable, of, throwError, pipe} from "rxjs"
 import { map, filter, catchError, mergeMap } from 'rxjs/operators';
+import { Registration } from '../Models/User.Models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
-  public apiURL:string="http://localhost:50148/";
+  public apiURL:string="http://localhost:8080/mvc/";
 
   constructor(private httpClient:HttpClient) { }
 
-  ValidateUser (user:any)
+  ValidateUser (user: Registration)
   {
-    var userData = "username=" + user.UserName + "&password=" + user.Password + "&grant_type=password";
-    var reqHeader = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded','No-Auth':'True' });
 
-    return this.httpClient.post(this.apiURL+ '/token',userData,{ headers: reqHeader })
+//http://localhost:8080/mvc/api/users/search?email='admin@sas.net'
+
+    //var userData = "username=" + user.email + "&password=" + user.password + "&grant_type=password";
+    var userData = user.email ;//+ "&password=" + user.password + "&grant_type=password";
+    var reqHeader = new HttpHeaders({ 'Content-Type': 'application/json','No-Auth':'True' });
+    console.log(this.apiURL+ 'api/users/email/' + 'admin@sas.net');
+
+    return this.httpClient.get(this.apiURL+ 'api/users/search?email='+ 'admin@sas.net',{ headers: reqHeader })
     .pipe(
       map(res => res),
        catchError( this.errorHandler)
@@ -27,7 +33,7 @@ export class AuthenticationService {
   {
     var reqHeader = new HttpHeaders({ 'Authorization':'Bearer '+this.getToken()});
         reqHeader.append('Content-Type', 'application/json');
-    return this.httpClient.get(this.apiURL+ 'api/Users',{ headers: reqHeader })
+    return this.httpClient.get(this.apiURL+ 'api/users',{ headers: reqHeader })
     .pipe(
       map(res => res),
        catchError( this.errorHandler)

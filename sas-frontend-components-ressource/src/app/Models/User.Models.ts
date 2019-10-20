@@ -1,10 +1,10 @@
 export interface Registration
 {
-    Id:number;
-    UserName:string;
-    Password:string;
-    Email:string;
-    Role:string;
-    Gender:string;
-    Phone:string;
+    id:number;
+    name:string;
+    password:string;
+    email:string;
+    role:string;
+    gender:string;
+    phone:string;
 }
