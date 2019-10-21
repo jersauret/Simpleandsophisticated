@@ -99,7 +99,7 @@ export class HomeThreeComponent implements OnInit {
 
    public getProductsResponse(res) {
       this.products = res;
-      this.allProducts = ((res.smartphone.concat(res.women)).concat(res.gadgets)).concat(res.accessories);
+      this.allProducts = ((res.men.concat(res.women)).concat(res.gadgets)).concat(res.accessories);
      
       for(let product of this.allProducts) {
          switch (product.category_type) {

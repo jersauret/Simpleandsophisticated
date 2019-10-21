@@ -29,6 +29,11 @@ export class MapComponent implements OnInit {
         height: 60
     }
 }
+
+ngOnInit(){
+   
+}
+
    constructor() { }
 
   /* ngOnInit() {
