@@ -31,13 +31,13 @@ export class MapComponent implements OnInit {
 }
    constructor() { }
 
-   ngOnInit() {
+  /* ngOnInit() {
       if(this.address) {
          this.getLatitudeLongitude(this.address);
       }
-   }
+   }*/
 
-   getLatitudeLongitude(address) 
+ /*  getLatitudeLongitude(address) 
    {
       // If adress is not supplied, use default value 'Ferrol, Galicia, Spain'
       address = address || 'Ferrol, Galicia, Spain';
@@ -60,6 +60,6 @@ export class MapComponent implements OnInit {
         this.mapOptions.lng = NewMapOptions.lng;
         this.showMap = true;
       }
-   }
+   }*/
 
 }

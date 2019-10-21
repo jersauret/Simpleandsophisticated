@@ -1,11 +1,11 @@
  export const environment = {
    production: false,
    firebase: {
-     apiKey: "AIzaSyC5kr77VEU-FnklR5DBn3bPwmtmpEjYde4",
-     authDomain: "embryo-version-2.firebaseapp.com",
-     databaseURL: "https://embryo-version-2.firebaseio.com",
-    projectId: "embryo-version-2",
-    storageBucket: "embryo-version-2.appspot.com",
-    messagingSenderId: "73552048992"
+    apiKey: "AIzaSyDQwXDbqGTG5durzA0gP1bVMY8un8TIjuQ",
+    authDomain: "simpleandsophisticated-32033.firebaseapp.com",
+     databaseURL: "https://simpleandsophisticated-32033.firebaseio.com",
+     projectId: "simpleandsophisticated-32033",
+     storageBucket: "simpleandsophisticated-32033.appspot.com",
+     messagingSenderId: "1061305900788"
    }
  };

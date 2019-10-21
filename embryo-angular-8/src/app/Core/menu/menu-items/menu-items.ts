@@ -199,33 +199,10 @@ const HeaderOneItems= [
   },
   {
   state: "pages",
-  name: "PAGES",
+  name: "USER ACCOUNT",
   type: "sub",
   icon: "pages",
   children: [
-     {  state: 'about', 
-        name: 'ABOUT',
-        type: 'link',
-        icon: 'arrow_right_alt',
-     },
-     {  state: 'term-condition', 
-        name: 'TERM AND CONDITION',
-        type: 'link',
-        icon: 'arrow_right_alt',
-     },
-     {  
-        state: 'privacy-policy', 
-        name: 'PRIVACY POLICY',
-        type: 'link',
-        icon: 'arrow_right_alt',
-      },
-      {  
-        state: 'faq', 
-        name: 'FAQ',
-        type: 'link',
-        icon: 'arrow_right_alt',
-      },
-    
       {  
          state: 'account/profile', 
          name: 'User Profile',
@@ -256,12 +233,6 @@ const HeaderOneItems= [
                 type: 'link',
                 icon: 'arrow_right_alt',
             },
-            {  
-                state: 'session/thank-you', 
-                name: 'THANK YOU',
-                type: 'link',
-                icon: 'arrow_right_alt',
-            }
           ]
        }
     ],
@@ -287,30 +258,6 @@ const FooterOneItems= [
      type:"sub",
      icon: '',
      children: [
-      {  
-         state: 'about', 
-         name: 'ABOUT',
-         type: 'link',
-         icon: 'arrow_right_alt',
-      },
-      {  
-         state: 'term-condition', 
-         name: 'TERM AND CONDITION',
-         type: 'link',
-         icon: 'arrow_right_alt',
-      },
-      {  
-        state: 'privacy-policy', 
-        name: 'PRIVACY POLICY',
-        type: 'link',
-        icon: 'arrow_right_alt',
-      },
-      {  
-        state: 'faq', 
-        name: 'FAQ',
-        type: 'link',
-        icon: 'arrow_right_alt',
-       },
        {  
          state:'contact',
          name:"CONTACT US",
