@@ -4,7 +4,7 @@ export interface Registration
     name:string;
     password:string;
     email:string;
-    role:string;
+    role:string[];
     gender:string;
     phone:string;
 }

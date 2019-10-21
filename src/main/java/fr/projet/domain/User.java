@@ -54,6 +54,8 @@ public class User implements IdEntity {
 	private String firstName;
 
 	private String lastName;
+	
+	private String access_token;
 
 	//CONSTRUCTEUR ADMIN
 	public User(String email, String password) {
@@ -217,6 +219,14 @@ public class User implements IdEntity {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public String getAccess_token() {
+		return access_token;
+	}
+
+	public void setAccess_token(String access_token) {
+		this.access_token = access_token;
 	}
 
 }

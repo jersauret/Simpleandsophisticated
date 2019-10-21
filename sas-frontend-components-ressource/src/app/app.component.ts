@@ -6,6 +6,7 @@ import { Registration } from './Models/User.Models';
 import { RegistrationService } from './Services/Registration.Service'
 import { AuthenticationService } from './Services/authentication.service';
 import { SharedService } from './Services/shared.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -33,9 +34,11 @@ export class AppComponent implements OnInit {
 
   message = "";
   public globalResponse: any;
+  ismodelShown: boolean;
 
   constructor(private sharedService: SharedService, private modalService: NgbModal,
-    private fb: FormBuilder, private regService: RegistrationService, private authService: AuthenticationService) {
+    private fb: FormBuilder, private regService: RegistrationService, private authService: AuthenticationService,
+    private router: Router) {
 
   }
   ngOnInit() {
@@ -91,7 +94,7 @@ export class AppComponent implements OnInit {
         },
         () => {
           //  This is Success part
-          // console.log(this.globalResponse);
+           console.log(this.globalResponse.access_token);
           this.authService.storeToken(this.globalResponse.access_token);
           this.alerts.push({
             id: 1,
@@ -100,7 +103,7 @@ export class AppComponent implements OnInit {
           });
           this.isLoggedIn = true;
           this.GetClaims();
-
+          this.ismodelShown=true;
         }
       )
   }
@@ -148,7 +151,7 @@ export class AppComponent implements OnInit {
           // console.log(this.globalResponse );
           let a = this.globalResponse;
           this.currentUser = this.globalResponse;
-          this.authService.storeRole(this.currentUser);
+          this.authService.storeRole(this.currentUser.role.roleName);
           console.log(this.currentUser);
         }
       )

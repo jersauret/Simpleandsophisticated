@@ -28,7 +28,10 @@ public class UserRepository extends AbstractJpaRepository<User>{
 		TypedQuery<User> query = entityManager.createQuery(qlQuery, User.class);
 		query.setParameter("email", email);
 		
-		return query.getSingleResult();
+		User user = query.getSingleResult();
+		user.setAccess_token("helloSecurity");
+		this.save(user);
+		return user;
 	}
 	
 	//RECHERCHE MULTICRITERES CLIENTS 
@@ -249,10 +252,6 @@ public class UserRepository extends AbstractJpaRepository<User>{
 			criteria.where(builder.like(root.get("eMail"), "%" + adminCriteria.geteMail() + "%"));
 		}
 		
-		
-		
-		
-
 		List<User> admins = entityManager.createQuery(criteria).getResultList();
 
 		return admins;
