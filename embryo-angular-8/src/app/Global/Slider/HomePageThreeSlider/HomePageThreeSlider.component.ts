@@ -15,19 +15,19 @@ export class HomePageThreeSliderComponent implements OnInit, OnChanges {
       {
          img         : "assets/images/h-slider-1.jpg",
          content     : "2019 Latest Collection",
-         heading_one : "New Fashion Collection",
+         heading_one : "New Mac Pro Laptops",
         
       },
       {
          img         : "assets/images/h-slider-2.jpg",
          content     : "2019 Latest Collection",
-         heading_one : "Summer Time Collection",
+         heading_one : "Virtual Reality Headsets",
    
       }, 
       {
          img         : "assets/images/h-slider-3.jpg",
          content     : "2019 Latest Collection",
-         heading_one : "Men's Suiting and Clothing",
+         heading_one : "New Readers",
          
       }
    ]

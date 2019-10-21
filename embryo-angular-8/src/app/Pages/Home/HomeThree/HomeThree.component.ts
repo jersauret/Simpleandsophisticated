@@ -9,7 +9,7 @@ import { EmbryoService } from '../../../Services/Embryo.service';
 export class HomeThreeComponent implements OnInit {
 
    categories : any = {
-      clothing     : [],
+      clothing    : [],
       shoes        : [],
       accessories  : [],
       gadgets      : []

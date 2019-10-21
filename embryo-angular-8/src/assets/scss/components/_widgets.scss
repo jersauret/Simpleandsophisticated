@@ -95,6 +95,16 @@
   }
 
 }
+.section-title-toolbar{
+  .grid-toolbar {
+    .mat-toolbar {
+      .mat-toolbar-multiple-rows {
+        background-color: black;
+
+      }
+    }
+  }
+}
 
 .grid-card-wrapper {
   .grid-toolbar {

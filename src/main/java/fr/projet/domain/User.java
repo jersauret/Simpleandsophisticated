@@ -39,7 +39,7 @@ public class User implements IdEntity {
 	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
 	@JsonSerialize(using = LocalDateSerializer.class)
 	@JsonDeserialize(using = LocalDateDeserializer.class)
-	private LocalDate dOB;
+	private LocalDate doB;
 	private String city;
 	private String country;
 	private String zipCode; // Code Postal
@@ -53,9 +53,6 @@ public class User implements IdEntity {
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
 	private List<Order> order;
 
-	private String firstName;
-
-	private String lastName;
 
 	//CONSTRUCTEUR ADMIN
 	public User(String email, String password) {

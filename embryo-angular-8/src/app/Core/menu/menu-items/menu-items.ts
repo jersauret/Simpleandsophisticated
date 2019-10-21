@@ -12,30 +12,11 @@ export interface Menu {
 }
 
 const HeaderOneItems= [
-  {
-    state: "home",
-    name: "HOME",
-    type: "sub",
-    icon: "home",
-    children: [
-      {  
-        state: 'home', 
-        name: 'HOME ONE',
-        type: 'link',
-        icon: 'home'
-      },
-      {  
-        state: 'home-two', 
-        name: 'HOME TWO',
-        type: 'link',
-        icon: 'home'
-      }, {
-        state:'home-three',
-        name: 'HOME THREE',
-        type: 'link',
-        icon: 'home'
-      }
-    ]
+  {  
+    state:'home-three',
+    name: 'HOME THREE',
+    type: 'link',
+    icon: 'home'
   },
   {
     state: "",
@@ -86,35 +67,35 @@ const HeaderOneItems= [
     children: [
       {  
         state: 'men', 
-        name: 'MEN',
+        name: 'DAILY',
         type: 'sub',
         icon: 'arrow_right_alt',
         children:[
           {  
             state: 'products/men', 
             queryState:'Jeans',
-            name: 'JEAN',
+            name: 'Smartphones',
             type: 'queryParams',
             icon: 'arrow_right_alt',
           },
           {  
             state: 'products/men', 
             queryState:'Jackets',
-            name: 'JACKETS',
+            name: 'Laptops',
             type: 'queryParams',
             icon: 'arrow_right_alt',
           },
           {
             state: 'products/men', 
             queryState:'Shirt',  
-            name: 'SHIRT',
+            name: 'Smartwatches',
             type: 'queryParams',
             icon: 'arrow_right_alt',
           },
           {  
             state: 'products/men', 
             queryState:'T-Shirt',
-            name: 'T-SHIRT',
+            name: 'Earphones/Headphones',
             type: 'queryParams',
             icon: 'arrow_right_alt',
           }
@@ -122,7 +103,7 @@ const HeaderOneItems= [
       },
       {  
         state: 'woman', 
-        name: 'WOMEN',
+        name: 'PRO',
         type: 'sub',
         icon: 'arrow_right_alt',
         children:[
@@ -151,7 +132,7 @@ const HeaderOneItems= [
       },
       {  
         state: 'gadgets', 
-        name: 'GADGETS',
+        name: 'Hobby',
         type: 'sub',
         icon: 'arrow_right_alt',
         children:[
@@ -187,28 +168,28 @@ const HeaderOneItems= [
       },
       {  
         state: 'accessories', 
-        name: 'ACCESSORIES',
+        name: 'NEWS',
         type: 'sub',
         icon: 'arrow_right_alt',
         children:[
           {  
             state: 'products/accessories', 
             queryState:'Laptap',
-            name: 'LAPTOP ACCESSORIES',
+            name: 'Laptops',
             type: 'queryParams',
             icon: 'arrow_right_alt',
           },
           {  
             state: 'products/accessories', 
             queryState:'Belts',
-            name: 'BELTS',
+            name: 'VR Headsets',
             type: 'queryParams',
             icon: 'arrow_right_alt',
           },
           {  
             state: 'products/accessories', 
             queryState:'Jewellery', 
-            name: 'JEWELLERY',
+            name: 'Reader',
             type: 'queryParams',
             icon: 'arrow_right_alt',
           }
@@ -239,23 +220,12 @@ const HeaderOneItems= [
         icon: 'arrow_right_alt',
       },
       {  
-        state: 'blogs/detail', 
-        name: 'BLOG DETAIL',
-        type: 'link',
-        icon: 'arrow_right_alt',
-      },
-      {  
         state: 'faq', 
         name: 'FAQ',
         type: 'link',
         icon: 'arrow_right_alt',
       },
-      {  
-        state: 'not-found', 
-        name: '404 PAGE',
-        type: 'link',
-        icon: 'arrow_right_alt',
-      },
+    
       {  
          state: 'account/profile', 
          name: 'User Profile',
@@ -304,7 +274,7 @@ const HeaderOneItems= [
   },
   {
     state:'admin-panel',
-    name:"ADMIN PANEL",
+    name:"Admin Portal",
     type:"link",
     icon: 'perm_identity'
   }
@@ -389,25 +359,25 @@ const FooterOneItems= [
     children: [
       {  
         state: 'products/women', 
-        name: 'WOMEN',
+        name: 'Pro',
         type: 'link',
         icon: 'arrow_right_alt',
       },
       {  
         state: 'products/men', 
-        name: 'MEN',
+        name: 'Daily',
         type: 'link',
         icon: 'arrow_right_alt',
       },
       {  
         state: 'products/accesories', 
-        name: 'ACCESSORIES',
+        name: 'New',
         type: 'link',
         icon: 'arrow_right_alt',
       },
       {  
         state: 'products/gadgets', 
-        name: 'GADGETS',
+        name: 'Hobby',
         type: 'link',
         icon: 'arrow_right_alt',
       }

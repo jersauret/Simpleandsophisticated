@@ -1252,8 +1252,8 @@
       ],
       "buySellChartColors": [{
             "lineTension": 0.4,
-            "borderColor": "#283593",
-            "pointBorderColor": "#283593",
+            "borderColor": "#ffffff",
+            "pointBorderColor": "#ffffff",
             "pointBorderWidth": 2,
             "pointRadius": 2,
             "fill": false,
@@ -1301,8 +1301,8 @@
       ],
       "buySellChartColors": [{
             "lineTension": 0.4,
-            "borderColor": "#283593",
-            "pointBorderColor": "#283593",
+            "borderColor": "#ffffff",
+            "pointBorderColor": "#ffffff",
             "pointBorderWidth": 2,
             "pointRadius": 2,
             "fill": false,
@@ -1350,8 +1350,8 @@
       ],
       "buySellChartColors": [{
             "lineTension": 0.4,
-            "borderColor": "#283593",
-            "pointBorderColor": "#283593",
+            "borderColor": "#ffffff",
+            "pointBorderColor": "#ffffff",
             "pointBorderWidth": 2,
             "pointRadius": 2,
             "fill": false,

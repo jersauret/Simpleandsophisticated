@@ -28,7 +28,7 @@ $user-name-font-size:1rem;
       vertical-align: middle;
    }
    body {
-
+      
       .sidebar-logo.mat-toolbar {
          align-items: center;
          background: transparent none repeat scroll 0 0;
@@ -74,6 +74,7 @@ $user-name-font-size:1rem;
             margin: 0;
             padding-top:0.25rem;
             padding-bottom: 0.25rem;
+            color: black;
          }
          // .mat-list-item-content {
          // 	margin-bottom: 0 !important;
@@ -192,7 +193,7 @@ $user-name-font-size:1rem;
          font-size: 0.875rem;
       }
       .mat-form-field.mat-focused .mat-form-field-ripple {
-         background-color: $primary;
+         background-color: white;
       }
       .mat-mini-fab .mat-button-wrapper {
          display: inline;
@@ -263,6 +264,9 @@ $user-name-font-size:1rem;
          }
       }
    }
+}
+.embryo-fixed-header {
+   background-color: black;
 }
 .chart-shadow canvas{
    -webkit-filter: drop-shadow(0 8px 8px #A9A9A9);

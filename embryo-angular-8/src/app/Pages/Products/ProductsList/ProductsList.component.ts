@@ -44,8 +44,8 @@ export class ProductsListComponent implements OnInit {
       
       switch (this.type || this.category) {
          case undefined:
-            this.pageTitle = "Fashion";
-            this.subPageTitle="Explore your favourite fashion style.";
+            this.pageTitle = "Products";
+            this.subPageTitle="Discover our products.";
             break;
 
          case "gadgets":
