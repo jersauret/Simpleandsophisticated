@@ -71,7 +71,7 @@ export class EditProductComponent implements OnInit {
 
    //getProductEditResponse method is used to according to the response edit poroduct data show.
    public getProductEditResponse(response) {
-		let products = ((response.men.concat(response.women)).concat(response.gadgets)).concat(response.accessories);
+		let products = ((response.smartphone.concat(response.women)).concat(response.gadgets)).concat(response.accessories);
       for(let data of products)
       {	
          if(data.id == this.productId && data.type == this.productType) {

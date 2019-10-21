@@ -26,7 +26,7 @@ export class HomeTwoComponent implements OnInit {
    public getLighteningDealsResponse(res) {
       let productsArray : any = [];
       this.lighteningDealsProducts = null;
-      productsArray.push(this.last(res.men));
+      productsArray.push(this.last(res.smartphone));
       productsArray.push(this.last(res.women));
       productsArray.push(this.last(res.gadgets));
       productsArray.push(this.last(res.accessories));
@@ -45,7 +45,7 @@ export class HomeTwoComponent implements OnInit {
 
    public getProductsResponse(res) {
       this.topProducts = null;
-      let products = ((res.men.concat(res.women)).concat(res.gadgets)).concat(res.accessories);
+      let products = ((res.smartphone.concat(res.women)).concat(res.gadgets)).concat(res.accessories);
       this.topProducts = products;
    }
 

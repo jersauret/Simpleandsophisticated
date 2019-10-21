@@ -25,7 +25,7 @@ const HeaderOneItems= [
     icon: "pages",
     children: [
       {  
-        state: 'products/men/4', 
+        state: 'products/smartphone/4', 
         name: 'PRODUCT DETAILS',
         type: 'link',
         icon: 'arrow_right_alt'
@@ -66,34 +66,34 @@ const HeaderOneItems= [
     icon: 'party_mode',
     children: [
       {  
-        state: 'men', 
+        state: 'smartphone', 
         name: 'DAILY',
         type: 'sub',
         icon: 'arrow_right_alt',
         children:[
           {  
-            state: 'products/men', 
+            state: 'products/smartphone', 
             queryState:'Jeans',
             name: 'Smartphones',
             type: 'queryParams',
             icon: 'arrow_right_alt',
           },
           {  
-            state: 'products/men', 
+            state: 'products/smartphone', 
             queryState:'Jackets',
             name: 'Laptops',
             type: 'queryParams',
             icon: 'arrow_right_alt',
           },
           {
-            state: 'products/men', 
+            state: 'products/smartphone', 
             queryState:'Shirt',  
             name: 'Smartwatches',
             type: 'queryParams',
             icon: 'arrow_right_alt',
           },
           {  
-            state: 'products/men', 
+            state: 'products/smartphone', 
             queryState:'T-Shirt',
             name: 'Earphones/Headphones',
             type: 'queryParams',
@@ -311,7 +311,7 @@ const FooterOneItems= [
         icon: 'arrow_right_alt',
       },
       {  
-        state: 'products/men', 
+        state: 'products/smartphone', 
         name: 'Daily',
         type: 'link',
         icon: 'arrow_right_alt',

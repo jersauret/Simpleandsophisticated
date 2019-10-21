@@ -106,7 +106,7 @@
          "content": "<p> <span class='dropcap accent-color'>T</span>onsectetur adipisicing elit. Animi ea libero nobis hic impedit similique, iste possimus. Libero delectus hic tempore suscipit blanditiis? Odit consequuntur facilis debitis quam accusamus ducimus? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p> <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). sometimes on purpose (injected humour and the like). </p> <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ea libero nobis hic impedit similique, iste possimus. Libero delectus hic tempore suscipit blanditiis? Odit consequuntur facilis debitis quam accusamus ducimus? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p> <p> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p>",
          "id": 3,
          "image": "assets/images/post-3.jpg",
-         "name": "Festival Sale has lots of amazing offer for men and woman",
+         "name": "Festival Sale has lots of amazing offer for smartphone and woman",
          "post_type": "Featured post.",
          "short_content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
          "tags": [
@@ -231,7 +231,7 @@
       "id": 1,
       "name": "Blue Jean",
       "rating": 4,
-      "type": "men",
+      "type": "smartphone",
       "user_rating": [{
             "comment": "I love the way it has delivered to me and after using ,i just wanna say one word that is awesome",
             "date": "a month ago",
@@ -312,7 +312,7 @@
                "assets/images/accessroies/a-2-c.jpg",
                "assets/images/accessroies/a-2-d.jpg"
             ],
-            "name": "Men Belts",
+            "name": "smartphone Belts",
             "popular": false,
             "price": 38.31,
             "product_code": "#EM1216",
@@ -382,7 +382,7 @@
                "assets/images/accessroies/a-4-c.jpg",
                "assets/images/accessroies/a-4-d.jpg"
             ],
-            "name": "Men Purse",
+            "name": "smartphone Purse",
             "popular": false,
             "price": 15.75,
             "product_code": "#EM1218",
@@ -391,7 +391,7 @@
             "status": 0,
             "tags": [
                "Tan",
-               "Men",
+               "smartphone",
                "Money"
             ],
             "type": "accessories"
@@ -426,7 +426,7 @@
             "status": 0,
             "tags": [
                "Black",
-               "Men",
+               "smartphone",
                "Shape"
             ],
             "type": "accessories"
@@ -532,7 +532,7 @@
             "status": 0,
             "tags": [
                "Analog/Digital ",
-               "Men/Women ",
+               "smartphone/Women ",
                "Black"
             ],
             "type": "gadgets"
@@ -568,7 +568,7 @@
             "status": 0,
             "tags": [
                "Analog/Digital ",
-               "Men/Women ",
+               "smartphone/Women ",
                "Black"
             ],
             "type": "gadgets"
@@ -609,7 +609,7 @@
             "type": "gadgets"
          }
       ],
-      "men": [{
+      "smartphone": [{
             "availablity": true,
             "brand": "Liod Marcos",
             "category": "Jeans",
@@ -623,13 +623,13 @@
                "Free Shipping and delivery in 4 Days"
             ],
             "id": 1,
-            "image": "assets/images/men/3-item-a.jpg",
+            "image": "assets/images/smartphone/3-item-a.jpg",
             "image_gallery": [
-               "assets/images/men/3-item-a.jpg",
-               "assets/images/men/3-item-b.jpg",
-               "assets/images/men/3-item-c.jpg",
-               "assets/images/men/3-item-d.jpg",
-               "assets/images/men/3-item-e.jpg"
+               "assets/images/smartphone/3-item-a.jpg",
+               "assets/images/smartphone/3-item-b.jpg",
+               "assets/images/smartphone/3-item-c.jpg",
+               "assets/images/smartphone/3-item-d.jpg",
+               "assets/images/smartphone/3-item-e.jpg"
             ],
             "name": "Vintage Jean",
             "popular": false,
@@ -640,10 +640,10 @@
             "status": 0,
             "tags": [
                "Jean ",
-               "Men ",
+               "smartphone ",
                "Outwear"
             ],
-            "type": "men"
+            "type": "smartphone"
          },
          {
             "availablity": true,
@@ -659,13 +659,13 @@
                "Free Shipping and delivery in 2 Days"
             ],
             "id": 2,
-            "image": "assets/images/men/2-item-a.jpg",
+            "image": "assets/images/smartphone/2-item-a.jpg",
             "image_gallery": [
-               "assets/images/men/2-item-a.jpg",
-               "assets/images/men/2-item-b.jpg",
-               "assets/images/men/2-item-c.jpg",
-               "assets/images/men/2-item-d.jpg",
-               "assets/images/men/2-item-e.jpg"
+               "assets/images/smartphone/2-item-a.jpg",
+               "assets/images/smartphone/2-item-b.jpg",
+               "assets/images/smartphone/2-item-c.jpg",
+               "assets/images/smartphone/2-item-d.jpg",
+               "assets/images/smartphone/2-item-e.jpg"
             ],
             "name": "Super Jacket",
             "popular": false,
@@ -676,10 +676,10 @@
             "status": 0,
             "tags": [
                "Winter ",
-               "Men ",
+               "smartphone ",
                "Jacket"
             ],
-            "type": "men"
+            "type": "smartphone"
          },
          {
             "availablity": true,
@@ -695,13 +695,13 @@
                "Free Shipping in some areas and delivery in 4 Days"
             ],
             "id": 3,
-            "image": "assets/images/men/1-item-a.jpg",
+            "image": "assets/images/smartphone/1-item-a.jpg",
             "image_gallery": [
-               "assets/images/men/1-item-a.jpg",
-               "assets/images/men/1-item-b.jpg",
-               "assets/images/men/1-item-c.jpg",
-               "assets/images/men/1-item-d.jpg",
-               "assets/images/men/1-item-e.jpg"
+               "assets/images/smartphone/1-item-a.jpg",
+               "assets/images/smartphone/1-item-b.jpg",
+               "assets/images/smartphone/1-item-c.jpg",
+               "assets/images/smartphone/1-item-d.jpg",
+               "assets/images/smartphone/1-item-e.jpg"
             ],
             "name": "Denim Pullover",
             "popular": false,
@@ -711,11 +711,11 @@
             "rating": 4,
             "status": 0,
             "tags": [
-               "Men ",
+               "smartphone ",
                "Pullover",
                "Denim"
             ],
-            "type": "men"
+            "type": "smartphone"
          },
          {
             "availablity": true,
@@ -731,13 +731,13 @@
                "Free Shipping and delivery in 1 Days"
             ],
             "id": 4,
-            "image": "assets/images/men/4-item-a.jpg",
+            "image": "assets/images/smartphone/4-item-a.jpg",
             "image_gallery": [
-               "assets/images/men/4-item-a.jpg",
-               "assets/images/men/4-item-b.jpg",
-               "assets/images/men/4-item-c.jpg",
-               "assets/images/men/4-item-d.jpg",
-               "assets/images/men/4-item-e.jpg"
+               "assets/images/smartphone/4-item-a.jpg",
+               "assets/images/smartphone/4-item-b.jpg",
+               "assets/images/smartphone/4-item-c.jpg",
+               "assets/images/smartphone/4-item-d.jpg",
+               "assets/images/smartphone/4-item-e.jpg"
             ],
             "name": "Blue Jean",
             "popular": false,
@@ -748,10 +748,10 @@
             "status": 0,
             "tags": [
                "Blue",
-               "Men",
+               "smartphone",
                "Jean"
             ],
-            "type": "men"
+            "type": "smartphone"
          },
          {
             "availablity": true,
@@ -767,13 +767,13 @@
                "Free Shipping and delivery in 4 Days"
             ],
             "id": 5,
-            "image": "assets/images/men/5-item-a.jpg",
+            "image": "assets/images/smartphone/5-item-a.jpg",
             "image_gallery": [
-               "assets/images/men/5-item-a.jpg",
-               "assets/images/men/5-item-b.jpg",
-               "assets/images/men/5-item-c.jpg",
-               "assets/images/men/5-item-d.jpg",
-               "assets/images/men/5-item-e.jpg"
+               "assets/images/smartphone/5-item-a.jpg",
+               "assets/images/smartphone/5-item-b.jpg",
+               "assets/images/smartphone/5-item-c.jpg",
+               "assets/images/smartphone/5-item-d.jpg",
+               "assets/images/smartphone/5-item-e.jpg"
             ],
             "name": "Black T-Shirt",
             "popular": false,
@@ -784,10 +784,10 @@
             "status": 0,
             "tags": [
                "Black ",
-               "Men ",
+               "smartphone ",
                "Summer"
             ],
-            "type": "men"
+            "type": "smartphone"
          },
          {
             "availablity": true,
@@ -802,11 +802,11 @@
                "Wipe with a clean, dry cloth to remove dust"
             ],
             "id": 6,
-            "image": "assets/images/men/cat-shoes.jpg",
+            "image": "assets/images/smartphone/cat-shoes.jpg",
             "image_gallery": [
-               "assets/images/men/cat-shoes.jpg"
+               "assets/images/smartphone/cat-shoes.jpg"
             ],
-            "name": "Men White AIR",
+            "name": "smartphone White AIR",
             "popular": true,
             "price": 65.75,
             "product_code": "#4330899",
@@ -817,7 +817,7 @@
                "Black ",
                "White"
             ],
-            "type": "men"
+            "type": "smartphone"
          }
       ],
       "women": [{
