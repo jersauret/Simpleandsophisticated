@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes, RouterModule} from '@angular/router';
+import { Routes} from '@angular/router';
 
 import { MainComponent } from './Main/Main.component';
 import { HomeoneComponent } from './Pages/Home/HomeOne/HomeOne.component';
@@ -70,21 +70,3 @@ export const AppRoutes : Routes = [
       redirectTo: 'not-found'
    }
 ]
-
-/*
-@NgModule({
-   imports: [RouterModule.forRoot(routes)],
-   exports: [RouterModule]
- })
- export class AppRoutingModule { }
-
-const routes: Routes = [
-  {path:"",component:ProductdisplayComponent},
-  {path:"profile",component:ProfileComponent,canActivate:[authGuardGuard]},
-  {path:"dashboard",component:DashboardComponent,canActivate:[authGuardGuard]},
-  {path:"admin",component:AdminComponent,canActivate:[authGuardGuard]},
-  {path:"productdisplay",component:ProductdisplayComponent},
-  {path:"mycart",component:MycartComponent},
-  {path:"productdisplaybycriteria",component:ProductDisplayByCriteriaComponent},
-  {path:"**",component:ProductdisplayComponent},
-];*/

@@ -72,13 +72,6 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { AdminPanelModule } from './AdminPanel/admin-panel.module';
-import { FilterByCriteriaPipe } from './Pipes/filter-by-criteria.pipe';
-import { AdminComponent } from './admin/admin/admin.component';
-import { DashboardComponent } from './dashboard/dash-board/dash-board.component';
-import { MycartComponent } from './mycart/my-cart/my-cart.component';
-import { ProductdisplayComponent } from './productdisplay/product-display/product-display.component';
-import { ProductDisplayByCriteriaComponent } from './productdisplaybycriteria/product-display-by-criteria/product-display-by-criteria.component';
-import { ProfileComponent } from './profile/profile/profile.component';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -107,14 +100,7 @@ export function createTranslateLoader(http: HttpClient) {
       FooterTwoComponent,
       HomeThreeComponent,
       HeaderThreeComponent,
-      FixedHeaderComponent,
-      FilterByCriteriaPipe,
-      AdminComponent,
-      DashboardComponent,
-      MycartComponent,
-      ProductdisplayComponent,
-      ProductDisplayByCriteriaComponent,
-      ProfileComponent
+      FixedHeaderComponent
    ],
    imports: [
       BrowserModule.withServerTransition({appId: 'embryo-seo-pre'}),
