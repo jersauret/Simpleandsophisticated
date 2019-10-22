@@ -731,13 +731,13 @@
                "Free Shipping and delivery in 1 Days"
             ],
             "id": 4,
-            "image": "assets/images/smartphone/4-item-a.jpg",
+            "image": "assets/images/men/4-item-a.jpg",
             "image_gallery": [
-               "assets/images/smartphone/4-item-a.jpg",
-               "assets/images/smartphone/4-item-b.jpg",
-               "assets/images/smartphone/4-item-c.jpg",
-               "assets/images/smartphone/4-item-d.jpg",
-               "assets/images/smartphone/4-item-e.jpg"
+               "assets/images/men/4-item-a.jpg",
+               "assets/images/men/4-item-b.jpg",
+               "assets/images/men/4-item-c.jpg",
+               "assets/images/men/4-item-d.jpg",
+               "assets/images/men/4-item-e.jpg"
             ],
             "name": "Blue Jean",
             "popular": false,
@@ -767,13 +767,13 @@
                "Free Shipping and delivery in 4 Days"
             ],
             "id": 5,
-            "image": "assets/images/smartphone/5-item-a.jpg",
+            "image": "assets/images/men/5-item-a.jpg",
             "image_gallery": [
-               "assets/images/smartphone/5-item-a.jpg",
-               "assets/images/smartphone/5-item-b.jpg",
-               "assets/images/smartphone/5-item-c.jpg",
-               "assets/images/smartphone/5-item-d.jpg",
-               "assets/images/smartphone/5-item-e.jpg"
+               "assets/images/men/5-item-a.jpg",
+               "assets/images/men/5-item-b.jpg",
+               "assets/images/men/5-item-c.jpg",
+               "assets/images/men/5-item-d.jpg",
+               "assets/images/men/5-item-e.jpg"
             ],
             "name": "Black T-Shirt",
             "popular": false,
@@ -802,9 +802,9 @@
                "Wipe with a clean, dry cloth to remove dust"
             ],
             "id": 6,
-            "image": "assets/images/smartphone/cat-shoes.jpg",
+            "image": "assets/images/men/cat-shoes.jpg",
             "image_gallery": [
-               "assets/images/smartphone/cat-shoes.jpg"
+               "assets/images/men/cat-shoes.jpg"
             ],
             "name": "smartphone White AIR",
             "popular": true,

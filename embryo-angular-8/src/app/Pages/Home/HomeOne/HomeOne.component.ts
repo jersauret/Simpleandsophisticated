@@ -126,7 +126,7 @@ export class HomeoneComponent implements OnInit, AfterViewChecked{
       this.productsSliderData = null;
       switch (tabIndex) {
          case 0:
-            this.productsSliderData = this.productsArray.smartphone;
+            this.productsSliderData = this.productsArray.men;
          break;
 
          case 1:
@@ -153,7 +153,7 @@ export class HomeoneComponent implements OnInit, AfterViewChecked{
       this.newProductsSliderData = null;
       switch (tabIndex) {
          case 0:
-            this.newProductsSliderData = this.productsArray.smartphone;
+            this.newProductsSliderData = this.productsArray.men;
          break;
 
          case 1:

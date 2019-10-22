@@ -31,7 +31,7 @@ export class ProductsComponent implements OnInit {
 	//getProductResponse method is used to get the response of all products.
  	public getProductResponse(response) {
       this.productsGrid = null;
-      let products = ((response.smartphone.concat(response.women)).concat(response.gadgets)).concat(response.accessories);
+      let products = ((response.men.concat(response.women)).concat(response.gadgets)).concat(response.accessories);
       this.productsGrid = products;
    }
 
