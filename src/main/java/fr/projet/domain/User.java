@@ -45,6 +45,7 @@ public class User implements IdEntity {
 	private String zipCode; // Code Postal
 	
 	private String phoneNumber;
+	private String access_token;
 	
 	
 	@ManyToOne(fetch = FetchType.EAGER)
@@ -216,6 +217,14 @@ public class User implements IdEntity {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public String getAccess_token() {
+		return access_token;
+	}
+
+	public void setAccess_token(String access_token) {
+		this.access_token = access_token;
 	}
 
 }

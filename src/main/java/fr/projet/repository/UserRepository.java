@@ -24,11 +24,17 @@ public class UserRepository extends AbstractJpaRepository<User>{
 
 	public User findOneByEmail(String email) {
 		//TODO: Récupérer depuis la base (penser à fetch les roles et droits)
-		String qlQuery = "from User u left join fetch u.role r left join fetch r.rights where u.email = :email";
+		String qlQuery = "from User u where u.email = :email";
 		TypedQuery<User> query = entityManager.createQuery(qlQuery, User.class);
 		query.setParameter("email", email);
-		
-		return query.getSingleResult();
+		User user = query.getSingleResult();
+		if(user != null) {
+			user.setAccess_token("Security_Token_Engaged");
+			this.save(user);
+			return user;
+		}else {
+			return null;
+		}
 	}
 	
 	//RECHERCHE MULTICRITERES CLIENTS 
