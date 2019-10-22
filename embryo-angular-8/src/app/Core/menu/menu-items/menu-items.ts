@@ -74,7 +74,7 @@ const HeaderOneItems= [
           {  
             state: 'products/smartphone', 
             queryState:'Jeans',
-            name: 'Smartphones',
+            name: 'mens',
             type: 'queryParams',
             icon: 'arrow_right_alt',
           },
@@ -145,8 +145,8 @@ const HeaderOneItems= [
           },
           {  
             state: 'products/gadgets', 
-            queryState:'Smartphone',
-            name: 'SMARTPHONE',
+            queryState:'smartphone',
+            name: 'smartphone',
             type: 'queryParams',
             icon: 'arrow_right_alt',
           },

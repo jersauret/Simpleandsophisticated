@@ -470,7 +470,7 @@
          {
             "availablity": true,
             "brand": "Liod Marcos",
-            "category": "Smartphone",
+            "category": "smartphone",
             "category_type": "gadgets",
             "color": "Black",
             "description": "Dolor sit amet consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!",
@@ -488,7 +488,7 @@
                "assets/images/gadgets/g-2-c.jpg",
                "assets/images/gadgets/g-2-d.jpg"
             ],
-            "name": "Black Smartphone",
+            "name": "Black smartphone",
             "popular": false,
             "price": 847.63,
             "product_code": "#EM1210",
@@ -497,7 +497,7 @@
             "status": 0,
             "tags": [
                "Phone ",
-               "Smartphone ",
+               "smartphone ",
                "New"
             ],
             "type": "gadgets"
@@ -609,7 +609,7 @@
             "type": "gadgets"
          }
       ],
-      "smartphone": [{
+      "men": [{
             "availablity": true,
             "brand": "Liod Marcos",
             "category": "Jeans",
@@ -623,13 +623,13 @@
                "Free Shipping and delivery in 4 Days"
             ],
             "id": 1,
-            "image": "assets/images/smartphone/3-item-a.jpg",
+            "image": "assets/images/men/3-item-a.jpg",
             "image_gallery": [
-               "assets/images/smartphone/3-item-a.jpg",
-               "assets/images/smartphone/3-item-b.jpg",
-               "assets/images/smartphone/3-item-c.jpg",
-               "assets/images/smartphone/3-item-d.jpg",
-               "assets/images/smartphone/3-item-e.jpg"
+               "assets/images/men/3-item-a.jpg",
+               "assets/images/men/3-item-b.jpg",
+               "assets/images/men/3-item-c.jpg",
+               "assets/images/men/3-item-d.jpg",
+               "assets/images/men/3-item-e.jpg"
             ],
             "name": "Vintage Jean",
             "popular": false,
@@ -643,7 +643,7 @@
                "smartphone ",
                "Outwear"
             ],
-            "type": "smartphone"
+            "type": "men"
          },
          {
             "availablity": true,
@@ -659,13 +659,13 @@
                "Free Shipping and delivery in 2 Days"
             ],
             "id": 2,
-            "image": "assets/images/smartphone/2-item-a.jpg",
+            "image": "assets/images/men/2-item-a.jpg",
             "image_gallery": [
-               "assets/images/smartphone/2-item-a.jpg",
-               "assets/images/smartphone/2-item-b.jpg",
-               "assets/images/smartphone/2-item-c.jpg",
-               "assets/images/smartphone/2-item-d.jpg",
-               "assets/images/smartphone/2-item-e.jpg"
+               "assets/images/men/2-item-a.jpg",
+               "assets/images/men/2-item-b.jpg",
+               "assets/images/men/2-item-c.jpg",
+               "assets/images/men/2-item-d.jpg",
+               "assets/images/men/2-item-e.jpg"
             ],
             "name": "Super Jacket",
             "popular": false,
@@ -679,7 +679,7 @@
                "smartphone ",
                "Jacket"
             ],
-            "type": "smartphone"
+            "type": "men"
          },
          {
             "availablity": true,
@@ -695,13 +695,13 @@
                "Free Shipping in some areas and delivery in 4 Days"
             ],
             "id": 3,
-            "image": "assets/images/smartphone/1-item-a.jpg",
+            "image": "assets/images/men/1-item-a.jpg",
             "image_gallery": [
-               "assets/images/smartphone/1-item-a.jpg",
-               "assets/images/smartphone/1-item-b.jpg",
-               "assets/images/smartphone/1-item-c.jpg",
-               "assets/images/smartphone/1-item-d.jpg",
-               "assets/images/smartphone/1-item-e.jpg"
+               "assets/images/men/1-item-a.jpg",
+               "assets/images/men/1-item-b.jpg",
+               "assets/images/men/1-item-c.jpg",
+               "assets/images/men/1-item-d.jpg",
+               "assets/images/men/1-item-e.jpg"
             ],
             "name": "Denim Pullover",
             "popular": false,
@@ -921,7 +921,7 @@
             "rating": 5,
             "status": 0,
             "tags": [
-               "Smartphone ",
+               "smartphone ",
                "One note "
             ],
             "type": "women"

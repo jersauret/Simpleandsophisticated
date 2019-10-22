@@ -470,7 +470,7 @@
          {
             "availablity": true,
             "brand": "Liod Marcos",
-            "category": "Smartphone",
+            "category": "smartphone",
             "category_type": "gadgets",
             "color": "Black",
             "description": "Dolor sit amet consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!",
@@ -488,7 +488,7 @@
                "assets/images/gadgets/g-2-c.jpg",
                "assets/images/gadgets/g-2-d.jpg"
             ],
-            "name": "Black Smartphone",
+            "name": "Black smartphone",
             "popular": false,
             "price": 847.63,
             "product_code": "#EM1210",
@@ -497,7 +497,7 @@
             "status": 0,
             "tags": [
                "Phone ",
-               "Smartphone ",
+               "smartphone ",
                "New"
             ],
             "type": "gadgets"
@@ -921,7 +921,7 @@
             "rating": 5,
             "status": 0,
             "tags": [
-               "Smartphone ",
+               "smartphone ",
                "One note "
             ],
             "type": "women"
