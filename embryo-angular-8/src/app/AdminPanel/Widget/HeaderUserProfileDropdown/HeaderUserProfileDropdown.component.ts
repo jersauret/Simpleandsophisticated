@@ -9,14 +9,18 @@ import { Router } from '@angular/router';
 
 export class HeaderUserProfileDropdownComponent implements OnInit {
 
+	isLoggedIn:boolean;
+
 	constructor(public router : Router) { }
 
 	ngOnInit() {
+		this.isLoggedIn = true;
 	}
 
 	//log out method 
 	logOut(){
 		document.getElementById('html').classList.remove("admin-panel");
+		this.isLoggedIn = true;
 		this.router.navigate(['/session/signin']);
 	}
 }

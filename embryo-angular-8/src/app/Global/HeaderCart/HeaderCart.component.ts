@@ -1,4 +1,6 @@
 import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angular/core';
+import { AuthenticationService } from 'src/app/Services/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
    selector: 'embryo-HeaderCart',
@@ -18,11 +20,19 @@ export class HeaderCartComponent implements OnInit, OnChanges {
 
    hiddenBadge = true;
 
-   constructor() {
+   constructor(private authentication: AuthenticationService, private route: Router) {
       this.mobWidth = window.screen.width;
    }
    
    ngOnInit() {
+   }
+
+   isLogged(){
+      if(this.authentication.isAuthenticated()){
+         this.route.navigateByUrl('/checkout/payment');
+      }else{
+         this.route.navigateByUrl('/checkout');
+      }
    }
 
    ngOnChanges() {
