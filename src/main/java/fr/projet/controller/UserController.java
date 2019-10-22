@@ -48,9 +48,8 @@ public class UserController {
 
 	//@PreAuthorize("hasRole('ADMIN')")
 	//@PostAuthorize("hasRole('ADMIN')")
-	@RequestMapping(value = "/email", method = RequestMethod.GET)
-	public User findOneByMail(@RequestParam(required = true) String email) {
-		System.out.println(email);
+	@RequestMapping(value = "/email/{email}", method = RequestMethod.GET)
+	public User findOneByMail(@PathVariable String email) {
 		return clientService.findOneByEmail(email);
 	}
 
