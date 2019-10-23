@@ -59,13 +59,13 @@ export class ProductsListComponent implements OnInit {
             break;
 
          case "gadgets":
-            this.pageTitle = "Gadgets";
-            this.subPageTitle="Check out our new gadgets.";
+            this.pageTitle = "Products";
+            this.subPageTitle="Discover our products.";
             break;
 
          case "accessories":
-            this.pageTitle = "Accessories";
-            this.subPageTitle="Choose the wide range of best accessories.";
+            this.pageTitle = "Products";
+            this.subPageTitle="Discover our products.";
             break;
          
          default:

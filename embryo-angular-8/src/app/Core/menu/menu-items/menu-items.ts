@@ -25,7 +25,7 @@ const HeaderOneItems= [
     icon: "pages",
     children: [
       {  
-        state: 'products/clothing/4', 
+        state: 'products/men/4', 
         name: 'PRODUCT DETAILS',
         type: 'link',
         icon: 'arrow_right_alt'
@@ -50,14 +50,6 @@ const HeaderOneItems= [
       }
     ]
   },
- 
- 
-  {
-    state:'products/accessories',
-    name:"ACCESSORIES",
-    type:"link",
-    icon: 'party_mode'
-  },
   {
     state:'products',
     name:"CATEGORIES",
@@ -66,34 +58,28 @@ const HeaderOneItems= [
     icon: 'party_mode',
     children: [
       {  
-        state: 'clothing', 
+        state: 'men', 
         name: 'DAILY',
         type: 'sub',
         icon: 'arrow_right_alt',
         children:[
           {  
-            state: 'products/clothing', 
-            queryState:'Jeans',
-            name: 'mens',
-            type: 'queryParams',
-            icon: 'arrow_right_alt',
-          },
-          {  
-            state: 'products/clothing', 
+           
+            state: 'products/men', 
             queryState:'Jackets',
             name: 'Laptops',
             type: 'queryParams',
             icon: 'arrow_right_alt',
           },
           {
-            state: 'products/clothing', 
+            state: 'products/men', 
             queryState:'Shirt',  
             name: 'Smartwatches',
             type: 'queryParams',
             icon: 'arrow_right_alt',
           },
           {  
-            state: 'products/clothing', 
+            state: 'products/men', 
             queryState:'T-Shirt',
             name: 'Earphones/Headphones',
             type: 'queryParams',
@@ -110,21 +96,21 @@ const HeaderOneItems= [
           {  
             state: 'products/woman', 
             queryState:'Dresses',
-            name: 'DRESS',
+            name: 'Laptop',
             type: 'queryParams',
             icon: 'arrow_right_alt',
           },
           {  
             state: 'products/woman', 
             queryState:'Shirt',
-            name: 'SHIRT',
+            name: 'Smartphones',
             type: 'queryParams',
             icon: 'arrow_right_alt',
           },
           {  
             state: 'products/woman', 
             queryState:'T-Shirt',
-            name: 'T-SHIRT',
+            name: 'Smartwatches',
             type: 'queryParams',
             icon: 'arrow_right_alt',
           }
@@ -143,24 +129,18 @@ const HeaderOneItems= [
             type: 'queryParams',
             icon: 'arrow_right_alt',
           },
-          {  
-            state: 'products/gadgets', 
-            queryState:'clothing',
-            name: 'clothing',
-            type: 'queryParams',
-            icon: 'arrow_right_alt',
-          },
-          {  
-            state: 'products/gadgets', 
-            queryState:'Watch',
-            name: 'WATCH',
-            type: 'queryParams',
-            icon: 'arrow_right_alt',
-          },
+         
           {  
             state: 'products/gadgets', 
             queryState:'Speaker',
             name: 'SPEAKER',
+            type: 'queryParams',
+            icon: 'arrow_right_alt',
+          },
+          {  
+            state: 'products/gadgets', 
+            queryState:'Jewellery', 
+            name: 'Reader',
             type: 'queryParams',
             icon: 'arrow_right_alt',
           }
@@ -186,13 +166,7 @@ const HeaderOneItems= [
             type: 'queryParams',
             icon: 'arrow_right_alt',
           },
-          {  
-            state: 'products/accessories', 
-            queryState:'Jewellery', 
-            name: 'Reader',
-            type: 'queryParams',
-            icon: 'arrow_right_alt',
-          }
+        
         ]
       }
     ]

@@ -57,7 +57,7 @@
                "assets/images/accessroies/a-2-c.jpg",
                "assets/images/accessroies/a-2-d.jpg"
             ],
-            "name": "smartphone Belts",
+            "name": "Men Belts",
             "popular": false,
             "price": 38.31,
             "product_code": "#EM1216",
@@ -127,7 +127,7 @@
                "assets/images/accessroies/a-4-c.jpg",
                "assets/images/accessroies/a-4-d.jpg"
             ],
-            "name": "smartphone Purse",
+            "name": "Men Purse",
             "popular": false,
             "price": 15.75,
             "product_code": "#EM1218",
@@ -215,7 +215,7 @@
          {
             "availablity": true,
             "brand": "Liod Marcos",
-            "category": "smartphone",
+            "category": "Men",
             "category_type": "gadgets",
             "color": "Black",
             "description": "Dolor sit amet consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!",
@@ -242,7 +242,7 @@
             "status": 0,
             "tags": [
                "Phone ",
-               "smartphone ",
+               "Men ",
                "New"
             ],
             "type": "gadgets"
@@ -277,7 +277,7 @@
             "status": 0,
             "tags": [
                "Analog/Digital ",
-               "smartphone/Women ",
+               "Men/Women ",
                "Black"
             ],
             "type": "gadgets"

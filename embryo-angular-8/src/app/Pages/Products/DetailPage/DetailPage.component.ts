@@ -43,6 +43,7 @@ export class DetailPageComponent implements OnInit {
             break;
          }
       }
+      console.log(this.singleProductData);
    }
 
    public addToCart(value) {
