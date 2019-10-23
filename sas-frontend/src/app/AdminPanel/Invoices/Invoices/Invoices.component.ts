@@ -3,6 +3,7 @@ import { AdminPanelServiceService } from '../../Service/AdminPanelService.servic
 import { MatTableDataSource, MatPaginator } from '@angular/material';
 import { Order } from 'src/app/order';
 import { OrderService } from 'src/app/order.service';
+import { User } from 'firebase';
 
 @Component({
    selector: 'app-invoices',
@@ -16,6 +17,7 @@ export class InvoicesComponent implements OnInit {
 
    popUpDeleteUserResponse: any;
    invoiceList: Order[] = [];
+   user: User;
 
 
    @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
@@ -37,17 +39,38 @@ export class InvoicesComponent implements OnInit {
             console.log(this.order);
             return this.order;
           });*/
-      this.orderService.getOrder('666').subscribe(res => {
-         this.getInvoiceData(res);
+
+    this.orderService.getOrder('666').subscribe(res => {
+         this.getInvoiceDataList(res);
          this.order = this.invoiceList[0];
       console.log(this.invoiceList[0])
       console.log(this.order.orderNumber);
    });
+
+   
+   this.orderService.getOrder('666').subscribe(res => this.invoiceList.push(res));
+      console.log(this.invoiceList.toLocaleString());
+/*
+      this.orderService.getOrder('666').subscribe(res => {this.getInvoiceData(res);
+         console.log(this.getInvoiceData(res))});
+*/
+
 }
 
 
+
 // getInvoiceData method is used to get the invoice list data.
-getInvoiceData(response) {
+getInvoiceData() {
+   //this.invoiceList = response;
+   this.dataSource = new MatTableDataSource<any>(this.invoiceList);
+   setTimeout(() => {
+      this.dataSource.paginator = this.paginator;
+   }, 0);
+
+}
+
+// getInvoiceData method is used to get the invoice list data.
+getInvoiceDataList(response) {
    this.invoiceList = response;
    this.dataSource = new MatTableDataSource<any>(this.invoiceList);
    setTimeout(() => {

@@ -41,6 +41,7 @@ public class Order implements IdEntity {
 	private LocalDate purchaseDate;
 	private String orderNumber;
 	private Integer totalPrice;
+	private String payment;
  
 	@Enumerated(EnumType.STRING)
 	private CommandStatus commandStatus;
@@ -137,6 +138,14 @@ public class Order implements IdEntity {
 
 	public void setCommandStatus(CommandStatus commandStatus) {
 		this.commandStatus = commandStatus;
+	}
+
+	public String getPayment() {
+		return payment;
+	}
+
+	public void setPayment(String payment) {
+		this.payment = payment;
 	}
 	
 	

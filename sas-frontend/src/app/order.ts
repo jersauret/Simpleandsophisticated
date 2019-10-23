@@ -4,5 +4,6 @@ export class Order {
     orderNumber: string;
     totalPrice: number;
     userName: string;
-
+    commandStatus: string;
+    payment: string;
   }

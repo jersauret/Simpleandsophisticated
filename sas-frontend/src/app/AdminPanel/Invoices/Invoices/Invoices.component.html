@@ -1,7 +1,7 @@
 <div class="dash-title mb-4 ml-3">
 </div>
 <!-- dash-title -->
-<!--
+
 <mat-card class="m-3">
    <div fxLayout="row wrap">
       <div fxFlex.gt-md="600px" fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
@@ -10,16 +10,9 @@
          </mat-form-field>
       </div>
    </div>
-</mat-card>-->
-<div>
-      {{order.purchaseDate}}
-      {{order.orderNumber}}
-      {{order.totalPrice}}
-      {{order.status}}
-</div>
+</mat-card>
 
 
-<!--
 <ng-container *ngIf=" invoiceList && invoiceList.length>0; else elseBlock">
    <div fxLayout="column">
       <mat-card>
@@ -27,11 +20,11 @@
             <table mat-table [dataSource]="dataSource" class="w-100 table-scroll-wrap">
                <ng-container matColumnDef="position">
                   <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef> No. </th>
-                  <td class="px-3 text-nowrap" mat-cell *matCellDef="let element"> {{element.position}} </td>
+                  <td class="px-3 text-nowrap" mat-cell *matCellDef="let element"> {{order.orderNumber}} </td>
                </ng-container>
                <ng-container matColumnDef="invoiceId">
                   <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef> Invoice Id </th>
-                  <td class="px-3 text-nowrap" mat-cell *matCellDef="let element"> <a href="javascript:void(0)" (click) ="onSeeDialog()"> {{order.id}}</a> </td>
+                  <td class="px-3 text-nowrap" mat-cell *matCellDef="let element"> <a href="javascript:void(0)" (click) ="onSeeDialog()"> {{user.userName}}</a> </td>
                </ng-container>
                <ng-container matColumnDef="name">
                   <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef> Buyer </th>
@@ -47,11 +40,11 @@
                </ng-container>
                <ng-container matColumnDef="payment">
                   <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef mat-sort-header> Payment </th>
-                  <td class="px-3 text-nowrap" mat-cell *matCellDef="let element"> {{element.payment}} </td>
+                  <td class="px-3 text-nowrap" mat-cell *matCellDef="let element"> {{order.payment}} </td>
                </ng-container>
                <ng-container matColumnDef="status">
                   <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef> Status </th>
-                  <td class="px-3 text-nowrap" mat-cell *matCellDef="let element"> {{element.status}} </td>
+                  <td class="px-3 text-nowrap" mat-cell *matCellDef="let element"> {{order.commandStatus}} </td>
                </ng-container> 
                <ng-container matColumnDef="action">
                   <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef> Action </th>
@@ -69,11 +62,11 @@
             </table>
          </div>  
          <mat-paginator [pageSizeOptions]="[15, 30, 45, 60]"></mat-paginator>
-      -->
-         <!-- table-responsive
+      
+          <!--table-responsive-->
       </mat-card>
    </div>
 </ng-container>
 <ng-template #elseBlock>
    <h5 class="ml-5">No data found</h5>
-</ng-template> -->
+</ng-template>
