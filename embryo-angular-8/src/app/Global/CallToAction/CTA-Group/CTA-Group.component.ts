@@ -14,7 +14,7 @@ export class CTAGroupComponent implements OnInit {
       },
       {
          img_path:"assets/images/sports.jpg",
-         route :"/products/smartphone/3"
+         route :"/products/clothing/3"
       },
       {
          img_path:"assets/images/headphone.jpg",
@@ -22,7 +22,7 @@ export class CTAGroupComponent implements OnInit {
       },
       {
          img_path:"assets/images/t-shirts.jpg",
-         route :"/products/smartphone/5"
+         route :"/products/clothing/5"
       },
       {
          img_path:"assets/images/watch.jpg",
@@ -30,7 +30,7 @@ export class CTAGroupComponent implements OnInit {
       },
       {
          img_path:"assets/images/shoes.jpg",
-         route :"/products/smartphone/6"
+         route :"/products/clothing/6"
       }
    ]
 

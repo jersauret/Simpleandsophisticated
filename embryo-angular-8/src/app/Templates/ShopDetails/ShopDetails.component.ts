@@ -17,7 +17,7 @@ export class ShopDetailsComponent implements OnInit, OnChanges {
    totalPrice    : any;
    type          : any;
    colorsArray   : string[] = ["Red", "Blue", "Yellow", "Green"];
-   sizeArray     : number[] = [36,38,40,42,44,46,48];
+   sizeArray     : number[] = [5, 10,16,32,64,128];
    quantityArray : number[] = [1,2,3,4,5,6,7,8,9,10];
    productReviews : any;
 

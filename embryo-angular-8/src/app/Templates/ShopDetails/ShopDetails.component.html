@@ -69,7 +69,7 @@
                 </ul>
               </div>
               <div fxLayoutGap="30px" class="mb-3 select-group">
-                <ng-container *ngIf="type == 'smartphone' || type == 'women'">
+                <ng-container *ngIf="type == 'clothing' || type == 'women'">
                   <mat-form-field>
                     <mat-select class="product-detail-select" placeholder="Color">
                       <ng-container *ngFor="let color of colorsArray">
@@ -78,7 +78,7 @@
                     </mat-select>
                   </mat-form-field>
                   <mat-form-field>
-                    <mat-select placeholder="Size">
+                    <mat-select placeholder="Qt Giga">
                       <ng-container *ngFor = "let size of sizeArray">
                         <mat-option value="{{size}}">{{size}}</mat-option>
                       </ng-container>

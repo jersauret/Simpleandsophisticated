@@ -25,7 +25,7 @@ const HeaderOneItems= [
     icon: "pages",
     children: [
       {  
-        state: 'products/smartphone/4', 
+        state: 'products/clothing/4', 
         name: 'PRODUCT DETAILS',
         type: 'link',
         icon: 'arrow_right_alt'
@@ -66,34 +66,34 @@ const HeaderOneItems= [
     icon: 'party_mode',
     children: [
       {  
-        state: 'smartphone', 
+        state: 'clothing', 
         name: 'DAILY',
         type: 'sub',
         icon: 'arrow_right_alt',
         children:[
           {  
-            state: 'products/smartphone', 
+            state: 'products/clothing', 
             queryState:'Jeans',
             name: 'mens',
             type: 'queryParams',
             icon: 'arrow_right_alt',
           },
           {  
-            state: 'products/smartphone', 
+            state: 'products/clothing', 
             queryState:'Jackets',
             name: 'Laptops',
             type: 'queryParams',
             icon: 'arrow_right_alt',
           },
           {
-            state: 'products/smartphone', 
+            state: 'products/clothing', 
             queryState:'Shirt',  
             name: 'Smartwatches',
             type: 'queryParams',
             icon: 'arrow_right_alt',
           },
           {  
-            state: 'products/smartphone', 
+            state: 'products/clothing', 
             queryState:'T-Shirt',
             name: 'Earphones/Headphones',
             type: 'queryParams',
@@ -145,8 +145,8 @@ const HeaderOneItems= [
           },
           {  
             state: 'products/gadgets', 
-            queryState:'smartphone',
-            name: 'smartphone',
+            queryState:'clothing',
+            name: 'clothing',
             type: 'queryParams',
             icon: 'arrow_right_alt',
           },
@@ -290,12 +290,7 @@ const FooterOneItems= [
             type: 'link',
             icon: 'arrow_right_alt',
         },
-        {  
-            state: 'session/thank-you', 
-            name: 'THANK YOU',
-            type: 'link',
-            icon: 'arrow_right_alt',
-        }
+        
     ]
   },
   {
@@ -311,7 +306,7 @@ const FooterOneItems= [
         icon: 'arrow_right_alt',
       },
       {  
-        state: 'products/smartphone', 
+        state: 'products/clothing', 
         name: 'Daily',
         type: 'link',
         icon: 'arrow_right_alt',

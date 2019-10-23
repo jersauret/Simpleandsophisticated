@@ -106,7 +106,7 @@
          "content": "<p> <span class='dropcap accent-color'>T</span>onsectetur adipisicing elit. Animi ea libero nobis hic impedit similique, iste possimus. Libero delectus hic tempore suscipit blanditiis? Odit consequuntur facilis debitis quam accusamus ducimus? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p> <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). sometimes on purpose (injected humour and the like). </p> <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ea libero nobis hic impedit similique, iste possimus. Libero delectus hic tempore suscipit blanditiis? Odit consequuntur facilis debitis quam accusamus ducimus? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p> <p> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p>",
          "id": 3,
          "image": "assets/images/post-3.jpg",
-         "name": "Festival Sale has lots of amazing offer for smartphone and woman",
+         "name": "Festival Sale has lots of amazing offer for clothing and woman",
          "post_type": "Featured post.",
          "short_content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
          "tags": [
@@ -231,7 +231,7 @@
       "id": 1,
       "name": "Blue Jean",
       "rating": 4,
-      "type": "smartphone",
+      "type": "clothing",
       "user_rating": [{
             "comment": "I love the way it has delivered to me and after using ,i just wanna say one word that is awesome",
             "date": "a month ago",
@@ -312,7 +312,7 @@
                "assets/images/accessroies/a-2-c.jpg",
                "assets/images/accessroies/a-2-d.jpg"
             ],
-            "name": "smartphone Belts",
+            "name": "clothing Belts",
             "popular": false,
             "price": 38.31,
             "product_code": "#EM1216",
@@ -382,7 +382,7 @@
                "assets/images/accessroies/a-4-c.jpg",
                "assets/images/accessroies/a-4-d.jpg"
             ],
-            "name": "smartphone Purse",
+            "name": "clothing Purse",
             "popular": false,
             "price": 15.75,
             "product_code": "#EM1218",
@@ -391,7 +391,7 @@
             "status": 0,
             "tags": [
                "Tan",
-               "smartphone",
+               "clothing",
                "Money"
             ],
             "type": "accessories"
@@ -426,7 +426,7 @@
             "status": 0,
             "tags": [
                "Black",
-               "smartphone",
+               "clothing",
                "Shape"
             ],
             "type": "accessories"
@@ -470,7 +470,7 @@
          {
             "availablity": true,
             "brand": "Liod Marcos",
-            "category": "smartphone",
+            "category": "clothing",
             "category_type": "gadgets",
             "color": "Black",
             "description": "Dolor sit amet consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!",
@@ -488,7 +488,7 @@
                "assets/images/gadgets/g-2-c.jpg",
                "assets/images/gadgets/g-2-d.jpg"
             ],
-            "name": "Black smartphone",
+            "name": "Black clothing",
             "popular": false,
             "price": 847.63,
             "product_code": "#EM1210",
@@ -497,7 +497,7 @@
             "status": 0,
             "tags": [
                "Phone ",
-               "smartphone ",
+               "clothing ",
                "New"
             ],
             "type": "gadgets"
@@ -532,7 +532,7 @@
             "status": 0,
             "tags": [
                "Analog/Digital ",
-               "smartphone/Women ",
+               "clothing/Women ",
                "Black"
             ],
             "type": "gadgets"
@@ -568,7 +568,7 @@
             "status": 0,
             "tags": [
                "Analog/Digital ",
-               "smartphone/Women ",
+               "clothing/Women ",
                "Black"
             ],
             "type": "gadgets"
@@ -640,7 +640,7 @@
             "status": 0,
             "tags": [
                "Jean ",
-               "smartphone ",
+               "clothing ",
                "Outwear"
             ],
             "type": "men"
@@ -676,7 +676,7 @@
             "status": 0,
             "tags": [
                "Winter ",
-               "smartphone ",
+               "clothing ",
                "Jacket"
             ],
             "type": "men"
@@ -711,11 +711,11 @@
             "rating": 4,
             "status": 0,
             "tags": [
-               "smartphone ",
+               "clothing ",
                "Pullover",
                "Denim"
             ],
-            "type": "smartphone"
+            "type": "clothing"
          },
          {
             "availablity": true,
@@ -748,10 +748,10 @@
             "status": 0,
             "tags": [
                "Blue",
-               "smartphone",
+               "clothing",
                "Jean"
             ],
-            "type": "smartphone"
+            "type": "clothing"
          },
          {
             "availablity": true,
@@ -784,10 +784,10 @@
             "status": 0,
             "tags": [
                "Black ",
-               "smartphone ",
+               "clothing ",
                "Summer"
             ],
-            "type": "smartphone"
+            "type": "clothing"
          },
          {
             "availablity": true,
@@ -806,7 +806,7 @@
             "image_gallery": [
                "assets/images/men/cat-shoes.jpg"
             ],
-            "name": "smartphone White AIR",
+            "name": "clothing White AIR",
             "popular": true,
             "price": 65.75,
             "product_code": "#4330899",
@@ -817,7 +817,7 @@
                "Black ",
                "White"
             ],
-            "type": "smartphone"
+            "type": "clothing"
          }
       ],
       "women": [{
@@ -921,7 +921,7 @@
             "rating": 5,
             "status": 0,
             "tags": [
-               "smartphone ",
+               "clothing ",
                "One note "
             ],
             "type": "women"
