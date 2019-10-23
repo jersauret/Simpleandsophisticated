@@ -31,7 +31,7 @@ export class MainComponent implements OnInit {
                meta: Meta, title: Title,
                private activatedRoute: ActivatedRoute) { 
 
-      title.setTitle('Embryo - Angular Material Design eCommerce Template');
+      title.setTitle('Simple And Sophisticated');
 
       meta.addTags([
          { name: 'author',   content: 'The IRON Network'},
