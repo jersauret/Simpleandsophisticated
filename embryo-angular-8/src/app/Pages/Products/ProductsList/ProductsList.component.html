@@ -150,8 +150,11 @@
                                 <h6 class="accent-color">{{product?.price | currency}}</h6>
                              </div>
                           </div>
+                          <div class="a-icon">
+                              <button mat-fab (click)="addToWishList(product)"><i class="material-icons">W</i></button>
+                           </div>
                           <div class="m-icon">
-                             <button mat-fab (click)="addToCart(product)"><i class="material-icons"></i></button>
+                             <button mat-fab (click)="addToCart(product)"><i class="material-icons">B</i></button>
                           </div>
                        </mat-card-content>
                     </mat-card>
