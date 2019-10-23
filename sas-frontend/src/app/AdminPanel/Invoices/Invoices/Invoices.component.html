@@ -1,7 +1,7 @@
 <div class="dash-title mb-4 ml-3">
-   Invoice List
 </div>
 <!-- dash-title -->
+<!--
 <mat-card class="m-3">
    <div fxLayout="row wrap">
       <div fxFlex.gt-md="600px" fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
@@ -10,8 +10,16 @@
          </mat-form-field>
       </div>
    </div>
-   <!-- wrap -->
-</mat-card>
+</mat-card>-->
+<div>
+      {{order.purchaseDate}}
+      {{order.orderNumber}}
+      {{order.totalPrice}}
+      {{order.status}}
+</div>
+
+
+<!--
 <ng-container *ngIf=" invoiceList && invoiceList.length>0; else elseBlock">
    <div fxLayout="column">
       <mat-card>
@@ -61,10 +69,11 @@
             </table>
          </div>  
          <mat-paginator [pageSizeOptions]="[15, 30, 45, 60]"></mat-paginator>
-         <!-- table-responsive -->
+      -->
+         <!-- table-responsive
       </mat-card>
    </div>
 </ng-container>
 <ng-template #elseBlock>
    <h5 class="ml-5">No data found</h5>
-</ng-template>
+</ng-template> -->

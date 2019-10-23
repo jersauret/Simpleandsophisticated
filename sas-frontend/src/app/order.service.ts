@@ -8,16 +8,16 @@ import { Order } from './order';
 })
 export class OrderService {
 
-  baseUrl = 'http://localhost:8080/Projet_Fil_Rouge/api/orders';
-  corsUrl = 'http://localhost:8080/Projet_Fil_Rouge/';
+  baseUrl = 'http://localhost:8080/mvc/api/orders/search?';
+  corsUrl = 'http://localhost:8080/mvc/';
 
   constructor(private  httpClient: HttpClient) { }
 
-  getOrder(id: number): Observable<Order> {
+  getOrder(orderNumber: string): Observable<Order> {
     const headers: HttpHeaders = new HttpHeaders()
       .set('Accept', 'application/json')
       .set('access-control-allow-origin', this.corsUrl);
 
-    return this.httpClient.get<Order>(this.baseUrl + '/' + id, { headers });
+    return this.httpClient.get<Order>(this.baseUrl + 'ordernumber=' + orderNumber, { headers });
   }
 }
