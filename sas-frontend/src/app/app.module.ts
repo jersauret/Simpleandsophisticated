@@ -72,6 +72,7 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { AdminPanelModule } from './AdminPanel/admin-panel.module';
+import { UserComponent } from './user/user.component';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -100,7 +101,8 @@ export function createTranslateLoader(http: HttpClient) {
       FooterTwoComponent,
       HomeThreeComponent,
       HeaderThreeComponent,
-      FixedHeaderComponent
+      FixedHeaderComponent,
+      UserComponent
    ],
    imports: [
       BrowserModule.withServerTransition({appId: 'embryo-seo-pre'}),
